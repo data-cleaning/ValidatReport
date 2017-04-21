@@ -5,6 +5,12 @@
 \usepackage{array}   % outline of p{} elements in tables
 \usepackage{enumitem}% control spacing in lists
 \usepackage{caption} % for non-floating tables
+\usepackage{listings}
+
+\lstset{numbers=left,
+language=C
+}
+
 \usepackage[
   pdfborder={0,0,0},
   colorlinks=true,
@@ -42,6 +48,8 @@
 \begin{document}
 
 \maketitle{}
+
+\tableofcontents{}
 
 
 \section{Introduction}
@@ -270,7 +278,8 @@ validation event. Every table has four columns, with the following contents.
 \begin{enumerate}
 \item Item: the name of the slot.
 \item Format: technical format of the data in the slot. Allowed formats are: \code{string},
-\code{numeric}, \code{enum} (with categories defined in the description column) and \code{datetime}.
+\code{numeric}, \code{enum} (with categories defined in the description column), \code{datetime} and
+\code{-}. The latter indicates that the format is free, including the possibility to include user-defined objects.
 \item Description: a short description of the slot. More detailed descriptions
 might follow after the table.
 \item Example: an example.
@@ -298,8 +307,9 @@ encoded as stated in Table~\ref{tab:dataformat}.
 The following Tables fix the information content of each item making up elements of 
 a validation report: $e$, $r$, $d$, and $v$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Identification of a physical validation event.}
-
+%
 \begin{center}
 \captionof{table}{Mandatory identification of a physical validation event $e$.}
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
@@ -317,13 +327,13 @@ actor         & string        a  & Software that or person who created the valid
 
 
 \begin{center}
-\captionof{table}{Recommended information physical validation event $e$.}
+\captionof{table}{Recommended information on a physical validation event $e$.}
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
 \hline
-agent   & string & Actor (person, institute, dpt) responsible for executing the validation event & dpt. of data validation, Eurostat\\
-trigger & -      & Actor (person, institute, dpt) responsible for triggering the event  & John Statistician, Statistics Netherlands\\
+agent   & \multicolumn{1}{c}{-} & Actor (person, institute, dpt) responsible for executing the validation event & dpt. of data validation, Eurostat\\
+trigger & \multicolumn{1}{c}{-} & Actor (person, institute, dpt) responsible for triggering the event  & John Statistician, Statistics Netherlands\\
 \hline
 \end{tabular}
 \label{tab:recommendedevent}.
@@ -331,7 +341,8 @@ trigger & -      & Actor (person, institute, dpt) responsible for triggering the
 The recommended slots of Table~\ref{tab:recommendedevent} are useful, especially when validation is executed as a (remote) service.
 
 
-\subsection{Identification of a validation rule}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Identification of a validation rule}
 %
 \begin{center}
 \captionof{table}{Mandatory identification of validation rule $r$.}
@@ -340,8 +351,8 @@ The recommended slots of Table~\ref{tab:recommendedevent} are useful, especially
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
 language      & string   & Language and version in which a rule is expressed & R/validate version 0.1.7\\
 expression    & string   & Expression defining the rule           & \code{age >= 0}\\
-severity      & enum     & One of \code{'error}, \code{'warning'},
-                           or \code{'information'}                   & \code{'information'}\\ 
+severity      & enum     & \code{`error'}, \code{`warning'},
+                           or \code{`information'}                & \code{`information'}\\ 
 
 \hline
 \multicolumn{4}{|l|}{The number of slots defining a validation rule is \textbf{extendable}.
@@ -349,7 +360,83 @@ severity      & enum     & One of \code{'error}, \code{'warning'},
 \hline
 \end{tabular}
 \end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Identification of the validated data}
+Although generic models for identifying a data point exist [e.g.
+\citet[Chapter~5]{zio2015methodology}], it will in practice often depend on the
+local implementation of a local data model. Therefore, little limits are posed
+on the keys involved in pointing out the data used in an evaluation. However,
+as a general rule, it should be clear 
+\begin{itemize}[itemsep=0pt]
+\item to which population the data under scrutiny pertains;
+\item the identity of the process that yielded the data (`time of measurement');
+\item to which units in the population the data pertains;
+\item what variables are measured by the data.
+\end{itemize}
+These are the four components defined in the Methodology of validation handbook 
+\citep{zio2015methodology}.
+
+
+\begin{center}
+\captionof{table}{Mandatory identification of validated data $d$.}
+\begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
+\hline
+\textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
+data    &\multicolumn{1}{c}{-} & A set of key(s) or other identification (e.g.
+a query statement) identifying the data used in evaluating the validation rule
+&  (`people in NL', `SILC2016, `Ria Respondent', `Income')\\
+\hline
+\multicolumn{4}{|l|}{The number of slots defining a validation rule is \textbf{extendable}.
+}\\
+\hline
+\end{tabular}
+\end{center}
+
+
+Allowing for implicit definition of the (sub)set of data touched by a
+validation rule potentially reduces the size of a validation report
+significantly: it is possible to have millions of datapoints involved in a
+single validation rule. The trade-off is that aggregating validation reports,
+grouped by properties of the data directly is not possible.
+
+\begin{tabular}{|p{0.97\textwidth}|}
+\hline
+It is recommended that for validation rules that can be evaluated using a
+single datapoint only (e.g. \code{income >= 0}), the data is identified using a
+key (or array of keys) directly related to the data value under scrutiny.\\
+\hline
+\end{tabular}
+
+\subsubsection{Validation result}
+
+\begin{center}
+\captionof{table}{Mandatory format for the validation result $v$.}
+\begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
+\hline
+\textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
+value  & \code{enum} & \waar{}, \onwaar{}, or \na{}    &\waar{}\\
+\hline
+\multicolumn{4}{|l|}{The number of slots defining a validation result \textbf{not extendable}.
+}\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{JSON schema for basic validation reports}
+The code on Page~\pageref{code:basicreport} shows a JSON schema implementing
+a format for storing and transmitting the information items described in the previous
+paragraphs. 
+
+\newpage
+\label{code:basicreport}
+\lstinputlisting[frame=single]{../json/basic_validation_report.json}
+
+
 \section{Extended validation report structure}
+
+
 
 \bibliography{report}
 
