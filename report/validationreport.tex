@@ -429,17 +429,25 @@ is also an oriented graph.
 \item The empty graph $(\{\},\{\})$ is an extended validation report.
 \item If $B$ is a basic validation report, then the edgeless graph $(B, \{\})$
 is an extended validation report.
-\item Given an extended validation report $R=(V,E)$  a subset $S\subseteq V$ and
+\item Given an extended validation report $(V,E)$  a subset $S\subseteq V$ and
 a function $f:2^V\to\mathbb{R}$.  Then 
 \begin{displaymath}
 \left(
-B\cup \{(f,f(S))\}, E\cup \bigcup_{s\in S}\left( (f,f(S)), s \right)
+V\cup \{(f,f(S))\}, E\cup \bigcup_{s\in S}\left( (f,f(S)), s \right)
 \right)
 \end{displaymath}
 is an extended validation report.
 \end{enumerate}
 \end{definition}
-
+Here, the first step is a formality, allowing one to apply formal set
+operations on the elements of a validation report. In the second step a basic
+validation report is lifted to an extended validation report by endowing it
+with an empty set of edges. The crucial step is step three. Here, an aggregate
+function is assumed that assigns a number to a set of nodes of an extended
+validation report. The number and the aggregating function are paired and added
+as a node to the existing node set. Furthermore, the set of edges is extended
+with pairs $(a,s)$ where $a$ is the aggregate node and $s$ runs over all nodes
+that were used to compute the aggregate.
 
 
 
