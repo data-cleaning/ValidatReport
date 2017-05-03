@@ -424,16 +424,24 @@ is also an oriented graph.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Extended validation report structure}
+Conceptually, the structure of an extended validation report is an oriented
+graph, where each node is either atomic (resulting from a validation event) or
+an aggregate, possibly built from previous aggregate. The atomic nodes store
+information on the used validation function, the data involved and the event
+that created it. The aggregated nodes store information on the agregating
+function (sum, mean, $\ldots$), while the edges indicate which nodes were used
+to form an aggregate. Formally, the definition can  now be written as follows.
+%
 \begin{definition}[Extended validation report]\leavevmode
 \begin{enumerate}
 \item The empty graph $(\{\},\{\})$ is an extended validation report.
 \item If $B$ is a basic validation report, then the edgeless graph $(B, \{\})$
 is an extended validation report.
 \item Given an extended validation report $(V,E)$  a subset $S\subseteq V$ and
-a function $f:2^V\to\mathbb{R}$.  Then 
+a function $f:2^V\to\mathbb{R}$.  Denoting the aggregate node $a=(f,f(S))$, then 
 \begin{displaymath}
 \left(
-V\cup \{(f,f(S))\}, E\cup \bigcup_{s\in S}\left( (f,f(S)), s \right)
+V\cup \{a\}, E\cup \bigcup_{s\in S}\left\{( a, s )\right\}
 \right)
 \end{displaymath}
 is an extended validation report.
