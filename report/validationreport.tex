@@ -365,7 +365,7 @@ aggregates. Figure~\ref{fig:graph3} depics a situation where a subset of
 valdation results are combined to form aggregates of several types: the number
 of passes and the fraction of passes.
 %
-\begin{figure}[t]
+\begin{figure}[!t]
   \centering
   \begin{subfigure}[b]{0.7\textwidth}
     \includegraphics[width=\textwidth]{fig/graph1.pdf}
@@ -392,18 +392,57 @@ used to compute the contents of the node. Nodes that have no outgoing edges
 correspond one-to-one with validation results---they can be considered a
 trivial aggregate. The collection of nodes and edges contain sufficient
 structure to make the representation of validaiton reports identifiable,
-combinable, and (recursively) aggregable. We now proceed to 
+combinable, and (recursively) aggregable. In the following paragraph we define
+more closely the type of graph that can be used to represent an aggregation
+structure.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Aggregation graphs}
+\label{sect:aggregationgraphs}
+Graphs are well-known mathematical structures that represent connectivity
+between objects. Indeed, the  study of graphs dates back to the 18th century
+when Leonhard \citet{euler1741solutio} solved the famous K\"oningsberger
+bridges problem.  For our purposes, a graph will serve as a model to store
+validation results, aggregates thereof, and the operations that lead to the
+aggregated values.
 
-\subsection{Graph structure}
+The need for a graph structure rather then a more simple record-like structure
+arises from the demand that reports be combinable to a new report.  To see
+this, consider the following example. Two institutes validate a dataset with
+turnover values against the rule \code{turnover >= 0}. The first intitute
+reports the fraction of passes, while the second institute reports the results
+for each individual record. If these reports were naively combined, one could
+misinterpret the fractional value reported by the first institute as pertaining
+to the separate values reported by the second institute. A second example
+occurs when the first institute creates a report containing both the individial
+results and the aggregated fraction of passes. If this report is to be
+augmented with new information, for example when new records come in it should
+be clear from the report that the reported fraction of passes does not pertain
+to the records added later.
 
+
+Graphs basically consist of elements of some set, called \emph{nodes} or
+\emph{vertices} and connections between them, which are called \emph{edges} or
+\emph{arrows} if they are directed. Structured information can be stored by
+endowing the nodes and edges with parcels of data.  Depending on the type and
+number of edges allowed between the nodes, graphs are classified in a broad
+number of types.  Below we define simple directed graph that comes close to our
+purpose of structuring validation aggregates.
+%
 \begin{definition}
 A \emph{simple finite directed graph} is a pair  $(V,E)$ where $V$ is a finite set and $E$
 is a set of pairs $(v_1,v_2)$ with $v_1,v_2\in V$ and $v_1\not=v_2$.
 \end{definition}
-The elements of $V$ are usully called \emph{nodes} or \emph{vertices} and the
-elements of $E$ are usually called \emph{edges} or \emph{arrows}. A validation
+In this definition, the term \emph{simple} means that there are no loops (edges
+that start where they begin, like $(v_1,v_1)$). The term \emph{directed} mean
+that edges have a direction: the edge $(v_1,v_2)$ can be thought of as an
+arrow, pointing from $v_1$ to $v_2$ and therefore differs from ($v_2$,$v_1$).
+The term \emph{simple} also indicates that each pair of nodes is connected by
+at most two, opposite pointing arrows.
+
+
+A validation
 report can be represented by a more special graph. Since aggregation works
 bottom-up and not top-down, we define the following.
 \begin{definition}
@@ -413,9 +452,10 @@ $v_1$ and $v_2$ in $V$ at most one of $(v_1,v_2)$ and $(v_2,v_1)$ are in $E$.
 Graphs, and in particular oriented graphs, can be combined naturally to form
 new graphs. Namely, if $G=(V,E)$ and $F=(V',E')$ are oriented graphs then
 \begin{equation}
-G\oplus F = (V\cup V', E\cup E').
+G\oplus F = (V\cup V', E\cup E'),
 \end{equation}
-is also an oriented graph.
+is also an oriented graph on the condition that the combined set of edges
+$E\cup E'$ has does not contain a pair of opposite pointing arrows.
 
 
 
