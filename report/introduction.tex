@@ -1,3 +1,43 @@
 \section{Introduction}
 \label{sect:introduction}
 
+Data validation is at the core of every production chain in official statistics.
+Whether it is the input received via a survey, a bunch of data records transferred from an administrative source or a register or the result from some internet scraping,
+data must be checked against its expectations to process it and finally publish it.
+For a more detailed explanation of data validation in general and the principles we identified in validation, we refer to the 
+handbook of data validation [ref] and the appendix of the Business architecture on validation [ref].
+
+Standardisation is important in official statistics and this also applies to validation processes.
+Especially in the case of cross-organisation validation, where both a data producer and a data receiver check the same data against some
+commonly agreed validation rules, standardisation is crucial to prevent different interpretations of the results.
+The more harmonised validation reports are, the better the understanding across organisations is.
+This has been recognized by the ESSnet on Validation project (Validat Integration) and thus a Work Package (WP2) was added to attack this issue.
+This report is one of the deliverables of Work Packages 2.
+It contains the result of the work carried out by various project partners and focusses on the standardisation of the output of a validation process: the \emph{validation report}.
+
+Obviously we are interested in the question what information can and should be included in a validation report and the optimal way to express this information.
+In this document we develop a \emph{generic} structure for expressing validation results.
+We have the ambition to develop a validation report structure that can be used in \emph{any{ validation task} in \emph{any organisation} in any \emph{statistical domain}. 
+To make it applicable in machine to machine communication contexts as well as in human contexts we design a machine-readable as well as a human readable format.
+
+The approach we have taken is a combination of a top-down apprach and a botom-up approach.
+In the bottom-up approach a number of example validation reports from member states and Eurostat were collected and studied to identify common elements.
+This resulted in a long-list of validation report elements categorized into several classes such as rule metadata, process metadata, aggregates etc.
+This led to some thinking about the basic concepts that are used in validation reports across the ESS.
+We used the results from the bottom-up approach to develop a more formal top-down approach expressed in this report.
+Step by step we built a validation report structure that is generic enough to be used in a wide range of validation contexts in many institutes,
+expressive enough to support the most recognized validation report elements recognized from the bottom-up approach and
+flexible enough to be adapted in a regional validation context while containing the standardized elements from the generic format.
+Validation tools or other statistical tools producing validation reports as a side product should be able to use this structure for its validation output.
+
+In this deliverable we address the following aspects:
+In chapter 2 we ask ourselves what we should expect from a generic validation report structure.
+After some elaboration on the variety in richness of a validation report, we define a number of generic demands.
+In chapter 3 we define some core elements to be used in the definition of the validation report structure such as a validation result and a validation event.
+In chapter 4 we formally define a validation report and propose a JSON-concept scheme for a basic machine-readable validation report.
+This basic scheme leaves out aggregation facilities, which complicates the design considerably.
+We describe the possibilities to add aggregation facilities to the report structure in chapter 5 and propose a JSON-concpet scheme for such message as well.
+Chapter 6 shows some examples of validtaion reports, expressed in the schemes derived in chapters 4 and 5.
+chapter 7 explains how a machine readable format can be transformed into a human readable format.
+Chapter 8 presents a brief conclusion.
+
