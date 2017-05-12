@@ -71,8 +71,8 @@ composable.
 \begin{definition}[Basic validation report]\leavevmode
 \begin{enumerate}[topsep=0pt,itemsep=0pt]
 \item The empty set $\{\}$ is a basic validation report.
-\item If $\la{e}=(t,r,d)$ is a validation event and $v$ its validation result,
-then $\{(\la{e},v)\}$ is a basic validation report.
+\item If $\la{c}=(t,r,d)$ is a confrontation and $v$ its validation result,
+then $\{(\la{c},v)\}$ is a basic validation report.
 \item If $V$ and $W$ are basic validation reports, then the set union $V\cup W$
 is also a validation report.
 \end{enumerate}
@@ -80,14 +80,14 @@ is also a validation report.
 %
 By formaly combining a validation result with a representation of the physical
 event that created it, the results become identifyable
-(Demand~\ref{dem:identify}).  The set structure and inclusion of set union in
+(Demand~\ref{dem:identify}). The set structure and inclusion of set union in
 the definition guarantees combinability of the reports
 (Demand~\ref{dem:combine}).
 
 It follows immediately that any subset of a basic validation report is a basic
-validation report. Also we inherit from set theory that for validation reports
-$V$ and $W$, the set difference $V-W$ is also a validation report as well as
-the set intersection $V\cap W$.
+validation report. Also we inherit from set theory that for basic validation
+reports $V$ and $W$, the set difference $V-W$ is also a validation report as
+well as the set intersection $V\cap W$.
 
 Now that we have a conceptual definition of a basic validation report, we can
 move forward and define the identifying pieces of information to be stored in
@@ -121,9 +121,14 @@ this is the case is indicated at the bottom of each table.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Identification of a physical validation event.}
+Recall that a \emph{confrontation} is defined as a triple $(t,r,d)$ where $r$
+and $d$ identify the data and rules confronted and $t$ identifies the actual
+physical event that generated the result
+(Definition~\ref{def:validationevent}).  This section identifies the
+information components that make up $t$.
 %
 \begin{center}
-\captionof{table}{Mandatory identification of a physical validation event $e$.}
+\captionof{table}{Mandatory identification of a physical validation event $t$.}
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
@@ -139,7 +144,7 @@ actor         & string        a  & Software that or person who created the valid
 
 
 \begin{center}
-\captionof{table}{Recommended information on a physical validation event $e$.}
+\captionof{table}{Recommended information on a physical validation event $t$.}
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
@@ -164,7 +169,7 @@ The recommended slots of Table~\ref{tab:recommendedevent} are useful, especially
 language      & string   & Language and version in which a rule is expressed & R/validate version 0.1.7\\
 expression    & string   & Expression defining the rule           & \code{age >= 0}\\
 severity      & enum     & \code{`error'}, \code{`warning'},
-                           or \code{`information'}                & \code{`information'}\\ 
+                           or \code{`information'}                & \code{`error'}\\ 
 
 \hline
 \multicolumn{4}{|l|}{The number of slots defining a validation rule is \textbf{extendable}.
@@ -248,16 +253,16 @@ Figure~\ref{fig:encoding}) with the following demand.
 \begin{center}
 \captionof{table}{File encoding used for validation reports}
 \label{tab:encoding}
-\begin{tabular}{|l|}
+\begin{tabular}{|p{0.97\textwidth}|}
 \hline
-Validation reports shall be transmitted using \code{UTF-8} character encoding.\\
+Validation reports shall be encoded in \code{UTF-8}.\\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{fig/encoding_use.pdf}
+\includegraphics[width=0.7\textwidth]{fig/encoding_use.pdf}
 \caption{Percentages of encoding standards used on the web \citep{w3techs2017}.}
 \label{fig:encoding}
 \end{figure}
