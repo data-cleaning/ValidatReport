@@ -63,60 +63,61 @@ Deliverable xx for the ESSnet Validat Integration
 \input{identifying.tex}
  
 \section{Basic validation reports}
-The concepts of a validation result and a validation event now allow us to 
-give a recursive definition of a validation report.
+The concepts of a validation result and a validation event now allow us to give
+a recursive definition of a basic validation report. These reports are aimed to
+satisfy the demands for results to be identifiable and reports to be
+composable.
 %
 \begin{definition}[Basic validation report]\leavevmode
 \begin{enumerate}[topsep=0pt,itemsep=0pt]
 \item The empty set $\{\}$ is a basic validation report.
-\item If $\la{k}$ is a validation event and $v$ its validation result, then $\{(\la{k},v)\}$
-is a basic validation report.
-\item If $V$ and $W$ are basic validation reports, then the set union $V\cup
-W$, set difference $V-W$ and set intersection $V\cap W$ are validation reports.
+\item If $\la{e}=(t,r,d)$ is a validation event and $v$ its validation result,
+then $\{(\la{e},v)\}$ is a basic validation report.
+\item If $V$ and $W$ are basic validation reports, then the set union $V\cup W$
+is also a validation report.
 \end{enumerate}
 \end{definition}
 %
-It follows trivially that any subset of a basic validation report is a
-basic validation report. The event key $\la{k}$ ensures identifiability of the
-validation result $v$ for each element of a report (Demand~\ref{dem:identify}),
-while the set union ensures that reports can be combined
+By formaly combining a validation result with a representation of the physical
+event that created it, the results become identifyable
+(Demand~\ref{dem:identify}).  The set structure and inclusion of set union in
+the definition guarantees combinability of the reports
 (Demand~\ref{dem:combine}).
 
+It follows immediately that any subset of a basic validation report is a basic
+validation report. Also we inherit from set theory that for validation reports
+$V$ and $W$, the set difference $V-W$ is also a validation report as well as
+the set intersection $V\cap W$.
 
+Now that we have a conceptual definition of a basic validation report, we can
+move forward and define the identifying pieces of information to be stored in
+the validation events, both on a logical and a technical level.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Structure of a basic validation report}
-Below, we detail the minimum information to include in each slot of a formal 
-validation event. Every table has four columns, with the following contents.
+\label{sect:basicreportstructure}
+In the following we present the information to be stored in a validation report
+in a number of tables. The information is chosen so validation results are
+identiable. In these tables, each row represents an information item to be
+included. Each row has four colums with the following information.
+%
 \begin{enumerate}
-\item Item: the name of the slot.
-\item Format: technical format of the data in the slot. Allowed formats are: \code{string},
-\code{numeric}, \code{enum} (with categories defined in the description column), \code{datetime} and
-\code{-}. The latter indicates that the format is free, including the possibility to include user-defined objects.
-\item Description: a short description of the slot. More detailed descriptions
+\item Item: the name of the information item.
+\item Format: logical format of the data in the item. Allowed formats are: \code{string},
+\code{numeric}, \code{enum} (with categories defined in the description
+column), \code{datetime} and \code{-}. The latter indicates that the format is
+free, including the possibility to include user-defined objects.
+\item Description: a short description of the item. More detailed descriptions
 might follow after the table.
 \item Example: an example.
 \end{enumerate}
 %
-The information in these Tables is mandatory. For each table it is also
-indicated whether it is allowed to extend it with user-defined information.
+We distinguish between information which is mandatory and information that
+is recommended. This is indicated in the caption of each table. Some
+information items may be extended with user-defined information. Whether
+this is the case is indicated at the bottom of each table.
 
-
-The different data types are to be formatted according to commonly used
-standards where possible. In particular, data in validation reports shall be
-encoded as stated in Table~\ref{tab:dataformat}.
-\begin{center}
-\captionof{table}{Format of data types in validation reports (basic or extended).}
-\begin{tabular}{|lp{0.92\textwidth}|}
-\hline
-1&Numbers shall be encoded in a valid decimal ISO/IEC/IEEE 60559:2011 (IEEE 754) format \\
-2&Date-time data shall be denoted in ISO 8601 format \code{YYMMDDTHHmmss+HHMM}. \\
-3&Enumerated data types are encoded as a string from the set predefined in the item's description.\\
-\hline
-\end{tabular}
-\label{tab:dataformat}
-\end{center}
-
-The following Tables fix the information content of each item making up elements of 
-a validation report: $e$, $r$, $d$, and $v$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Identification of a physical validation event.}
@@ -235,10 +236,57 @@ value  & \code{enum} & \waar{}, \onwaar{}, or \na{}    &\waar{}\\
 \end{tabular}
 \end{center}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{File encoding and data storage format per type}
+Below we propose a JSON format \citep{ecma2013json} for exchanging data
+validation reports.  Although it is a textual format, the JSON standard does
+not impose restrictions on the encoding being used, leaving it explicitly to
+standards built upon JSON to define an encoding \citep[pp ii]{ecma2013json}. In
+this standard we follow the currently most widely applied standard (see
+Figure~\ref{fig:encoding}) with the following demand.
+
+\begin{center}
+\captionof{table}{File encoding used for validation reports}
+\label{tab:encoding}
+\begin{tabular}{|l|}
+\hline
+Validation reports shall be transmitted using \code{UTF-8} character encoding.\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{fig/encoding_use.pdf}
+\caption{Percentages of encoding standards used on the web \citep{w3techs2017}.}
+\label{fig:encoding}
+\end{figure}
+
+The different data types within a file are to be formatted according to
+commonly used standards where possible. In particular, data in validation
+reports shall be encoded as stated in Table~\ref{tab:dataformat}.
+\begin{center}
+\captionof{table}{Format of data types in validation reports.}
+\begin{tabular}{|lp{0.92\textwidth}|}
+\hline
+1&Numbers shall be encoded in a valid decimal ISO/IEC/IEEE 60559:2011 (IEEE 754) format \\
+2&Date-time data shall be denoted in ISO 8601 format \code{YYMMDDTHHmmss+HHMM}. \\
+3&Enumerated data types are encoded as a string from the set predefined in the item's description.\\
+\hline
+\end{tabular}
+\label{tab:dataformat}
+\end{center}
+
+
+
 \subsection{JSON schema for basic validation reports}
-The code on Page~\pageref{code:basicreport} shows a JSON schema implementing
-a format for storing and transmitting the information items described in the previous
-paragraphs. 
+The code on Page~\pageref{code:basicreport} shows a JSON schema implementing a
+format for storing and transmitting the information items described in Section
+\ref{sect:basicreportstructure}.
+
+
+
+
 
 \newpage
 \label{code:basicreport}
