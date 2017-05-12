@@ -181,19 +181,38 @@ severity      & enum     & \code{`error'}, \code{`warning'},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Identification of the validated data}
-Although generic models for identifying a data point exist [e.g.
-\citet[Chapter~5]{zio2015methodology}], it will in practice often depend on the
-local implementation of a local data model. Therefore, little limits are posed
-on the keys involved in pointing out the data used in an evaluation. However,
-as a general rule, it should be clear 
-\begin{itemize}[itemsep=0pt]
-\item to which population the data under scrutiny pertains;
-\item the identity of the process that yielded the data (`time of measurement');
-\item to which units in the population the data pertains;
-\item what variables are measured by the data.
+With the validated data, we mean precisely the set of datapoints that was
+necessary to evaluate the current validation rule. Since rules are are defined
+independent of a data set instance, this identification can only take place
+during the physical validation event. To be clear, consider the following
+example. Given the rule \code{turnover >= 0}. Such a rule is implicitly
+understood to be checked for each turnover value separately. Hence, for a
+dataset with $n$ records, $n$ validation events will take place, each resulting
+in a single validation value. The data to be identified with each result is a
+single data point (i.e. a single turnover value). Now consider the rule that
+states \code{mean(profit) > 0}, evaluated on the same dataset. Each profit
+value in the dataset is involved in the evaluation of this rule. We therefore
+conclude that in general, we need to identify a set of data points to make a
+validation result identifiable.
+
+
+The methodology handbook on validation prescribes a generic model to 
+identify a single datapoint \citep[Chapter~5]{zio2015methodology}. In short,
+one identifies the value of a data point by fixing
+\begin{itemize}
+\item the population $U$ to which it pertains;
+\item the event $\tau$ that lead to its observation;
+\item the population unit $u$ from which a property was observed, and
+\item the attribute $X$ that was measured.
 \end{itemize}
-These are the four components defined in the Methodology of validation handbook 
-\citep{zio2015methodology}.
+Here, the term `population' should be interpreted very generally. It may be the
+human population of a country or region, but it can also be a population of
+companies, countries, events, emails, and so on. Similarly, the event that lead
+to an observation can be the receival of transmitted data from an institute.
+In the handbook, a data point is defined as a value (from some domain) paired
+with a tuple $(U,\tau,u,X)$ that identifies it.
+
+
 
 
 \begin{center}
@@ -201,9 +220,9 @@ These are the four components defined in the Methodology of validation handbook
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
-data    &\multicolumn{1}{c}{-} & A set of key(s) or other identification (e.g.
-a query statement) identifying the data used in evaluating the validation rule
-&  (`people in NL', `SILC2016, `Ria Respondent', `Income')\\
+data    &\multicolumn{1}{c}{-} & A set of key(s) 
+identifying the data used in evaluating the validation rule.
+&  $\{$(`Dutch inhabitants', `EU-SILC2016, `Ria Respondent', `Income')$\}$\\
 \hline
 \multicolumn{4}{|l|}{The number of slots defining a validation rule is \textbf{extendable}.
 }\\
@@ -211,23 +230,25 @@ a query statement) identifying the data used in evaluating the validation rule
 \end{tabular}
 \end{center}
 
+When the set of keys consists of a set of $(U,\tau,u,X)$-tuples as defined in
+the mehtodological handbook on validation, the report will identify data
+involved in validation completely free of any context involving the sender, the
+process, institutes involved and so on. 
 
-Allowing for implicit definition of the (sub)set of data touched by a
-validation rule potentially reduces the size of a validation report
-significantly: it is possible to have millions of datapoints involved in a
-single validation rule. The trade-off is that aggregating validation reports,
-grouped by properties of the data directly is not possible.
+The format is left open, since the denotation of keys typically depends on
+local storage schemes and formats.
 
-\begin{tabular}{|p{0.97\textwidth}|}
-\hline
-It is recommended that for validation rules that can be evaluated using a
-single datapoint only (e.g. \code{income >= 0}), the data is identified using a
-key (or array of keys) directly related to the data value under scrutiny.\\
-\hline
-\end{tabular}
+%\begin{tabular}{|p{0.97\textwidth}|}
+%\hline
+%It is recommended that for validation rules that can be evaluated using a
+%single datapoint only (e.g. \code{income >= 0}), the data is identified using a
+%key (or array of keys) directly related to the data value under scrutiny.\\
+%\hline
+%\end{tabular}
 
 \subsubsection{Validation result}
-
+A validation result can have three different values and is hence conceived
+logically as a enumeration type.
 \begin{center}
 \captionof{table}{Mandatory format for the validation result $v$.}
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
