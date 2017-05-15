@@ -40,11 +40,14 @@ is a combination that is not allowed by the rule, yielding \onwaar{}.
 The above discussion leads to the following definition of a validation result.
 %
 \begin{definition}[Validation result]
-A validation result is a value from the set $\{\waar{},\onwaar{},\na{}\}$.
+A validation result is a value from the set $\{0,1,\na{}\}$.
 \label{def:validationresult}
 \end{definition}
 Validation results are obtained as outcomes of evaluating a validation rule on
-a data set.
+a data set. We also follow the common convention which identifies $0$ with
+\onwaar{} and $1$ with \waar{}.  The numeric representation will make it easier
+to define aggregators in later chapters. 
+
 
 A recurring point of discussion is whether \na{} should be an allowed
 validation result. The main other options are to either interrupt execution, or
