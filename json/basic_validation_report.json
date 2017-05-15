@@ -29,7 +29,8 @@
         "properties" : {
            "language"   : {"type" : "string"},
            "expression" : {"type" : "string"},
-           "severity"   : {"enum" : ["information", "warning", "error"]}
+           "severity"   : {"enum" : 
+              ["information", "warning", "error"]}
         },
         "required" : ["language", "expression", 
                       "severity"]
