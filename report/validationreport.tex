@@ -305,18 +305,11 @@ reports shall be encoded as stated in Table~\ref{tab:dataformat}.
 
 
 
-\subsection{JSON schema for basic validation reports}
-The code on Page~\pageref{code:basicreport} shows a JSON schema implementing a
-format for storing and transmitting the information items described in Section
-\ref{sect:basicreportstructure}.
 
 
 
 
 
-\newpage
-\label{code:basicreport}
-\lstinputlisting[frame=single]{../json/basic_validation_report.json}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aggregation}
@@ -525,5 +518,14 @@ oriented grahs].
 \subsection{Structure of an extended validation report}
 
 \bibliography{report}
+
+
+\appendix
+\section{JSON schemas}
+\label{code:basicreport}
+\lstinputlisting[frame=single
+  , float=h
+  , caption=JSON schema for basic validation report.]{../json/basic_validation_report.json}
+
 
 \end{document}
