@@ -74,13 +74,14 @@ the actor performing the execution. We therefore adopt the following convention
 by defining a set of keys that identifies such a physical event.
 %
 \begin{definition}[confrontation] 
-A \emph{confrontation} is a triple $(t,r,d)$, where $t$ identifies the physical
-validation event, $r$ identifies the evaluated validation rule and $d$
-identifies the data points involved in the evaluation.
+A \emph{confrontation} is a tuple $(e,r,d,v)$, where $e$ identifies the physical
+validation event, $r$ identifies the evaluated validation rule, $d$
+identifies the data points involved in the evaluation and $v$ is the
+generated validation result.
 \label{def:confrontation}
 \end{definition}
 %
-We leave open the possibility that the components $t$, $r$ and $d$ consist of
+We leave open the possibility that the components $e$, $r$ and $d$ consist of
 informative tuples to identify subcomponents of the event, data or rule. Note
 that the above `definition' is not a definition in the mathematical sense.
 Rather it is a convention that can be tested in a (software) environment where

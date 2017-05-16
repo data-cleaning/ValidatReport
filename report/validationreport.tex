@@ -82,19 +82,18 @@ composable.
 \begin{definition}[Basic validation report]\leavevmode
 \begin{enumerate}[topsep=0pt,itemsep=0pt]
 \item The empty set $\{\}$ is a basic validation report.
-\item If $\la{c}=(t,r,d)$ is a confrontation and $v$ its validation result,
-then $\{(\la{c},v)\}$ is a basic validation report.
+\item If $(e,r,d,v)$ is a confrontation then $\{(e,d,r,v)\}$ is a basic
+validation report.
 \item If $V$ and $W$ are basic validation reports, then the set union $V\cup W$
 is also a validation report.
 \end{enumerate}
 \label{def:basicvalidationreport}
 \end{definition}
 %
-By formally combining a validation result with a representation of the physical
-event that created it, the results become identifiable
-(Demand~\ref{dem:identify}). The set structure and inclusion of set union in
-the definition guarantees combinability of the reports
-(Demand~\ref{dem:combine}).
+The first three elements of each confrontation make sure that the associated
+result becomes identifiable (Demand~\ref{dem:identify}). The set structure and
+inclusion of set union in the definition guarantees combinability of the
+reports (Demand~\ref{dem:combine}).
 
 It follows immediately that any subset of a basic validation report is a basic
 validation report. Also we inherit from set theory that for basic validation
@@ -103,16 +102,16 @@ well as the set intersection $V\cap W$.
 
 Now that we have a conceptual definition of a basic validation report, we can
 move forward and define the identifying pieces of information to be stored in
-the validation events, both on a logical and a technical level.
+the confrontations on a logical level.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Basic validation report structure}
 \label{sect:basicreportstructure}
-In the following we present the information to be stored in a validation report
-in a number of tables. The information is chosen so validation results are
-identifiable. In these tables, each row represents an information item to be
-included. Each row has four colums with the following information.
+In the following we present the information to be stored in a basic validation
+report in a number of tables. The information is chosen so validation results
+are identifiable. In these tables, each row represents an information item to
+be included. Each row has four colums with the following information:
 %
 \begin{enumerate}
 \item Item: the name of the information item.
@@ -134,21 +133,21 @@ this is the case is indicated at the bottom of each table.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Identification of a physical validation event.}
 \label{sect:idevent}
-Recall that a \emph{confrontation} is defined as a triple $(t,r,d)$ where $r$
-and $d$ identify the data and rules confronted and $t$ identifies the actual
-physical event that generated the result
-(Definition~\ref{def:confrontation}).  This section identifies the
-information components that make up $t$.
+Recall that a \emph{confrontation} is defined as a tuple $(e,r,d,v)$ where $r$
+and $d$ identify the data and rules confronted, $e$ identifies the actual
+physical event that generated the result and $v$ is the resulting value.
+(Definition~\ref{def:confrontation}). This section identifies the information
+components that make up $t$.
 %
 \begin{center}
-\captionof{table}{Mandatory identification of a physical validation event $t$.}
+\captionof{table}{Mandatory identification of a physical validation event.}
 \label{tab:idve}
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
 \hline
 time          & datetime & Time marking the completion of a validation event. & \code{20170212T101530+0100}\\
-actor         & string        a  & Software that or person who created the validation result. & \code{R package validate version 0.1.7}\\
+actor         & string   & Software that or person who created the validation result. & \code{R package validate version 0.1.7}\\
 \hline
 \multicolumn{4}{|l|}{The number of slots defining a validation event is \textbf{extendable}.
 }\\
@@ -158,7 +157,7 @@ actor         & string        a  & Software that or person who created the valid
 
 
 \begin{center}
-\captionof{table}{Recommended information on a physical validation event $t$.}
+\captionof{table}{Recommended information on a physical validation event.}
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
@@ -177,7 +176,7 @@ The recommended slots of Table~\ref{tab:recommendedevent} are useful, especially
 \label{sect:idrule}
 %
 \begin{center}
-\captionof{table}{Mandatory identification of validation rule $r$.}
+\captionof{table}{Mandatory identification of a validation rule.}
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
@@ -197,19 +196,19 @@ severity      & enum     & \code{`error'}, \code{`warning'},
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Identification of the validated data}
 \label{sect:iddata}
-With the validated data, we mean precisely the set of datapoints that was
-necessary to evaluate the current validation rule. Since rules are are defined
-independent of a data set instance, this identification can only take place
-during the physical validation event. To be clear, consider the following
-example. Given the rule \code{turnover >= 0}. Such a rule is implicitly
-understood to be checked for each turnover value separately. Hence, for a
-dataset with $n$ records, $n$ validation events will take place, each resulting
-in a single validation value. The data to be identified with each result is a
-single data point (i.e. a single turnover value). Now consider the rule that
-states \code{mean(profit) > 0}, evaluated on the same dataset. Each profit
-value in the dataset is involved in the evaluation of this rule. We therefore
-conclude that in general, we need to identify a set of data points to make a
-validation result identifiable.
+With the validated data, we mean the set of datapoints that was used to
+evaluate the current validation rule, resulting in the reported validation
+result. Since rules are are defined independent of a data set instance, this
+identification can only take place during the physical validation event. To be
+clear, consider the following example. Given the rule \code{turnover >= 0}.
+Such a rule is implicitly understood to be checked for each turnover value
+separately. Hence, for a dataset with $n$ records, $n$ validation events will
+take place, each resulting in a single validation value. The data to be
+identified with each result is a single data point (i.e. a single turnover
+value). Now consider the rule that states \code{mean(profit) > 0}, evaluated on
+the same dataset. Each profit value in the dataset is involved in the
+evaluation of this rule. We therefore conclude that in general, we need to
+identify a set of data points to make a validation result identifiable.
 
 
 The methodology handbook on validation prescribes a generic model to 
@@ -221,12 +220,13 @@ one identifies the value of a data point by fixing
 \item the population unit $u$ from which a property was observed, and
 \item the attribute $X$ that was measured.
 \end{itemize}
-Here, the term `population' should be interpreted very generally. It may be the
-human population of a country or region, but it can also be a population of
+Here, the term `population' should be interpreted rather generally. It may be
+the human population of a country or region, but it can also be a population of
 companies, countries, events, emails, and so on. Similarly, the event that lead
-to an observation can be the receiving of transmitted data from an institute.
-In the handbook, a data point is defined as a value (from some domain) paired
-with a tuple $(U,\tau,u,X)$ that identifies it.
+to an observation can be the receiving of transmitted data from an institute,
+or it may be a data collection event based on a survey.  In the handbook, a
+data point is defined as a value (from some domain) paired with a tuple
+$(U,\tau,u,X)$ that identifies it.
 
 
 
@@ -238,7 +238,7 @@ with a tuple $(U,\tau,u,X)$ that identifies it.
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
 data    &\multicolumn{1}{c}{-} & A set of key(s) 
 identifying the data used in evaluating the validation rule.
-&  $\{$(`Dutch inhabitants', `EU-SILC2016, `Ria Respondent', `Income')$\}$\\
+&  $\{$(`Dutch inhabitants', `EU-SILC2016, `Richard Respondent', `Income')$\}$\\
 \hline
 \multicolumn{4}{|l|}{The number of slots defining a validation rule is \textbf{extendable}.
 }\\
@@ -268,7 +268,7 @@ logically as a enumeration type.
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
-value  & \code{enum} & \waar{}, \onwaar{}, or \na{}    &\waar{}\\
+value  & \code{enum} & $1$, $0$, or \na{}    &$1$\\
 \hline
 \multicolumn{4}{|l|}{The number of slots defining a validation result \textbf{not extendable}.
 }\\
@@ -343,12 +343,11 @@ of passes and the fraction of passes.
 These examples suggest that aggregates can be interpreted as nodes in a
 directed graph where the edges (arrows) point from the aggregate to the nodes
 used to compute the contents of the node. Nodes that have no outgoing edges
-(leaves) correspond one-to-one with validation results---they can be considered
-a trivial aggregate. The collection of nodes and edges contain sufficient
-structure to make the representation of validation reports identifiable,
-combinable, and (recursively) aggregable. In the following paragraph we define
-more closely the type of graph that can be used to represent an aggregation
-structure.
+(leaves) correspond one-to-one with validation results.  The collection of
+nodes and edges contain sufficient structure to make the representation of
+validation reports identifiable, combinable, and (recursively) aggregable. In
+the following paragraph we define more closely the type of graph that can be
+used to represent an aggregation structure.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -395,20 +394,26 @@ arrow, pointing from $v_1$ to $v_2$ and therefore differs from ($v_2$,$v_1$).
 The term \emph{simple} also indicates that each pair of nodes is connected by
 at most two, opposite pointing arrows.
 
-
-A validation report can be represented by a more special graph. Since
-aggregation works bottom-up and not top-down, we define the following.
+A validation report can be represented by a more special graph. To define
+it, first need the concept of a path.
+\begin{definition}[path, cycle]
+Given a simple finite directed graph $(V,E)$. A \emph{path} is a sequence of
+edges $e_1,e_2,\ldots,e_n$ such that the start of $e_j$ is equal to the end of
+$e_{j+1}$ for $j=2,3,\ldots,n$. A \emph{cycle} is a path such that the end of
+$e_n$ is equal to the start of $e_1$.
+\end{definition}
+A path is thus a sequence of connected edges. Since aggregation works bottom-up
+and not top-down, we define the following graph to represent an extended
+validation report.
 \begin{definition}
-A \emph{directed acyclic graph} is a simple finite directed graph $(V,E)$ where
-for any $v_1$ and $v_2$ in $V$ at most one of $(v_1,v_2)$ and $(v_2,v_1)$ are
-in $E$.
+A \emph{directed acyclic graph} is a simple finite directed graph $(V,E)$ with
+the condition that $E$ contains no cycles.
 \end{definition}
 %
 The term `directed acyclic graph' is often shortened to DAG in literature. This
 particular structure is widely researched in fields related to computer
 science. For example, the DAG stands model for data processing flow in the
-SPARK model for distributed computing \citep{gupta2003spark}. In mathematics
-the term `oriented graph' is also used for this structure.
+SPARK model for distributed computing \citep{gupta2003spark}. 
 
 
 Simple graphs have a natural rule of composition. The `sum' of two simple
@@ -423,7 +428,7 @@ Given two DAGs $G=(V,E)$ and $F=(V',E')$. These graphs are called
 \begin{align*}
 G\oplus F = (V\cup V', E\cup E'),
 \end{align*}
-is also an oriented graph.
+is also a DAG.
 \end{definition}
 It is not hard to see that two oriented graphs are not compatible precisely
 when $V\cap V'$ has at least two vertices $v_1$ and $v_2$ for which it holds
@@ -435,19 +440,16 @@ upon combination.
 
 
 
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Extended validation reports}
 Conceptually, the structure of an extended validation report is an directed
-acyclic graph (DAG), where each node is either atomic (resulting from a
-validation event) or an aggregate, possibly built from previous aggregates. The
-atomic nodes store information on the used validation function, the data
-involved and the event that created it. The aggregated nodes store information
-on the aggregating function (sum, mean, $\ldots$) and the aggregation value
-while the edges indicate which nodes were used to form an aggregate. 
+acyclic graph (DAG), where each node is either a confrontation (a labeled
+validation result, corresponding to a single validation event) or an aggregate,
+possibly built from previous aggregates. The atomic nodes store information on
+the used validation function, the data involved and the event that created it.
+The aggregated nodes store information on the aggregating function (sum, mean,
+$\ldots$) and the aggregation value while the edges indicate which nodes were
+used to form an aggregate. 
 
 To make sure that aggregate nodes can be added without loosing the property of
 the graph being a DAG, we need to be able to uniquely identify them. This can
