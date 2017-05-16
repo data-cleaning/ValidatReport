@@ -3,38 +3,6 @@
   "id"     : "https://git.io/v9Jqj",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type"   : "array",
-    "confrontations" : {
-      "type"   : "object", 
-        "properties" : {
-          "event" : {"$ref" : "#/definitions/event"},
-          "rule"  : {"$ref" : "#/definitions/rule" },
-          "data"  : {},
-          "value" : {"enum" : ["True", "False", "NA"]}
-        },
-        "required" : ["event", "rule", "data", "value"]
-    },
-  "definitions" : {
-     "event" : {
-       "type" : "object",
-         "properties" : {
-           "time"    : {"type" : "string"},
-           "actor"   : {"type" : "string"},
-           "agent"   : {},
-           "trigger" : {}
-         },
-         "required"  : ["time", "actor"]
-     },
-     "rule" : {
-       "type" : "object",
-        "properties" : {
-           "language"   : {"type" : "string"},
-           "expression" : {"type" : "string"},
-           "severity"   : {"enum" : 
-              ["information", "warning", "error"]}
-        },
-        "required" : ["language", "expression", 
-                      "severity"]
-      }
-    }
+    "confrontations" : { "$ref" : "confrontation.json" }
 }
 

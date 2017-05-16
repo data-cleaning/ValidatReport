@@ -1,0 +1,39 @@
+{ 
+  "title"  : "confrontation object for validation reports version 0.0.1",
+  "id"     : "TODO",
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+    "type"   : "object",
+      "properties" : 
+      {
+        "event" : {"$ref" : "#/definitions/event"},
+        "rule"  : {"$ref" : "#/definitions/rule" },
+        "data"  : {},
+        "value" : {"enum" : ["True", "False", "NA"]}
+      },
+      "required" : ["event", "rule", "data", "value"],
+  "definitions" : {
+    "event" : {
+      "type" : "object", 
+        "properties" :
+        {
+          "time"    : {"type" : "string"},
+          "actor"   : {"type" : "string"},
+          "agent"   : {},
+          "trigger" : {}
+        },
+        "required"  : ["time", "actor"]
+    },
+    "rule" : {
+      "type" : "object",
+        "properties" : 
+        {
+          "language"   : {"type" : "string"},
+          "expression" : {"type" : "string"},
+          "severity"   : {"enum" : 
+            ["information", "warning", "error"]}
+        },
+        "required" : ["language", "expression", 
+                      "severity"]
+      }
+    }
+}
