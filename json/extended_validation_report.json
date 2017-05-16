@@ -1,43 +1,39 @@
 {
-  "title"  : "extended validation report version 0.0.1",
+  "title"  : "extended validation report v0.0.1",
   "id"     : "TODO",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type"   : "array", "nodes" : 
-    { "oneOf" : 
-      [
-        { "$ref" : "#definitions/basic"}, 
-        { "$ref": "#definitions/aggregate"}
-      ]
-    },
-  "type"   : "array", "edges" : { "$ref" : "#definitions/edge" },
+    { "type" : "object",
+      "properties" :
+      {
+        "key"   : {"type" : "string"},
+        "value" : {"oneOf": 
+          [
+            {"$ref" : "confrontation.json"},
+            {"$ref" : "#definitions/aggregate"}
+          ]
+        }
+    }
+  },
+  "type"   : "array", "edges" : 
+    { "$ref" : "#definitions/edge" },
   "definitions" : {
     "edge" : { 
       "type" : "array",
-        "items" : [{"type" : "string"}, {"type" : "string"}]
+        "items" : [
+          {"type" : "string"}, 
+          {"type" : "string"}
+      ]
     },
-    "basic" : {
-      "type" : "object",
-      "properties" :
-      {
-        "key"   : { "type" : "string" },
-        "value" : { "$ref" : "confrontation.json"}
-      }
-    },
-    "aggregate" : {
-      "type" : "object",
-      "properties" :
-      {
-        "key"   : { "type" : "string" },
-        "value" : { "$ref" : "#definitions/aggregate_node"}
-      }
-    },
-    "aggregate_node" : {
+    "aggregation" : {
       "type" : "object",
       "properties" : 
-      {
-        "function" : { "type" : "string" },
-        "value"    : { "type" : "numeric"}
+      { 
+        "event"      : { "type" : "string"},
+        "aggregator" : { "type" : "string" },
+        "value"      : { "type" : "numeric"}
       }
     }
   }
 }
+

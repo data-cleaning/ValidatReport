@@ -1,5 +1,5 @@
 { 
-  "title"  : "confrontation object for validation reports version 0.0.1",
+  "title"  : "confrontation object v0.0.1",
   "id"     : "TODO",
   "$schema": "http://json-schema.org/draft-04/schema#", 
     "type"   : "object",

@@ -126,7 +126,7 @@ this is the case is indicated at the bottom of each table.
 Recall that a \emph{confrontation} is defined as a triple $(t,r,d)$ where $r$
 and $d$ identify the data and rules confronted and $t$ identifies the actual
 physical event that generated the result
-(Definition~\ref{def:validationevent}).  This section identifies the
+(Definition~\ref{def:confrontation}).  This section identifies the
 information components that make up $t$.
 %
 \begin{center}
@@ -446,18 +446,19 @@ the physical activity that takes as input a set of nodes and an aggregation
 function, and generates a numeric value. On a more formal level, we define the
 following.
 %
-\begin{definition}[aggregate node]
-An \emph{aggregation node} is a triple $(a,f,x)$ where $a$ uniquely corresponds
+\begin{definition}[aggregation]
+\label{def:aggregation}
+An \emph{aggregation} is a triple $(a,f,x)$ where $a$ uniquely corresponds
 to the physical event creating the aggregate, $f$ identifies the function used for
 aggregation and $x\in \mathbb{R}$ is the aggregate.
 \end{definition}
-Just as in Definition~\ref{def:validationevent}, this is not a definition in a
+Just as in Definition~\ref{def:confrontation}, this is not a definition in a
 precise mathematical sense. Rather it is something that can be tested in a
 particular practical (software) environment. The statement that the key $a$
 uniquely corresponds to an aggregation event leaves open the possibility that
-no information about that event is stored. The most important function of $a$
-is to make the triple unique, even when the same aggregate is computed multiple
-times.
+no explicit information about that event is stored. The most important function
+of $a$ is to make the triple unique, even when the same aggregate is computed
+multiple times.
 
 We are now ready to define the extended validation report.
 %
@@ -507,41 +508,20 @@ stored in an extended validation report. Since by definition, the extended
 validation report contains a basic validation report
 (Definition~\ref{def:basicvalidationreport}), we will focus on the elements
 that are new with respect to this.  These are the aggregate nodes and the edges
-that connect aggregate nodes with each other and with basic nodes. We also add
-a unique key to the leave nodes for the definition of leave nodes.
-
-\subsubsection{Basic nodes (leaves)}
-The leaves of the DAG we represent here correspond to the elements of 
-the basic validation report. In the extended report we add a unique
-identifying key to the elements of a basic report to facilitate the
-definition of edges. Hence, we demand the following.
-
-\begin{center}
-\captionof{table}{Mandatory identification of a base node.}
-\begin{tabular}{|lp{0.1\textwidth}p{0.64\textwidth}|}
-\hline
-\textbf{Item} & \textbf{Format} & \textbf{Description} \\
-\hline
-key           & string & Unique identifier labeling the base node  \\
-confrontation & -      & A confrontation object, with contents as defined in
-Sections~\ref{sect:idevent}, \ref{sect:idrule}, \ref{sect:iddata} and \ref{sect:valres}. \\
-\hline
-\multicolumn{3}{|l|}{The number of slots for a base node is \textbf{extendable}.}\\
-\hline
-\end{tabular}
-\end{center}
+that connect aggregate nodes with each other and with basic nodes. 
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Aggregates}
-
+\label{sect:aggregates}
 \begin{center}
-\captionof{table}{Mandatory identification of an aggregate.}
+\captionof{table}{Mandatory values for identification of an aggregate.}
 \begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.30\textwidth}|}
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
 \hline
-key          & string & Unique identifier labeling the aggregate. & \\
+event        & string & Unique identifier labeling the event 
+               that created the aggregate. & \code{"20170516T104312+0100"}\\
 aggregator   & string & The statistical method used to compute the aggregate & \code{sum}\\
 value        & numeric& the computed value & $7.5$\\
 \hline
@@ -560,8 +540,8 @@ Edges indicate which nodes are used in the computation of an aggregate value.
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
 \hline
-start  & string & The key of an aggregate node. & \\
-end    & string & The key of an aggregate or base node. & \\
+start  & string & Reference to an aggregate node. & \\
+end    & string & Reference to an aggregate or base node. & \\
 \hline
 \multicolumn{4}{|l|}{The number of slots for an edge is \textbf{extendable}.
 }\\
@@ -572,6 +552,8 @@ end    & string & The key of an aggregate or base node. & \\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage{}
 \section{Technical standards}
 In this section we define explicitly the technical data exchange
 formats defined in the previous subsections.
@@ -579,7 +561,7 @@ formats defined in the previous subsections.
 \subsection{File encoding and data storage format per type}
 Below we propose a JSON format \citep{ecma2013json} for exchanging data
 validation reports.  Although it is a textual format, the JSON standard does
-not impose restrictions on the encoding being used, leaving it explicitly to
+not impose restrictions on the encoding used. It is left explicitly to
 standards built upon JSON to define an encoding \citep[pp ii]{ecma2013json}. In
 this standard we follow the currently most widely applied standard (see
 Figure~\ref{fig:encoding}) with the following demand.
@@ -616,20 +598,74 @@ reports shall be encoded as stated in Table~\ref{tab:dataformat}.
 \label{tab:dataformat}
 \end{center}
 
+\subsection{JSON schemas}
+To implement the basic and extended validation report we devise a simple object model
+allowing for reuse of some components. The per-event validation results are stored in
+a confrontation object, representing the concept of Definition~\ref{def:confrontation}:
+\begin{equation}
+\label{eq:confrontation}
+\textsf{confrontation}:\langle\textsf{event}, \textsf{rule}, \textsf{data}, \textsf{value}\rangle,
+\end{equation}
+where the required information for each component is defined in Sections~\ref{sect:idevent}--\ref{sect:valres}.
 
-
-
-
-\subsection{JSON schema for the basic validation report}
-Listing~\ref{lst:basic} defines the JSON schema for basic
-validation reports.
-\label{code:basicreport}
+The JSON schema for this object is shown in Listing~\ref{lst:confrontation}
+%
+\lstinputlisting[frame=single
+  , float=h,caption=JSON schema for a confrontation object.
+  ,label=lst:confrontation]{../json/confrontation.json}
+%
+A basic validation report contains no aggregated values and is just an array of confrontation
+objects. The JSON schema for this structure is shown in Listing~\ref{lst:basic}.
+%
 \lstinputlisting[frame=single
   , float=h
   , caption=JSON schema for basic validation report.
   , label=lst:basic]{../json/basic_validation_report.json}
+%
 
-\subsection{JSON schema for the extended validation report}
+The extended validation report represents a directed acyclic graph. Under the
+current model we store an array of nodes and an array of edges. A node
+is represented as a key-value pair where the payload can either be a confrontation,
+corresponding to the result of a single validation event, or an aggregate.
+Symbolically (using `$|$' to indicate `or'):
+\begin{align}
+\label{eq:node}
+\textsf{node} &: \langle \textsf{key},\textsf{value}\rangle\textrm{, where }
+\textsf{value} : \langle \textsf{confrontation} | \textsf{aggregation}\rangle.
+\end{align}
+The structure implemented for a confrontation was defined in
+\eqref{eq:confrontation} an aggregation, following
+Definition~\ref{def:aggregation} is implemented as follows.
+\begin{align}
+\textsf{aggregation} : \langle\textsf{event}, \textsf{aggregator}, \textsf{value}\rangle.
+\end{align}
+The JSON schema for extended validation reports is shown in Listing~\ref{lst:extended}.
+Observe that the keys that define a confrontation or an aggregate have a
+semantic value in that they describe the value associated with them. On the
+contrary, the sole purpose of the `key' in~\eqref{eq:node} is to allow for the
+definition of edges. They may for example be generated by hashing the semantic
+keys to a single (hexadecimal) number.
+
+Finally, an edge object is an array consisting of two keys
+\begin{align}
+\textsf{edge} : [\textsf{key}_1,\textsf{key}_2],
+\end{align}
+where the first key indicates the start of an edge (this is always an aggregate)
+and the second key indicates the end of an edge (this can be an aggregate or a
+confrontation). 
+
+The complete listing for the JSON-schema of an extended validation
+report is given in Listing~\ref{lst:extended}. 
+%
+\lstinputlisting[frame=single
+  , float=h
+  , caption=JSON schema for extended validation report.
+  , label=lst:extended]{../json/extended_validation_report.json}
+%
+
+
+
+
 
 
 \clearpage{}

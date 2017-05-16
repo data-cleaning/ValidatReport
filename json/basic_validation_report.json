@@ -1,8 +1,8 @@
 {
-  "title"  : "basic validation report version 0.0.1",
+  "title"  : "basic validation report v0.0.1",
   "id"     : "https://git.io/v9Jqj",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type"   : "array",
-    "confrontations" : { "$ref" : "confrontation.json" }
+    "confrontations" : {"$ref" : "confrontation.json"}
 }
 
