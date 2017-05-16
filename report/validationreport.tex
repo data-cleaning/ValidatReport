@@ -8,6 +8,14 @@
 \usepackage{subcaption} % for subfigures
 \usepackage{listings}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{\leftmark}
+\lhead{}
+\lfoot{CONCEPT \today}
+\rfoot{\thepage}
+\cfoot{}
+
 \lstset{numbers=left,
 language=C
 }
@@ -37,7 +45,9 @@ language=C
 \newcommand{\la}[1]{\boldsymbol{#1}}
 
 \title{Validation report structure}
-\author{Mark van der Loo and Olav ten Bosch}
+\author{Mark van der Loo and Olav ten Bosch\thanks{
+Statistics Netherlands, Henri Faasdreef 312 2492 JP The Hague
+}}
 \date{\today\\
 \vspace{1cm}
 Deliverable xx for the ESSnet Validat Integration
@@ -48,6 +58,7 @@ Deliverable xx for the ESSnet Validat Integration
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2ex}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \maketitle{}
@@ -96,7 +107,7 @@ the validation events, both on a logical and a technical level.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Structure of a basic validation report}
+\subsection{Basic validation report structure}
 \label{sect:basicreportstructure}
 In the following we present the information to be stored in a validation report
 in a number of tables. The information is chosen so validation results are
@@ -429,7 +440,7 @@ upon combination.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Extended validation report structure}
+\section{Extended validation reports}
 Conceptually, the structure of an extended validation report is an directed
 acyclic graph (DAG), where each node is either atomic (resulting from a
 validation event) or an aggregate, possibly built from previous aggregates. The
@@ -469,7 +480,7 @@ We are now ready to define the extended validation report.
 \item If $B$ is a basic validation report, the edgeless graph $(B, \{\})$ is an
 extended validation report.
 \item Given an extended validation report $(V,E)$  a subset $S\subseteq V$ and
-a function $f:2^V\to\mathbb{R}$. Construct the aggregate node $v=(a,f,f(S))$.
+a function $f:2^V\to\mathbb{R}$. Construct the aggregation $v=(a,f,f(S))$.
 The graph
 \begin{displaymath}
 \left(
@@ -501,7 +512,7 @@ identification of aggregates).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Structure of an extended validation report}
+\subsection{Extended validation report structure}
 \label{sect:extendedreport}
 In the following subsections we define the logical information values to be
 stored in an extended validation report. Since by definition, the extended
@@ -590,7 +601,8 @@ reports shall be encoded as stated in Table~\ref{tab:dataformat}.
 \captionof{table}{Format of data types in validation reports.}
 \begin{tabular}{|lp{0.92\textwidth}|}
 \hline
-1&Numbers shall be encoded in a valid decimal ISO/IEC/IEEE 60559:2011 (IEEE 754) format \\
+1&Numbers shall be encoded in a valid decimal ISO/IEC/IEEE 60559:2011 (IEEE 754) format
+\citep{ieee:2008}. \\
 2&Date-time data shall be denoted in ISO 8601 format \code{YYMMDDTHHmmss+HHMM}. \\
 3&Enumerated data types are encoded as a string from the set predefined in the item's description.\\
 \hline
