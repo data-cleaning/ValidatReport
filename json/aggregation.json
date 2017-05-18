@@ -1,0 +1,36 @@
+{ 
+  "title"  : "aggregation object v0.0.1",
+  "id"     : "TODO",
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+    "type"   : "object",
+      "properties" : 
+      {
+        "aggregator": {"$ref" : "#/definitions/aggregator"},
+        "nodeset"   : {"$ref" : "#/definitions/nodeset"},
+        "value"     : {"type" : "string"}
+      },
+      "required" : ["aggregator", "nodeset", "value"],
+  "definitions" : {
+    "aggregator" : {
+      "type" : "object", 
+        "properties" :
+        {
+          "language"     : {"type" : "string"},
+          "expression"   : {"type" : "string"},
+          "description"  : {"type" : "string"}
+        },
+        "required"  : ["language", "expression"]
+    },
+    "nodeset" : {
+      "type" : "object",
+        "properties" : 
+        {
+          "keys"        : {"type" : "array",
+                  "items" : {"type" : "string"}},
+          "description" : {"type" : "string"}
+        },
+        "required" : ["keys"]
+    }
+  }
+}
+

@@ -10,29 +10,10 @@
         "value" : {"oneOf": 
           [
             {"$ref" : "confrontation.json"},
-            {"$ref" : "#definitions/aggregate"}
+            {"$ref" : "aggregation.json"}
           ]
-        }
-    }
-  },
-  "type"   : "array", "edges" : 
-    { "$ref" : "#definitions/edge" },
-  "definitions" : {
-    "edge" : { 
-      "type" : "array",
-        "items" : [
-          {"type" : "string"}, 
-          {"type" : "string"}
-      ]
-    },
-    "aggregation" : {
-      "type" : "object",
-      "properties" : 
-      { 
-        "event"      : { "type" : "string"},
-        "aggregator" : { "type" : "string" },
-        "value"      : { "type" : "numeric"}
-      }
+        },
+        "required" : ["key", "value"]
     }
   }
 }

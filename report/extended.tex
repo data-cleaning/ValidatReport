@@ -1,0 +1,163 @@
+\section{Extended validation reports}
+\label{sect:extended}
+Conceptually, an extended validation report is a direct acyclic graph (DAG) of
+which the nodes represent validation results or aggregates thereof and whose
+edges convey the nodes used in aggregation. There are several ways to represent
+a DAG or graphs in general: one may store a list of vertices and edges, or in
+the case of a DAG one may store the outgoing edges within each node.  For the sake
+of consistency with the definition of a confrontation, we choose the latter
+approach. Hence the following definition.
+%
+\begin{definition}[aggregation]
+\label{def:aggregation}
+An \emph{aggregation} is a triple $(f,s,x)$ where $f$ identifies the function
+used for aggregation, $s$ the set of nodes used for aggregation and $x=f(s)$ is
+the aggregate.
+\end{definition}
+Just like Definition~\ref{def:confrontation}, this is not a definition in a
+precise mathematical sense. Rather it is something that can be tested in a
+particular practical software/data environment. 
+
+Also observe that we have not specified a codomain (range) for the aggregating
+function $f$. We keep the definition general by design since aggregating
+functions can have several relevant output types, some examples:
+\begin{itemize}
+\item the number of events resulting int \waar{} (numeric);
+\item the rule that is violated most often (a string identifying the rule);
+\item whether all events resulted in \waar{} (validation result).
+\end{itemize}
+The only thing that is important for a aggregating function is that it results
+in a single value, in the sense that the result pertains to the whole subset
+$s$ on which $f$ acts.
+
+We are now ready to define the extended validation report.
+%
+\begin{definition}[Extended validation report]\leavevmode
+\label{def:extvalrep}
+\begin{enumerate}
+\item The empty set $\{\}$ is an extended validation report.
+\item If $B$ is a basic validation report then $B$ is an extended validation report.
+\item Given an extended validation report $V$, a subset $s\subseteq V$ and a
+partial function $f$ on $2^V$ such that $s$ is in the domain of
+$f$.  Then  $V\cup \{(f,s,f(s))\}$ is also an extended validation report. 
+\item If $V$ and $W$ are extended validation reports that are compatible
+in the sense of Definition~\ref{def:compatibledag}, then $V\cup W$ is
+also an extended validation report.
+\end{enumerate}
+\end{definition}
+Here, the first step is a formality, allowing one to have empty extended
+validation reports. In the second step, also a formality, basic validation
+reports are defined as a subtype of extended validation reports.  In step
+three, a new aggregate is added.  The last step defines the combination rule,
+which is complicated by the fact one should check whether two reports are
+compatible. That is, one must ensure that no cycles are introduced in the DAG
+represented by the extended validation report.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Extended validation report structure}
+\label{sect:extendedreport}
+In the following subsections we define the logical information values to be
+stored in an extended validation report. Since the definition of extended
+validation reports includes basic validation reports
+(Definition~\ref{def:basicvalidationreport}), we will focus on the elements
+that are new, namely the \code{aggregation} concept of
+Definition~\ref{def:aggregation}.  Recall that an aggregate value is determined
+uniquely by identifying the set of nodes used for the agregate and the
+aggregation method. Below we provide mandatory and recommended information
+elements that for these concepts.
+
+
+The format of the Tables defining information elements is defined at the
+beginning of Section~\ref{sect:basicreportstructure}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Identification of aggregators}
+\label{sect:aggregators}
+An aggregator should be defined in a formal language so there can be no doubt
+on its interpretation.
+%
+\begin{center}
+\captionof{table}{Mandatory values for identification of an aggregator.}
+\begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.30\textwidth}|}
+\hline
+\textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
+\hline
+language   & \code{string} & Language and version in which the aggregator is expressed. & \code{R version 3.4.0}\\
+expression & \code{string} & Expression used for aggregation & \code{mean(x, na.rm=TRUE)}\\
+\hline
+\multicolumn{4}{|l|}{The number of slots for an aggregation is \textbf{extendable}.
+}\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\captionof{table}{Recommended values for identification of an aggregator.}
+\begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.30\textwidth}|}
+\hline
+\textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
+\hline
+description   & \code{string} & human-readable description of the aggregation procedure. & 
+Mean, ignoring missing values.\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Identification of nodesets}
+\label{sect:nodesets}
+The nodesets represent the confrontations and/or other aggregates used to
+compute an aggregate.
+
+\begin{center}
+\captionof{table}{Mandatory identification of a set of nodes.}
+\begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.36\textwidth}|}
+\hline
+\textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
+\hline
+nodes  & \code{string[]} & List of keys referring to the nodes used in aggregation & 
+\code{["0xc0ffee"}, \code{"0xbeefed"]}\\
+\hline
+\multicolumn{4}{|l|}{The number of slots for an nodeset is \textbf{extendable}.
+}\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\captionof{table}{Recommended values for identification of a nodeset.}
+\begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.30\textwidth}|}
+\hline
+\textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
+\hline
+description   & \code{string} & human-readable description of the nodeset. & 
+fraction of events yielding \waar{}.\\
+\hline
+\end{tabular}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Aggregation values}  
+\begin{center}
+\captionof{table}{The value of aggregation.}
+\begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.36\textwidth}|}
+\hline
+\textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
+\hline
+value  & \code{string} & The value computed during aggregation & 
+\code{"3.141592653590"}\\
+\hline
+\multicolumn{4}{|l|}{The number of slots for an nodeset is \textbf{extendable}.
+}\\
+\hline
+\end{tabular}
+\end{center}
+
+We choose to represent the aggregated value as a string, since the outcome of an
+aggregate is not necessarily numerical. Aggregates may also answer both numerical 
+questions such `how often is a certain rule violated?' but also qualitative questions
+such as `which rule is violated most often?'.
+

@@ -8,7 +8,7 @@
         "event" : {"$ref" : "#/definitions/event"},
         "rule"  : {"$ref" : "#/definitions/rule" },
         "data"  : {},
-        "value" : {"enum" : ["True", "False", "NA"]}
+        "value" : {"enum" : ["1", "0", "NA"]}
       },
       "required" : ["event", "rule", "data", "value"],
   "definitions" : {
@@ -30,7 +30,8 @@
           "language"   : {"type" : "string"},
           "expression" : {"type" : "string"},
           "severity"   : {"enum" : 
-            ["information", "warning", "error"]}
+            ["information", "warning", "error"]},
+          "description": {"type" : "string"}
         },
         "required" : ["language", "expression", 
                       "severity"]

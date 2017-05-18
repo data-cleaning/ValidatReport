@@ -1,0 +1,158 @@
+\section{Aggregation}
+In the context of validation, commonly reported aggregates include the total
+number or fraction of rules violated or the number or fraction of records  that
+violate a certain rule. The latter aggregates may be reported for the whole
+population or for each relevant subpopulation (e.g. by economic activity for a
+business survey). 
+
+
+Before discussing how we endow machine-readable validation reports with
+identifiable and combinable aggregates, it is useful to point out some of the
+subtleties that arise when thinking of aggregation is a general way. The first
+subtlety has to do with counting rules and counting validation results.
+Consider as an example the rules \code{turnover >= 0} and \code{mean(profit) >=
+0}.  When applied to a set of $n$ business records containing the variables
+\code{turnover} and \code{profit}, the first rule is evaluated $n$ times in $n$
+validation events, yielding $n$ validation results. The second rule is
+evaluated in a single validation event, yielding a single validation result,
+regardless of the number of records in the dataset. This means that an
+aggregate such as `the total number of rules violated' is ill-defined. It is
+only meaningful to talk about `the number of events that resulted in
+\onwaar{}'. 
+
+The second subtlety is that a set of aggregates can again be combined to form
+new aggregates. For example, in a first step we may compute the fraction of
+events yielding \onwaar{} per economic sector. In a next step we count for how
+many sectors this number is less than or equal to 0.05.
+
+Figure~\ref{fig:graphs} illustrates the above points as a graph-like structure.
+Suppose we start with a basic report containing five validation results. We can
+add an aggregate counting the number of passes in a certain subset
+(Figure~\ref{fig:graph1}).  In Figure~\ref{fig:graph2}, a second count is
+added, as well as an overall count that is composed of the two low-level
+aggregates. Figure~\ref{fig:graph3} depicts a situation where a subset of
+validation results are combined to form aggregates of several types: the number
+of passes and the fraction of passes.
+%
+\begin{figure}[!t]
+  \centering
+  \begin{subfigure}[b]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{fig/graph1.pdf}
+    \caption{Validation report with a single aggregated value.}
+    \label{fig:graph1}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{fig/graph2.pdf}
+    \caption{Validation report with multiple aggregates.}
+    \label{fig:graph2}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{fig/graph3.pdf}
+    \caption{Validation report with aggregates of various types.}
+    \label{fig:graph3}
+  \end{subfigure}
+  \caption{Structure of validation reports including aggregates, of varying complexity.}
+  \label{fig:graphs}
+\end{figure}
+
+These examples suggest that aggregates can be interpreted as nodes in a
+directed graph where the edges (arrows) point from the aggregate to the nodes
+used to compute the contents of the node. Nodes that have no outgoing edges
+(leaves) correspond one-to-one with validation results.  The collection of
+nodes and edges contain sufficient structure to make the representation of
+validation reports identifiable, combinable, and (recursively) aggregable. In
+the following paragraph we define more closely the type of graph that can be
+used to represent an aggregation structure.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Aggregation graphs}
+\label{sect:aggregationgraphs}
+Graphs are well-known mathematical structures that represent connectivity
+between objects. Indeed, the  study of graphs dates back to the 18th century
+when Leonhard \citet{euler1741solutio} solved the famous K\"oningsberger
+bridges problem.  For our purposes, a graph will serve as a model to store
+validation results, aggregates thereof, and the operations that lead to the
+aggregated values.
+
+The need for a graph structure rather then a more simple record-like structure
+arises from the demand that reports be combinable to a new report.  To see
+this, consider the following example. Two institutes validate a dataset with
+turnover values against the rule \code{turnover >= 0}. The first institute
+reports the fraction of passes, while the second institute reports the results
+for each individual record. If these reports were naively combined, one could
+misinterpret the fractional value reported by the first institute as pertaining
+to the separate values reported by the second institute. A second example
+occurs when the first institute creates a report containing both the individual
+results and the aggregated fraction of passes. If this report is to be
+augmented with new information, for example when new records come in it should
+be clear from the report that the reported fraction of passes does not pertain
+to the records added later.
+
+
+Graphs basically consist of elements of some set, called \emph{nodes} or
+\emph{vertices} and connections between them, which are called \emph{edges} or
+\emph{arrows} if they are directed. Structured information can be stored by
+endowing the nodes and edges with parcels of data.  Depending on the type and
+number of edges allowed between the nodes, graphs are classified in a broad
+number of types.  Below we define simple directed graph that comes close to our
+purpose of structuring validation aggregates.
+%
+\begin{definition}
+\label{def:simplegraph}
+A \emph{simple finite directed graph} is a pair  $(V,E)$ where $V$ is a finite set and $E$
+is a set of pairs $(v_1,v_2)$ with $v_1,v_2\in V$ and $v_1\not=v_2$.
+\end{definition}
+In this definition, the term \emph{simple} means that there are no loops (edges
+that start where they begin, like $(v_1,v_1)$). The term \emph{directed} mean
+that edges have a direction: the edge $(v_1,v_2)$ can be thought of as an
+arrow, pointing from $v_1$ to $v_2$ and therefore differs from ($v_2$,$v_1$).
+The term \emph{simple} also indicates that each pair of nodes is connected by
+at most two, opposite pointing arrows.
+
+A validation report can be represented by a more special graph. To define
+it, we first need the concept of a path.
+\begin{definition}[path, cycle]
+\label{def:pathcycle}
+Given a simple finite directed graph $(V,E)$. A \emph{path} is a sequence of
+edges $e_1,e_2,\ldots,e_n$ such that the start of $e_j$ is equal to the end of
+$e_{j+1}$ for $j=2,3,\ldots,n$. A \emph{cycle} is a path such that the end of
+$e_n$ is equal to the start of $e_1$.
+\end{definition}
+A path is thus a sequence of connected edges. Since aggregation works bottom-up
+and not top-down, we define the following graph to represent an extended
+validation report.
+\begin{definition}
+A \emph{directed acyclic graph} is a simple finite directed graph $(V,E)$ with
+the condition that $E$ contains no cycles.
+\end{definition}
+%
+The term `directed acyclic graph' is often shortened to DAG in literature. This
+particular structure has many technical applications, For example, the DAG
+stands model for data processing flow in the SPARK model for distributed
+computing \citep{gupta2003spark}. 
+
+
+Simple graphs have a natural rule of composition. The `sum' of two simple
+(directed) graphs is obtained as the union of the two vertex sets and the union
+of the two edge sets. For a DAG, this combination rule does not always apply
+since we are not allowed to have more than a single edge between any pair of
+nodes.  We therefore define the following compatibility rule for oriented
+graphs.
+\begin{definition}[Compatible DAGs]
+\label{def:compatibledag}
+Given two DAGs $G=(V,E)$ and $F=(V',E')$. These graphs are called
+\emph{compatible} when the combination
+\begin{align*}
+G\oplus F = (V\cup V', E\cup E'),
+\end{align*}
+is also a DAG.
+\end{definition}
+It is not hard to see that two oriented graphs are not compatible precisely
+when $V\cap V'$ has at least two vertices $v_1$ and $v_2$ for which it holds
+that $(v_1,v_2)\in E$ and $(v_2,v_1)\in E'$. Any software that combines
+extended validation reports (validation reports including aggregates, to be
+defined below) should therefore always check for compatibility of the reports
+upon combination.
+
+
