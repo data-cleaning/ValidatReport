@@ -1,9 +1,9 @@
 {
   "title"  : "extended validation report v0.0.1",
-  "id"     : "TODO",
+  "id"     : "https://git.io/v9jJl",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type"   : "array", "nodes" : 
-    { "type" : "object",
+  "type"   : "array", 
+    "nodes" : { "type" : "object",
       "properties" :
       {
         "key"   : {"type" : "string"},

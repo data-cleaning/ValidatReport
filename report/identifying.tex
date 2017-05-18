@@ -62,16 +62,16 @@ clauses that detect missing values explicitly. The second option (\na{} implies
 We deem both alternatives undesirable and therefore follow the definition
 above, which also agrees with the definition of a formal data validation
 function in the Methodology on Validation handbook published by the Validat
-Foundation \cite{zio2015methodology}.
+Foundation ESSnet \citep{zio2015methodology}.
 
-\subsection{Validation events}
+
 
 With a \emph{validation event} we mean the physical activity where a dataset is
 confronted with a single rule, yielding precisely one validation result. A
 validation event is characterized by its inputs (the rule and the dataset it
 pertains to) as well as its own metadata, including the time of execution and
-the actor performing the execution. We therefore adopt the following convention
-by defining a set of keys that identifies such a physical event.
+the actor performing the execution. We adopt the following convention for
+pairing the result of such an event with its identifying metadata.
 %
 \begin{definition}[confrontation] 
 A \emph{confrontation} is a tuple $(e,r,d,v)$, where $e$ identifies the physical

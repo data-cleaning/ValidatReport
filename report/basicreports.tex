@@ -65,7 +65,8 @@ and $d$ identify the data and rules confronted, $e$ identifies the actual
 physical event that generated the result and $v$ is the resulting value.
 (Definition~\ref{def:confrontation}). This section identifies the information
 components that make up $t$.
-%
+
+\begin{minipage}{\textwidth}
 \begin{center}
 \captionof{table}{Mandatory identification of a physical validation event.}
 \label{tab:idve}
@@ -73,15 +74,15 @@ components that make up $t$.
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
 \hline
-time          & datetime & Time marking the completion of a validation event. & \code{20170212T101530+0100}\\
-actor         & string   & Software that or person who created the validation result. & \code{R package validate version 0.1.7}\\
+time          & \code{datetime} & Time marking the completion of a validation event. & \code{20170212T101530+0100}\\
+actor         & \code{string}   & Software that or person who created the validation result. & \code{R package validate version 0.1.7}\\
 \hline
 \multicolumn{4}{|l|}{The number of slots defining a validation event is \textbf{extendable}.
 }\\
 \hline
 \end{tabular}
 \end{center}
-
+\end{minipage}
 
 \begin{center}
 \captionof{table}{Recommended information on a physical validation event.}
@@ -186,6 +187,7 @@ identifying the data used in evaluating the validation rule.
 \end{center}
 
 
+\begin{minipage}{\textwidth}
 \begin{center}
 \captionof{table}{Recommended values for identification of validated data.}
 \begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.30\textwidth}|}
@@ -197,7 +199,7 @@ Income of a single citizen.\\
 \hline
 \end{tabular}
 \end{center}
-
+\end{minipage}
 
 When the set of keys consists of a set of $(U,\tau,u,X)$-tuples as defined in
 the methodological handbook on validation, the report will identify data

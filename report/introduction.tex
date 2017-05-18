@@ -4,12 +4,12 @@
 Data validation is at the core of every production chain in official
 statistics.  Whether it is the input received from a survey, a bunch of data
 records transferred from an administrative source or the result from some
-internet scraping, data must be checked against its expectations to process it
-and turn it into reliable statistics.  For a more detailed explanation of data
-validation in general and the principles we identified in validation, we refer
-to the handbook of data validation from the ESSnet Foundation, by Di Zio et al.
-(2015) and the validation principles written down by the Eurostat validation
-task force, see ESS (2017).
+internet scraping, data must be checked against our expectations in order to
+process it and turn it into reliable statistics.  For a more detailed
+explanation of data validation in general and the principles we identified in
+validation, we refer to the handbook of data validation from the ESSnet
+Foundation, by \citet{zio2015methodology} and the validation principles written down
+by the ESS validation task force, see \citet[Chapter 4]{ess2017}.
 
 Standardisation is important in official statistics and this also applies to
 validation processes.  Especially in the case of cross-organisation validation,
@@ -49,19 +49,19 @@ generic format.  Validation tools or other statistical tools producing
 validation reports as a side product should be able to use this structure for
 their validation output.
 
-In this deliverable we address the following aspects: In Chapter 2 we ask
-ourselves what we should expect from a generic validation report structure.
-After some elaboration on the variety in richness of a validation report, we
-define a number of generic demands.  In Chapter 3 we define some core elements
-to be used in the definition of the validation report structure such as a
-validation result and a validation event.  In Chapter 4 we formally define a
-validation report and propose a JSON scheme for a basic machine-readable
-validation report.  This basic scheme leaves out aggregation facilities, which
-complicates the design considerably.  We discuss the possibilities to add
-aggregation facilities to the report structure in Chapter 5 and propose a
-JSON-concpet scheme for an extended validation report structure that supports
-aggregation in Chapter 6.  Chapter 7 shows some examples of validation reports,
-expressed in the schemes derived in Chapters 4 and 6.  Chapter 8 explains how a
-machine readable format can be transformed into a human readable format.
-Chapter 9 presents a brief conclusion.
+In this deliverable we address the following aspects: In
+Chapter~\ref{sect:demands} we ask ourselves what we should expect from a
+generic validation report.  After some elaboration on the variety in richness
+of a validation report, we define a number of generic demands.  In
+Chapter~\ref{sect:identifying} we define some core elements to be used in the
+definition of the validation report structure such as a validation result and a
+validation event.  In Chapter~\ref{sect:basicreports} we formally define a
+validation report for basic validation results. In Chapter~\ref{sect:extended}
+we discuss the structure of aggregates, in light of the demands laid out in
+Chapter~\ref{sect:demands}. Chapter~\ref{sect:extended} then defines the report
+structure that can carry both basic and aggregated results.
+Chapter~\ref{sect:standards} describes the technical implementation of the
+concepts developed in the earlier Chapters.  Finally,
+Chapter~\ref{sect:examples} is devoted to some concrete examples.
+
 

@@ -1,5 +1,5 @@
-
 \section{Technical standards}
+\label{sect:standards}
 In this section we define explicitly the technical data exchange
 formats defined in the previous subsections.
 
@@ -47,6 +47,7 @@ reports are encoded as stated in Table~\ref{tab:dataformat}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage{}
 \subsection{JSON messages}
+\label{sect:jsonmessage}
 To implement the basic and extended validation report we devise a simple object model
 allowing for reuse of some components. Recall that the basic results are
 identified as a \emph{confrontation} (Definition~\ref{def:confrontation})
@@ -73,7 +74,7 @@ using R version 3.4.0 on 18 May 2017 at 10:50:55, in the UTC+2 timezone (this
 is CEST, summertime).  The rule is stated using syntax accepted by R package
 \code{validate} version 0.1.7, and the expression is \code{income >=  0}.
 Failure to pass this rule indicates an error, and there is also a short
-description. The data under scrutiny is coded in a length 4 arrayt using the
+description. The data under scrutiny is coded in a length 4 array using the
 $U\tau uX$ model for data identification.  In this case the household income of
 household number \code{"8237193679"}, as collected during the Household survey
 of 2017 amongst Dutch inhabitants was checked. The result is \code{1}, meaning

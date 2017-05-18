@@ -1,15 +1,17 @@
 { 
   "title"  : "aggregation object v0.0.1",
-  "id"     : "TODO",
+  "id"     : "https://git.io/v9jfd",
   "$schema": "http://json-schema.org/draft-04/schema#", 
     "type"   : "object",
       "properties" : 
       {
+        "type"      : {"enum" : ["aggregation"]},
         "aggregator": {"$ref" : "#/definitions/aggregator"},
         "nodeset"   : {"$ref" : "#/definitions/nodeset"},
         "value"     : {"type" : "string"}
       },
-      "required" : ["aggregator", "nodeset", "value"],
+      "required" : ["type", "aggregator",
+           "nodeset", "value"],
   "definitions" : {
     "aggregator" : {
       "type" : "object", 

@@ -58,16 +58,14 @@ represented by the extended validation report.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Extended validation report structure}
 \label{sect:extendedreport}
-In the following subsections we define the logical information values to be
-stored in an extended validation report. Since the definition of extended
-validation reports includes basic validation reports
-(Definition~\ref{def:basicvalidationreport}), we will focus on the elements
-that are new, namely the \code{aggregation} concept of
-Definition~\ref{def:aggregation}.  Recall that an aggregate value is determined
-uniquely by identifying the set of nodes used for the agregate and the
-aggregation method. Below we provide mandatory and recommended information
-elements that for these concepts.
-
+In the following subsections we define the information items to be stored in an
+extended validation report. Since the definition of extended validation reports
+includes basic validation reports (Definition~\ref{def:basicvalidationreport}),
+we will focus on the elements that are new, namely the \emph{aggregation}
+concept of Definition~\ref{def:aggregation}.  Recall that an aggregate value is
+determined uniquely by identifying the set of nodes used for the agregate and
+the aggregation method. Below we provide mandatory and recommended information
+elements for these concepts.
 
 The format of the Tables defining information elements is defined at the
 beginning of Section~\ref{sect:basicreportstructure}.
@@ -78,7 +76,8 @@ beginning of Section~\ref{sect:basicreportstructure}.
 \label{sect:aggregators}
 An aggregator should be defined in a formal language so there can be no doubt
 on its interpretation.
-%
+
+\begin{minipage}{\textwidth}
 \begin{center}
 \captionof{table}{Mandatory values for identification of an aggregator.}
 \begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.30\textwidth}|}
@@ -93,7 +92,9 @@ expression & \code{string} & Expression used for aggregation & \code{mean(x, na.
 \hline
 \end{tabular}
 \end{center}
+\end{minipage}
 
+\begin{minipage}{\textwidth}
 \begin{center}
 \captionof{table}{Recommended values for identification of an aggregator.}
 \begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.30\textwidth}|}
@@ -105,12 +106,14 @@ Mean, ignoring missing values.\\
 \hline
 \end{tabular}
 \end{center}
+\end{minipage}
 
 \subsubsection{Identification of nodesets}
 \label{sect:nodesets}
 The nodesets represent the confrontations and/or other aggregates used to
 compute an aggregate.
 
+\begin{minipage}{\textwidth}
 \begin{center}
 \captionof{table}{Mandatory identification of a set of nodes.}
 \begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.36\textwidth}|}
@@ -125,7 +128,9 @@ nodes  & \code{string[]} & List of keys referring to the nodes used in aggregati
 \hline
 \end{tabular}
 \end{center}
+\end{minipage}
 
+\begin{minipage}{\textwidth}
 \begin{center}
 \captionof{table}{Recommended values for identification of a nodeset.}
 \begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.30\textwidth}|}
@@ -137,10 +142,12 @@ fraction of events yielding \waar{}.\\
 \hline
 \end{tabular}
 \end{center}
-
+\end{minipage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Aggregation values}  
+
+\begin{minipage}{\textwidth}
 \begin{center}
 \captionof{table}{The value of aggregation.}
 \begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.36\textwidth}|}
@@ -150,14 +157,15 @@ fraction of events yielding \waar{}.\\
 value  & \code{string} & The value computed during aggregation & 
 \code{"3.141592653590"}\\
 \hline
-\multicolumn{4}{|l|}{The number of slots for an nodeset is \textbf{extendable}.
+\multicolumn{4}{|l|}{The number of slots for an aggregation value is \textbf{not extendable}.
 }\\
 \hline
 \end{tabular}
 \end{center}
+\end{minipage}
 
-We choose to represent the aggregated value as a string, since the outcome of an
-aggregate is not necessarily numerical. Aggregates may also answer both numerical 
-questions such `how often is a certain rule violated?' but also qualitative questions
-such as `which rule is violated most often?'.
+We choose to represent the aggregated value as a string, since the outcome of
+an aggregate is not necessarily numerical. Aggregates are constructed to answer
+numerical questions such `how often is a certain rule violated?' but also
+qualitative questions such as `which rule is violated most often?'.
 
