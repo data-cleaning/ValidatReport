@@ -17,7 +17,7 @@ par(mar=par('mar')+c(0,0,-2,0))
 d <- subset(dat, encoding == enc[1])
 plot(percent ~ year, data=d,type='l',lwd=lwd,las=1,ylim=c(0,100)
      , xlab = "Year",ylab="Percentage"
-     , cex,lab=1.2,cex.axis=1.2)
+     , cex.lab=1.2,cex.axis=1.2)
 
 for ( i in 2:4 ){
   d <- dat[dat$encoding==enc[i],]
