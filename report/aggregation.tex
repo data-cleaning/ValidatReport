@@ -8,7 +8,7 @@ business survey).
 
 Before discussing how we endow machine-readable validation reports with
 identifiable and combinable aggregates, it is useful to point out some of the
-subtleties that arise when thinking of aggregation is a general way. The first
+subtleties that arise when thinking of aggregation in a general way. The first
 subtlety has to do with counting rules and counting validation results.
 Consider as an example the rules \code{turnover >= 0} and \code{mean(profit) >=
 0}.  When applied to a set of $n$ business records containing the variables
@@ -137,7 +137,7 @@ Simple graphs have a natural rule of composition. The `sum' of two simple
 (directed) graphs is obtained as the union of the two vertex sets and the union
 of the two edge sets. For a DAG, this combination rule does not always apply
 since we are not allowed to have more than a single edge between any pair of
-nodes.  We therefore define the following compatibility rule for oriented
+nodes.  We therefore define the following compatibility rule for directed acyclic
 graphs.
 \begin{definition}[Compatible DAGs]
 \label{def:compatibledag}
@@ -148,11 +148,8 @@ G\oplus F = (V\cup V', E\cup E'),
 \end{align*}
 is also a DAG.
 \end{definition}
-It is not hard to see that two oriented graphs are not compatible precisely
-when $V\cap V'$ has at least two vertices $v_1$ and $v_2$ for which it holds
-that $(v_1,v_2)\in E$ and $(v_2,v_1)\in E'$. Any software that combines
-extended validation reports (validation reports including aggregates, to be
-defined below) should therefore always check for compatibility of the reports
-upon combination.
+Any software that combines extended validation reports (validation reports
+including aggregates, to be defined below) should therefore always check for
+compatibility of the reports upon combination.
 
 

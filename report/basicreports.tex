@@ -63,12 +63,11 @@ this is the case is indicated at the bottom of each table.
 Recall that a \emph{confrontation} is defined as a tuple $(e,r,d,v)$ where $r$
 and $d$ identify the data and rules confronted, $e$ identifies the actual
 physical event that generated the result and $v$ is the resulting value.
-(Definition~\ref{def:confrontation}). This section identifies the information
-components that make up $t$.
+(Definition~\ref{def:confrontation}). 
 
 \begin{minipage}{\textwidth}
 \begin{center}
-\captionof{table}{Mandatory identification of a physical validation event.}
+\captionof{table}{Mandatory identification of a physical validation event $e$.}
 \label{tab:idve}
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
 \hline
@@ -85,7 +84,7 @@ actor         & \code{string}   & Software that or person who created the valida
 \end{minipage}
 
 \begin{center}
-\captionof{table}{Recommended information on a physical validation event.}
+\captionof{table}{Recommended information on a physical validation event $e$.}
 \begin{tabular}{|lp{15mm}p{0.34\textwidth}p{0.34\textwidth}|}
 \hline
 \textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
@@ -211,7 +210,8 @@ local storage schemes and formats. Also, the open format allows for reduction
 of storage format by referring to a well defined data set and stating a query
 statement that would reproduce the exact data points used in the validation
 event. Such a format does require extra standardization between sender and
-receiver of the report.
+receiver of the report (e.g. in the case of a query statement, the 
+specific version of a dataset should be identified as well).
 
 
 \subsubsection{Validation result}
