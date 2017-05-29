@@ -48,10 +48,11 @@ reports are encoded as stated in Table~\ref{tab:dataformat}.
 \clearpage{}
 \subsection{JSON messages}
 \label{sect:jsonmessage}
-To implement the basic and extended validation report we devise a simple object model
-allowing for reuse of some components. Recall that the basic results are
-identified as a \emph{confrontation} (Definition~\ref{def:confrontation})
-and aggregates are identified as a \emph{aggregation} (Definition~\ref{def:aggregation}.
+To implement the basic and extended validation report we devise a simple object
+model allowing for reuse of some components. Recall that the basic results are
+identified as a \emph{confrontation} (Definition~\ref{def:confrontation}) and
+aggregates are identified as a \emph{aggregation}
+(Definition~\ref{def:aggregation}).
 We therefore define the following objects.
 \begin{align}
 \label{eq:confrontation}
@@ -68,10 +69,10 @@ Listings~\ref{lst:confrontation} and \ref{lst:aggregation}, on pages
 \pageref{lst:confrontation} and \pageref{lst:aggregation} of the next section
 respectively. Listing~\ref{lst:exampleconfrontation} shows an example
 confrontation JSON message, conforming to this standard. Note that this is not
-a yet a full validation report since this would allow for multiple
-confrontations to be stored.  In this example, a validation event was executed
-using R version 3.4.0 on 18 May 2017 at 10:50:55, in the UTC+2 timezone (this
-is CEST, summertime).  The rule is stated using syntax accepted by R package
+yet a full validation report since this would allow for multiple confrontations
+to be stored.  In this example, a validation event was executed using R version
+3.4.0 on 18 May 2017 at 10:50:55, in the UTC+2 timezone (this is CEST,
+summertime).  The rule is stated using syntax accepted by R package
 \code{validate} version 0.1.7, and the expression is \code{income >=  0}.
 Failure to pass this rule indicates an error, and there is also a short
 description. The data under scrutiny is coded in a length 4 array using the
