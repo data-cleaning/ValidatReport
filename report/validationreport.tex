@@ -7,6 +7,7 @@
 \usepackage{caption} % for non-floating tables
 \usepackage{subcaption} % for subfigures
 \usepackage{listings}
+\usepackage{enumitem}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -33,6 +34,7 @@ language=C
 \newtheorem{demand}{Demand}
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}
 
 
 \renewcommand{\familydefault}{\sfdefault}
@@ -71,11 +73,12 @@ Deliverable xx for the ESSnet Validat Integration
 
 \input{demands.tex}
 
+\input{evaluations.tex}
 \input{identifying.tex}
 
-\input{basicreports.tex}
-
 \input{aggregation.tex}
+
+\input{basicreports.tex}
 
 \input{extended.tex}
 

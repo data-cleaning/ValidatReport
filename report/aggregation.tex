@@ -25,7 +25,7 @@ new aggregates. For example, in a first step we may compute the fraction of
 events yielding \onwaar{} per economic sector. In a next step we count for how
 many sectors this number is less than or equal to 0.05.
 
-Figure~\ref{fig:graphs} illustrates the above points as a graph-like structure.
+Figure~\ref{fig:graphs} illustrates the above points in a graph-like structure.
 Suppose we start with a basic report containing five validation results. We can
 add an aggregate counting the number of passes in a certain subset
 (Figure~\ref{fig:graph1}).  In Figure~\ref{fig:graph2}, a second count is
@@ -152,4 +152,31 @@ Any software that combines extended validation reports (validation reports
 including aggregates, to be defined below) should therefore always check for
 compatibility of the reports upon combination.
 
+\subsection{Identifying aggregates}
+To understand the meaning of an aggregate value, one needs to identify the data
+used to construct it (other nodes in the DAG of which the aggregate is a
+member) as well as the way it was constructed. We therefore propose the
+following definition.
+
+\begin{definition}[aggregation]
+\label{def:aggregation}
+An \emph{aggregation} is a triple $(f,s,x)$ where $f$ identifies the function
+used for aggregation, $s$ identifies the set of nodes used for aggregation and
+$x=f(s)$ is the aggregate.
+\end{definition}
+Just like Definition~\ref{def:confrontation}, this is not a definition in a
+precise mathematical sense. Rather it is something that can be tested in a
+particular practical software/data environment. 
+
+Also observe that we have not specified a codomain (range) for the aggregating
+function $f$. We keep the definition general by design since aggregating
+functions can have several relevant output types, some examples:
+\begin{itemize}
+\item the number of events resulting int \waar{} (numeric);
+\item the rule that is violated most often (a string identifying the rule);
+\item whether all events resulted in \waar{} (validation result).
+\end{itemize}
+The only thing that is important for a aggregating function is that it results
+in a single value, in the sense that the result pertains to the whole subset
+$s$ on which $f$ acts.
 

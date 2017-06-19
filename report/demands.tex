@@ -99,18 +99,19 @@ same structure (but possibly different content) before or after aggregation. If
 this is not the case, we run the risk of defining new data structures for each
 aggregate or combination of reports.
 
-As it turns out, adding both closure under combination and closure under
-aggregation to the demand of identifiability significantly increases the
-complexity of the structure of a validation report. Since aggregates can always
-be derived from a set of `atomic' validation results, we therefore propose two
-types of interchange formats. The first is called the \emph{basic validation
-report structure} and it conveys the rule-by-rule and event-by-event validation
-results, dropping Demand~\ref{dem:aggregate}. It is a simple format that is
-representable as a rectangular data structure from which (possibly grouped)
-aggregations can easily be computed.  The second is called \emph{extended
-validation report structure}. This structure is richer and allows for
-precomputed aggregates.  Since aggregation imposes a graph structure on a
-record set, parsing such a structure is more involved.
+
+Upun closer examination the creation of aggregate results closely parallels the
+creation of validation results. From an abstract point of view both 
+types of results are created by event where an expression is evaluated
+after substituting its variables with values coming from a given dataset. Their
+explicit differences derive from their use in the context of validation
+reports: validation results are created by confronting statistical data with
+validation rules while aggregation results are created by evaluating an
+aggregation function using a set of validation results. 
+
+In the following section the idea of expression evaluation will be discussed
+in a little more detail. Next, the metadata elements will be specified towars
+validation and aggregation.
 
 
 

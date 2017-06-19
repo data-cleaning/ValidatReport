@@ -4,8 +4,8 @@
 To get an idea of the (meta)data necessary to identify a validation result,
 consider the data, validation rules and validation results shown in
 Table~\ref{tab:example1}. When a dataset is confronted with a validation rule,
-there are three possible outcomes. A rule can be satisfied, yielding \waar{}, a
-rule can be failed, yielding \onwaar{}, or a rule cannot be evaluated because
+there are three possible outcomes. A rule can be satisfied, yielding $1$, a
+rule can be failed, yielding $0$, or a rule cannot be evaluated because
 of missing data, yielding \na{}.
 %
 \begin{table}
@@ -16,9 +16,9 @@ of missing data, yielding \na{}.
 &\multicolumn{2}{c}{\textbf{Variables}}&&\multicolumn{2}{c}{\textbf{Rules}}\\
 Nr  & Age  & hasjob     && \code{Age >= 0} & \code{IF Age < 15 THEN hasjob == `no'}\\
 \cline{2-3}\cline{5-6}
-1   & 36   & \code{yes} && \waar{}        & \multicolumn{1}{c}{\waar{}}\\
-2   & 53   & \code{NA}  && \waar{}        & \multicolumn{1}{c}{\na{}}\\
-3   & 11   & \code{yes} && \waar{}        & \multicolumn{1}{c}{\onwaar{}}\\
+1   & 36   & \code{yes} && 1        & \multicolumn{1}{c}{1}\\
+2   & 53   & \code{NA}  && 1        & \multicolumn{1}{c}{\na{}}\\
+3   & 11   & \code{yes} && 1        & \multicolumn{1}{c}{0}\\
 \hline
 \end{tabular}
 \label{tab:example1}
@@ -29,12 +29,13 @@ Nr  & Age  & hasjob     && \code{Age >= 0} & \code{IF Age < 15 THEN hasjob == `n
 In the example three records on age and work status are checked against two
 rules: age must be larger than or equal to zero, and persons under 15 years old
 cannot have a job. In each case the demand on  age can be checked and and each
-record passes this test, yielding \waar{} as validation result. For the second
-rule, the first record passes the check since age equals 36 and the person has
-a job which is allowed by the rule. In the second case the job status is not
-available (\na{}). Hence the rule cannot be checked and the returned value is \na{}
-as well. Finally, in the third record there is an 11-year old with a job which
-is a combination that is not allowed by the rule, yielding \onwaar{}.
+record passes this test, yielding $1$ (\waar{}) as validation result. For the
+second rule, the first record passes the check since age equals 36 and the
+person has a job which is allowed by the rule. In the second case the job
+status is not available (\na{}). Hence the rule cannot be checked and the
+returned value is \na{} as well. Finally, in the third record there is an
+11-year old with a job which is a combination that is not allowed by the rule,
+yielding $0$ (\onwaar{}).
 
 
 The above discussion leads to the following definition of a validation result
@@ -52,7 +53,7 @@ to define aggregators in later chapters.
 
 A recurring point of discussion is whether \na{} should be an allowed
 validation result. The main other options are to either interrupt execution, or
-to interpret the result as failed (\onwaar{}) when one of the data points
+to interpret the result as failed when one of the data points
 necessary for evaluating a rule is missing. Because statistical data often
 suffers from missing data the first option would yield many interruptions of a
 statistical process flow, unless each rule guards against it by building in
@@ -77,7 +78,7 @@ pairing the result of such an event with its identifying metadata.
 \begin{definition}[confrontation] 
 A \emph{confrontation} is a tuple $(e,r,d,v)$, where $e$ identifies the physical
 validation event, $r$ identifies the evaluated validation rule, $d$
-identifies the data points involved in the evaluation and $v$ is the
+identifies the data points to which the result pertains, and $v$ is the
 generated validation result.
 \label{def:confrontation}
 \end{definition}
@@ -87,5 +88,36 @@ informative tuples to identify subcomponents of the event, data, or rule. Note
 that the above `definition' is not a definition in the mathematical sense.
 Rather it is a convention that can be tested in a (software) environment where
 data, rules, and validation events have been labeled and stored.
+
+Finally we point out a subtlelty concerning the identification of data points
+to which the result \emph{pertains}. In many cases, the data under scrutiny is
+also the data involved in evaluating the rule. Consider a set (column) of
+numerical values $\la{x}=(x_1,x_2,\ldots,x_m)$. In a structural business survey
+for example, $\la{x}$ may consist of profit values for different enterprises.
+The rule 
+\begin{align*}
+\textsf{mean}(x) \geq 0
+\end{align*}
+is a check on the whole column. The column of data is considered invalid if the mean
+profit is negative. Here, the data used to compute the result is also the data that
+is being validated. Now consider the following rule, based on a method of 
+\citet{hiridoglou1986statistical}, evaluated for each value $x_j$ ($j=1,2,\ldots, m)$:
+\begin{align*}
+\max\left(\frac{x_j}{x^*},\frac{x^*}{x_j}\right) \leq h.
+\end{align*}
+Here, $x^*$ is a reference value, usually $\textsf{median}(x)$, and $h$ is a
+fixed parameter. To evaluate this rule $x^*$ must be computed which implies
+that the whole of $\la{x}$ must be known. This means that in a formal sense the
+rule is a validation of $\la{x}$ as a whole. After all, changing any value
+$x_{i}$ may influence the result even when $i\not=j$. The aim is of course to
+evaluate the rule $m$ times, once for each value $x_j$ where the goal is to
+evaluate the value of $x_j$, not the combination of values $\la{x}$ $m$ times.
+
+Rather than identifying the values that are used in evaluating a rule it is
+therefore stressed that the report identifies both the values used to compute
+the results as well as the values that are (in)validated by the result.
+
+
+
 
 
