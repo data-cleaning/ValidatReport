@@ -1,0 +1,73 @@
+{ 
+  "title"  : "confrontation object v0.0.1",
+  "id"     : "https://git.io/v9jJs",
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+    "type" : "array",
+      "items" : {
+        "oneOf" : [
+          {"$ref" : "#/definitions/validation"},
+          {"$ref" : "#/definitions/aggregation"}
+        ]
+      },
+  "definitions" : {
+    "validation" : {
+      "type" : "object",
+        "properties" : 
+        {
+          "id"         : { "type" : "string" },
+          "enum"       : { "enum" : ["validation"] },
+          "event"      : { "$ref" : "#/definitions/event" },
+          "expression" : { "$ref" : "#/definitions/rule"  },
+          "data"       : { "$ref" : "#/definitions/data"  },
+          "value"      : { "enum" : ["0", "1", "NA"] }
+        }
+    },
+    "aggregation" : {
+      "type" : "object",
+        "properties" : 
+        {
+          "id"         : { "type" : "string" },
+          "enum"       : { "enum" : ["aggregation"] },
+          "event"      : { "$ref" : "#/definitions/event" },
+          "expression" : { "$ref" : "#/definitions/aggregate"  },
+          "data"       : { "$ref" : "#/definitions/data"  },
+          "value"      : { "type" : "string" }
+        }
+    },
+    "event" : {
+      "type" : "object", 
+        "properties" :
+        {
+          "time"    : {"type" : "string"},
+          "actor"   : {"type" : "string"},
+          "agent"   : {},
+          "trigger" : {}
+        },
+        "required"  : ["time", "actor"]
+    },
+    "rule" : {
+      "type" : "object",
+        "properties" : 
+        {
+          "language"   : {"type" : "string"},
+          "expression" : {"type" : "string"},
+          "severity"   : {"enum" : 
+            ["information", "warning", "error"]},
+          "description": {"type" : "string"}
+        },
+        "required" : ["language", "expression", 
+                      "severity"]
+    },
+    "aggregate" : {
+      "type" : "object",
+        "properties" : 
+        {
+          "language"   : {"type" : "string"},
+          "expression" : {"type" : "string"},
+          "description": {"type" : "string"}
+        },
+        "required" : ["language", "expression"]
+    },
+    "data" : { "type" : "string"}
+  }
+}
