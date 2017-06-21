@@ -39,7 +39,6 @@ yielding $0$ (\onwaar{}).
 
 
 The above discussion leads to the following definition of a validation result
-(see also \citet[Chapter 5]{zio2015methodology}.
 %
 \begin{definition}[Validation result]
 A validation result is a value from the set $\{0,1,\na{}\}$.
@@ -66,56 +65,53 @@ above, which also agrees with the definition of a formal data validation
 function in the Methodology on Validation handbook published by the Validat
 Foundation ESSnet \citep{zio2015methodology}.
 
-
-
-With a \emph{validation event} we mean the physical activity where a dataset is
-confronted with a single rule, yielding precisely one validation result. A
-validation event is characterized by its inputs (the rule and the dataset it
-pertains to) as well as its own metadata, including the time of execution and
-the actor performing the execution. We adopt the following convention for
-pairing the result of such an event with its identifying metadata.
-%
-\begin{definition}[confrontation] 
-A \emph{confrontation} is a tuple $(e,r,d,v)$, where $e$ identifies the physical
-validation event, $r$ identifies the evaluated validation rule, $d$
-identifies the data points to which the result pertains, and $v$ is the
-generated validation result.
-\label{def:confrontation}
-\end{definition}
-%
-We leave open the possibility that the components $e$, $r$ and $d$ consist of
-informative tuples to identify subcomponents of the event, data, or rule. Note
-that the above `definition' is not a definition in the mathematical sense.
-Rather it is a convention that can be tested in a (software) environment where
-data, rules, and validation events have been labeled and stored.
-
-Finally we point out a subtlelty concerning the identification of data points
-to which the result \emph{pertains}. In many cases, the data under scrutiny is
-also the data involved in evaluating the rule. Consider a set (column) of
-numerical values $\la{x}=(x_1,x_2,\ldots,x_m)$. In a structural business survey
+Often, but not always, the dataset that is used to evaluate a validation rule
+is also the data under scrutiny. As an example consider a set (column) of
+numerical values $\la{x}=(x_1,x_2,\ldots,x_n)$. In a structural business survey
 for example, $\la{x}$ may consist of profit values for different enterprises.
 The rule 
 \begin{align*}
 \textsf{mean}(x) \geq 0
 \end{align*}
-is a check on the whole column. The column of data is considered invalid if the mean
-profit is negative. Here, the data used to compute the result is also the data that
-is being validated. Now consider the following rule, based on a method of 
-\citet{hiridoglou1986statistical}, evaluated for each value $x_j$ ($j=1,2,\ldots, m)$:
-\begin{align*}
+is a check on the whole column. The dataset is considered invalid if the mean
+profit is negative. This does not mean that all values are necessarily
+erroneous, it just means that this particular combination of profit values
+cannot be accepted. So in this case the data used to compute the result is also
+the data that is being validated. Now consider a commonly used rule, based on a
+method of \citet{hiridoglou1986statistical}, evaluated for each value $x_j$
+($j=1,2,\ldots, n)$:
+\begin{align}
 \max\left(\frac{x_j}{x^*},\frac{x^*}{x_j}\right) \leq h.
-\end{align*}
+\label{eq:hbfun}
+\end{align}
 Here, $x^*$ is a reference value, usually $\textsf{median}(x)$, and $h$ is a
 fixed parameter. To evaluate this rule $x^*$ must be computed which implies
 that the whole of $\la{x}$ must be known. This means that in a formal sense the
 rule is a validation of $\la{x}$ as a whole. After all, changing any value
-$x_{i}$ may influence the result even when $i\not=j$. The aim is of course to
-evaluate the rule $m$ times, once for each value $x_j$ where the goal is to
-evaluate the value of $x_j$, not the combination of values $\la{x}$ $m$ times.
+$x_{i}$ may influence the result for even when $i\not=j$. The aim is of course
+to evaluate the rule $m$ times, once for each value $x_j$ where the goal is to
+evaluate the value of $x_j$, not the combination of values $\la{x}$ $n$ times.
 
-Rather than identifying the values that are used in evaluating a rule it is
-therefore stressed that the report identifies both the values used to compute
-the results as well as the values that are (in)validated by the result.
+For this reason it is proposed that the validation report provides explicit
+room to communicate cases where by intention, the validated data is not
+identical to the data used in evaluation of a rule. 
+%
+\begin{definition}[confrontation] 
+A \emph{confrontation} is a tuple $(e,d,f,v)$, where $e$ identifies the
+physical validation event, $d$ identifies the data points to which the result
+pertains, $f$ identifies the evaluated validation rule, and $v$ is the
+generated validation result.
+\label{def:confrontation}
+\end{definition}
+%
+We leave open the possibility that the components $e$, $r$ and $d$ consist of
+informative tuples to identify subcomponents of the event, data, or rule.  In
+particular, $d$ will contain information on the data used to evaluate the rule
+as well as the data to which the result pertains. Note that the above
+`definition' is not a definition in the mathematical sense.  Rather it is a
+convention that can be tested in a (software) environment where data, rules,
+and validation events have been labeled and stored.
+
 
 
 

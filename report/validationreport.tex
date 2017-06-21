@@ -55,8 +55,23 @@ Statistics Netherlands, Henri Faasdreef 312 2492 JP The Hague
 Deliverable xx for the ESSnet Validat Integration
 }
 
-
-
+\newenvironment{spec}[2]
+{
+\begin{minipage}{\textwidth}
+\begin{center}
+\captionof{table}{#1. Fields marked with a ${}^\dagger$ are for
+validation results only. The number of fields is #2extendable. }
+\begin{tabular}{|p{0.11\textwidth}p{0.11\textwidth}p{0.325\textwidth}p{0.325\textwidth}|}
+\hline
+\textbf{Item} & \textbf{Format} &\textbf{Description} &\textbf{Example}\\
+\hline
+}
+{
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2ex}
 
@@ -74,13 +89,13 @@ Deliverable xx for the ESSnet Validat Integration
 \input{demands.tex}
 
 \input{evaluations.tex}
+
 \input{identifying.tex}
 
 \input{aggregation.tex}
 
-\input{basicreports.tex}
+\input{reports.tex}
 
-\input{extended.tex}
 
 \clearpage{}
 \input{standards.tex}

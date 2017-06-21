@@ -1,10 +1,15 @@
 \section{Aggregation}
-In the context of validation, commonly reported aggregates include the total
-number or fraction of rules violated or the number or fraction of records  that
-violate a certain rule. The latter aggregates may be reported for the whole
-population or for each relevant subpopulation (e.g. by economic activity for a
-business survey). 
-
+An inventorisation of aggregates desired by users of validation reports
+yielded a wide range of desires\footnote{Inventories were taken at 
+the ESSnet Validat Integration meeting in \"Orebro Sweden (14-16 February 2017) and during
+the Task Force on Validation meeting in Luxemburg (31 May 2017). Minutes of both
+meetings are available via \href{https://ec.europa.eu/eurostat/cros}{CROS-portal} .}.
+Commonly reported aggregates include the total number or fraction of rules
+violated or the number or fraction of records  that violate a certain rule.
+Aggregates need not have a numerical value. For example, in the case of
+record-wise validation rules, interesting aggregates include `the validation
+rule that is violated most often by a dataset' or the `record violating most
+(record-wise) validation rules'. 
 
 Before discussing how we endow machine-readable validation reports with
 identifiable and combinable aggregates, it is useful to point out some of the
@@ -148,35 +153,61 @@ G\oplus F = (V\cup V', E\cup E'),
 \end{align*}
 is also a DAG.
 \end{definition}
-Any software that combines extended validation reports (validation reports
-including aggregates, to be defined below) should therefore always check for
-compatibility of the reports upon combination.
+A practical consequence of the condition in this definition is that software
+that combines extended validation reports (validation reports including
+aggregations, to be defined below) should always check for compatibility of the
+reports upon combination. 
 
+One case compatible graphs occurs when both $G$ and $F$ are edgeless. Two
+reports that do not contain any aggregates satisfy this condition. If $F\cap
+G=\varnothing$ so $F$ and $G$ have no nodes or edges in common, they are also
+compatible. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Identifying aggregates}
-To understand the meaning of an aggregate value, one needs to identify the data
-used to construct it (other nodes in the DAG of which the aggregate is a
-member) as well as the way it was constructed. We therefore propose the
-following definition.
+Just like validation results, aggregation results are created by evaluating an
+expression. Also, just like for validation results, the interpretation of to
+what dataset an aggregate pertains need not coincide with the data used to
+compute the result. Consider a set of validation results
+$\la{v}=(v_1,v_2,\ldots,v_k,v_{k+1},v_{k+2},\ldots, v_n)$. Here,
+$v_1\ldots v_k$ pertain to one subset of the data under scrutiny, for example a
+certain economic sector, and $v_{k+1},\ldots,v_n$ pertain to another subset.
+The aggregate
+\begin{align*}
+a = k - \sum_{j=1}^{k}v_j,
+\end{align*}
+counts the number of violations in the first subset. In this case, the
+aggregate is aimed to communicate a fact about the set used in the calculation.
+Now consider
+\begin{align*}
+a' = \frac{a}{n-\sum_{j=1}^n{v_j}}.
+\end{align*}
+This aggregate is the fraction of all failures that occur in the first subset.
+Although every validation result is used to compute it, the aggregate is
+intended to communicate something about a particular subset of the results.
 
+For this reason it is proposed that the validation report provides explicit
+room to communicate cases where by intention, the value set to which an
+aggregate pertains are not identical to the values used in evaluation of a
+rule. 
+%
 \begin{definition}[aggregation]
 \label{def:aggregation}
-An \emph{aggregation} is a triple $(f,s,x)$ where $f$ identifies the function
-used for aggregation, $s$ identifies the set of nodes used for aggregation and
-$x=f(s)$ is the aggregate.
+An \emph{aggregation} is a tuple  
+$(e, d, f, a)$
+where $e$ identifies the aggregating event, $d$ the data related to the
+aggregation, $f$ the aggregating expression, and $v$ the aggregate value.
 \end{definition}
-Just like Definition~\ref{def:confrontation}, this is not a definition in a
-precise mathematical sense. Rather it is something that can be tested in a
-particular practical software/data environment. 
+We leave open the possibility that the elements $e$, $d$ and $f$ are again
+tuples. In particular, $d$ may identify both the data used while evaluating a
+rule and the data to which the aggregate value pertains.  Like
+Definition~\ref{def:confrontation}, this is not a definition in a precise
+mathematical sense. Rather it is something that can be tested in a particular
+practical software/data environment. 
 
-Also observe that we have not specified a codomain (range) for the aggregating
-function $f$. We keep the definition general by design since aggregating
-functions can have several relevant output types, some examples:
-\begin{itemize}
-\item the number of events resulting int \waar{} (numeric);
-\item the rule that is violated most often (a string identifying the rule);
-\item whether all events resulted in \waar{} (validation result).
-\end{itemize}
-The only thing that is important for a aggregating function is that it results
-in a single value, in the sense that the result pertains to the whole subset
-$s$ on which $f$ acts.
+Considering again the graph structure of an aggregate, we see that an
+aggregation stores information on the content of the aggregate node and on the
+edges that connect it to the data used in its construction.
+
 

@@ -1,0 +1,227 @@
+\section{Validation reports}
+\label{sect:basicreports}
+Recall that a \emph{confrontation} is a tuple $(e,d,f,v)$ ($v\in\{0,1,\na{}\})$
+and an \emph{aggregation} is a tuple $(e,d,f,a)$ with $a$ an aggregate value.
+In both cases, $e$ refers to the event that where the expression $f$ was
+evaluated to create the result ($v$, or $a$) and $d$ refers to the data evolved
+in evaluating the expression as well as the data related to the interpretation
+of the result. 
+
+The tuples are constructed to make  the values $a$ and $v$ identifiable
+(Demand~\ref{dem:identify}).  The following recursive construction defines
+validation reports that are combinable (Demand~\ref{dem:combine}) and
+aggregable (Demand~\ref{dem:aggregate}).
+%
+\begin{definition}[Validation report]\leavevmode
+\begin{enumerate}[topsep=0pt,itemsep=0pt]
+\item The empty set $\{\}$ is a validation report.
+\item If $(e,r,d,v)$ is a confrontation then $\{(e,d,r,v)\}$ is a validation report.
+\item If $V$ and $W$ are combinable in the sense of
+Definition~\ref{def:compatibledag}, then $V\cup W$ is also a validation report.
+\item If $V$ is a validation report, $f$ is an expression, and  $S$ is a subset of $V$  
+such that $f$ can be evaluated with $S$. Then 
+\begin{align*}
+V\cup \{(e_{fS}, d_{fS}, f, f(S))\},
+\end{align*}
+is also a validation report. Here, $e_{fS}$ identifies the event that created
+the aggregate $f(S)$ and $d_{fS}$ identifies $S$ and the data to which the
+result $f(S)$ pertains.
+\end{enumerate}
+\label{def:basicvalidationreport}
+\end{definition}
+%
+The first step is a formality, allowing for the edge case of empty reports.  By
+applying the second and third step repeatedly, a report can be populated with
+identifiable valiation results (confrontations). Observe that as long as we are
+only adding confrontations, the validaition reports are trivially combinable
+since it can be interpreted as an edgeless graph (see under
+definition~\ref{def:compatibledag}). In step four, an identifiable aggregate
+(aggregation) is constructed that is compatible with the validation report to
+which it is added.
+
+Now that we have a conceptual definition of a validation report, that satisfies
+all three demands, we can move forward and define the identifying pieces of
+information to be stored in the confrontations on a logical level.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Logical validation report structure}
+\label{sect:basicreportstructure}
+In the following subsections, the information that needs to be stored in
+confrontation or aggregation tuples is described explicitly. 
+
+
+
+
+%
+\begin{enumerate}
+\item Item: the name of the information item.
+\item Format: logical format of the data in the item. Allowed formats are: \code{string},
+\code{numeric}, \code{enum} (with categories defined in the description
+column), \code{datetime} and \code{-}. The latter indicates that the format is
+free, including the possibility to include user-defined objects. A type
+may be followed by to brackets \code{[]} to indicate an array.
+\item Description: a short description of the item. More detailed descriptions
+might follow after the table.
+\item Example: an example.
+\end{enumerate}
+%
+We distinguish between information which is mandatory and information that is
+recommended. This is indicated in the caption of each table. Some information
+items may be extended with user-defined information. Whether this is the case
+is indicated at the bottom of each table.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Identification of an expression evaluation event.}
+\label{sect:idevent}
+
+\begin{spec}{
+Mandatory identification of a expression evaluation event $e$
+}{}
+time             & \code{datetime} & Time marking the completion of a validation event. & \code{20170212 10:15:30+0100}\\
+actor         & \code{string}   & Software that or person who created the result. & \code{R package validate version 0.1.7}\\
+\end{spec}
+
+The data validation business architecture \citep{ess2017} defines a
+service-oriented infrastructure for data validation. In the cases where a
+client-server model is applied (the server executing validation and sending
+reports), the following extra information is recommended.
+
+\begin{spec}{Recommended information on a physical validation event $e$}{}
+agent   & \multicolumn{1}{c}{-} & Actor (person, institute, dpt, $\ldots$) responsible for executing the validation event & dpt. of data validation, Eurostat\\
+trigger & \multicolumn{1}{c}{-} & Actor (person, institute, dpt, $\ldots$) responsible for triggering the event  & John Statistician, Statistics Netherlands\\
+\end{spec}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Identification of an expression}
+\label{sect:idrule}
+%
+\begin{spec}{Mandatory identification of an expression $f$}{}
+language      & string   & Language and version in which a expression is written & R/validate version 0.1.7\\
+expression    & string   & Expression defining the rule or aggregate.           & \code{age >= 0}\\
+severity$^\dagger$      & enum     & \code{`error'}, \code{`warning'},
+                           or \code{`information'}                & \code{`error'}\\ 
+\end{spec}
+
+The ESS validation business architecture also allows for certain up- or
+downgrades of the severity status for individual cases. Furthermore, it is good
+practice to explain the purpose of complicated expressions in a human-readable
+description.
+
+\begin{spec}{Recommended values for identification of a validation rule}{}
+description   & \code{string} & human-readable description of the rule. & 
+Nonnegativity for age.\\
+status$^\dagger$        & \code{string} & Whether the severity level was up- or downgraded for 
+the current report. & Lowered from \code{error}.\\
+\end{spec}
+
+Of course the `status' field can also be used to add an explanation on why a
+status was changed.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Identification of data}
+\label{sect:iddata}
+We distinguish between two data values to reference: the \emph{source} data
+that was necessary to evaluate an expression, and the \emph{target} data in
+relation to wich a result is interpreted (see Equation~\ref{eq:hbfun} on
+Page~\pageref{eq:hbfun} for an example). The former informs the user on how
+the result was obtained while the latter informs the user on how the result
+is to be interpreted. In many cases, the source and target data will however
+coincide.
+
+
+
+
+
+  
+
+\begin{spec}{Mandatory identification of validated data.}{}
+source    & string[] 
+  & A key or set of keys identifying the data used in evaluating the expression.
+  &  $\{$(`Dutch inhabitants', `EU-SILC2016, `Richard Respondent', `Income')$\}$\\
+target    & string[] 
+  & A key or set of keys identifying the data targeted by the expression.
+  &  $\{$(`Dutch inhabitants', `EU-SILC2016, `Richard Respondent', `Income')$\}$\\
+\hline
+\multicolumn{4}{|l|}{\textbf{Convention:} if the `target' field is empty,
+it is assumed equal to `source'.}\\
+\end{spec}
+
+
+Since a set of keys that identify a dataset is hard to interpret by humans, we
+add the following recommendation.
+
+\begin{minipage}{\textwidth}
+\begin{center}
+\captionof{table}{Recommended values for identification of validated data.}
+\begin{tabular}{|lp{0.1\textwidth}p{0.34\textwidth}p{0.30\textwidth}|}
+\hline
+\textbf{Item} & \textbf{Format} & \textbf{Description} &\textbf{Example}\\
+\hline
+description   & \code{string} & human-readable description of the data. & 
+Income of a single citizen.\\
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+
+Below, we sketch two possible ways on how the data identification could be
+implemented.
+
+\paragraph{1. Full specification of data.} The methodology handbook on validation
+prescribes a generic model to identify a single datapoint
+\citep[Chapter~5]{zio2015methodology}. In short, one identifies the value of a
+data point by fixing
+\begin{itemize}
+\item the population $U$ to which it pertains;
+\item the event $\tau$ that lead to its observation;
+\item the population unit $u$ from which a property was observed, and
+\item the attribute $X$ that was measured.
+\end{itemize}
+Here, the term `population' should be interpreted rather generally. It may be
+the human population of a country or region, but it can also be a population of
+companies, countries, events, emails, and so on. Similarly, the event that lead
+to an observation can be the receiving of transmitted data from an institute,
+or it may be a data collection event based on a survey.  In the handbook, a
+data point is defined as a value (from some domain) paired with a tuple
+$(U,\tau,u,X)$ that identifies it.
+
+
+When the set of keys consists of a set of $(U,\tau,u,X)$-tuples as defined in
+the methodological handbook on validation, the report will identify data
+involved in validation completely free of any context involving the sender, the
+process, institutes involved and so on. 
+
+\paragraph{2. Extra standardization.} The key sets can quikly inflate the size
+of a validation report. Since the format is left open (we only specify keys to
+be an (array of) strings), it is possible to apply a more practical format at
+the price of extra standardizing agreements between sender and receiver of the
+report. Let us illustrate this by sketching a validation procedure in a service-client
+based infrastructure. We call the client `Alice' and the server `Bob'.
+\begin{enumerate}[noitemsep]
+\item Alice sends data, consisting of $n$ records and a validation rule to `Bob'.
+She also sends a unique string $s$ (for example a hash key) that she has connected
+with this particular dataset in her administration. The rule she sends is such that
+it must be evaluated on every record.
+\item Upon receiving Alice's message, Bob evaluates the rule on each of the $n$
+records. He sets each \emph{source} field equal to the string $s.k$, where $k$
+is the key that uniquely identifies the record under scrutiny. The \emph{target}
+fields are left empty.
+\item Bob completes the validation report and sends it to Alice.
+\end{enumerate}
+
+The trade-off in the above procedure is that the validation report can only be 
+understood by the sender and receiver, but not by a third party who is unaware
+of the meaning of the identifying keys $s$ and $k$.
+
+
+\subsubsection{Result values}
+\label{sect:valres}
+
+\begin{spec}{
+Mandatory format for the validation result $v$ or aggregation result $a$}{not }
+value$^\dagger$  & \code{enum}   & $1$, $0$, or \na{}    &$1$\\
+value         & \code{string} & evaluation result     &\code{"7"}\\
+\end{spec}
+
