@@ -1,6 +1,6 @@
 \section{Validation reports}
 \label{sect:basicreports}
-Recall that a \emph{confrontation} is a tuple $(e,d,f,v)$ ($v\in\{0,1,\na{}\})$
+Recall that a \emph{validation} is a tuple $(e,d,f,v)$ ($v\in\{0,1,\na{}\})$
 and an \emph{aggregation} is a tuple $(e,d,f,a)$ with $a$ an aggregate value.
 In both cases, $e$ refers to the event that where the expression $f$ was
 evaluated to create the result ($v$, or $a$) and $d$ refers to the data evolved
@@ -15,7 +15,7 @@ aggregable (Demand~\ref{dem:aggregate}).
 \begin{definition}[Validation report]\leavevmode
 \begin{enumerate}[topsep=0pt,itemsep=0pt]
 \item The empty set $\{\}$ is a validation report.
-\item If $(e,r,d,v)$ is a confrontation then $\{(e,d,r,v)\}$ is a validation report.
+\item If $(e,r,d,v)$ is a  validation then $\{(e,d,r,v)\}$ is a validation report.
 \item If $V$ and $W$ are combinable in the sense of
 Definition~\ref{def:compatibledag}, then $V\cup W$ is also a validation report.
 \item If $V$ is a validation report, $f$ is an expression, and  $S$ is a subset of $V$  
@@ -32,8 +32,8 @@ result $f(S)$ pertains.
 %
 The first step is a formality, allowing for the edge case of empty reports.  By
 applying the second and third step repeatedly, a report can be populated with
-identifiable validation results (confrontations). Observe that as long as we are
-only adding confrontations, the validation reports are trivially combinable
+identifiable validation results (validations). Observe that as long as we are
+only adding validations, the validation reports are trivially combinable
 since it can be interpreted as an edgeless graph (see under
 definition~\ref{def:compatibledag}). In step four, an identifiable aggregate
 (aggregation) is constructed that is compatible with the validation report to
@@ -41,14 +41,15 @@ which it is added.
 
 Now that we have a conceptual definition of a validation report, that satisfies
 all three demands, we can move forward and define the identifying pieces of
-information to be stored in the confrontations on a logical level.
+information to be stored in the  validations and aggregations on a logical
+level.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Logical validation report structure}
 \label{sect:basicreportstructure}
 In the following subsections the information that needs to be stored in
-confrontation or aggregation tuples is described explicitly. The descriptions
+validation or aggregation tuples is described explicitly. The descriptions
 are formatted in a set of tables, each with the following structure.
 %
 \begin{enumerate}
