@@ -44,16 +44,8 @@ reports are encoded as stated in Table~\ref{tab:dataformat}.
 \label{tab:dataformat}
 \end{center}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\clearpage{}
-\subsection{JSON messages}
-\label{sect:jsonmessage}
 
 
-\begin{align*}
-\langle \textsf{key}, \textsf{type}, 
-\textsf{event}, \textsf{expression}, \textsf{data}, \textsf{value}\rangle
-\end{align*}
 
 
 
@@ -62,8 +54,17 @@ reports are encoded as stated in Table~\ref{tab:dataformat}.
 \clearpage{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{JSON Schemas}
-In this subsection the JSON schemas defining the basic and extended
-validation reports and their components are listed as a reference.
+The JSON message consists of records with the following structure
+\begin{align*}
+\langle \textsf{id}, \textsf{type}, 
+\textsf{event}, \textsf{expression}, \textsf{data}, \textsf{value}\rangle,
+\end{align*}
+where \textsf{id} is a unique identifier, \textsf{type} is one of
+\code{"aggregation"} or \code{"validation"}. The objects are otherwise direct
+translations of Definitions~\ref{def:validationresult}, \ref{def:confrontation}
+and \ref{def:aggregation}, with components derived from
+the logical descriptions in \S\ref{sect:basicreportstructure}.
+
 
 The full code can also be found at github:
 \begin{center}
@@ -71,11 +72,29 @@ The full code can also be found at github:
 \end{center}
 %
 \lstinputlisting[frame=single
-  , linewidth=1.1\textwidth
+  , linewidth=1.15\textwidth
+  , lastline=11
   , float=h,caption=JSON schema for a confrontation object.
   , label=lst:confrontation]{../json/validation_report.json}
 %
 %
+\newpage
+
+\lstinputlisting[frame=single
+  , linewidth=1.15\textwidth
+  , firstnumber=12
+  , firstline=12
+  , lastline=36
+  , float=h,caption=JSON schema for a confrontation object---continued.
+  , label=lst:confrontation]{../json/validation_report.json}
 
 
+\newpage
+
+\lstinputlisting[frame=single
+  , linewidth=1.15\textwidth
+  , firstnumber=37
+  , firstline=37
+  , float=h,caption=JSON schema for a confrontation object---continued.
+  , label=lst:confrontation]{../json/validation_report.json}
 

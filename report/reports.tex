@@ -32,8 +32,8 @@ result $f(S)$ pertains.
 %
 The first step is a formality, allowing for the edge case of empty reports.  By
 applying the second and third step repeatedly, a report can be populated with
-identifiable valiation results (confrontations). Observe that as long as we are
-only adding confrontations, the validaition reports are trivially combinable
+identifiable validation results (confrontations). Observe that as long as we are
+only adding confrontations, the validation reports are trivially combinable
 since it can be interpreted as an edgeless graph (see under
 definition~\ref{def:compatibledag}). In step four, an identifiable aggregate
 (aggregation) is constructed that is compatible with the validation report to
@@ -47,12 +47,9 @@ information to be stored in the confrontations on a logical level.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Logical validation report structure}
 \label{sect:basicreportstructure}
-In the following subsections, the information that needs to be stored in
-confrontation or aggregation tuples is described explicitly. 
-
-
-
-
+In the following subsections the information that needs to be stored in
+confrontation or aggregation tuples is described explicitly. The descriptions
+are formatted in a set of tables, each with the following structure.
 %
 \begin{enumerate}
 \item Item: the name of the information item.
@@ -60,7 +57,7 @@ confrontation or aggregation tuples is described explicitly.
 \code{numeric}, \code{enum} (with categories defined in the description
 column), \code{datetime} and \code{-}. The latter indicates that the format is
 free, including the possibility to include user-defined objects. A type
-may be followed by to brackets \code{[]} to indicate an array.
+may be followed by brackets \code{[]} to indicate an array.
 \item Description: a short description of the item. More detailed descriptions
 might follow after the table.
 \item Example: an example.
@@ -69,12 +66,14 @@ might follow after the table.
 We distinguish between information which is mandatory and information that is
 recommended. This is indicated in the caption of each table. Some information
 items may be extended with user-defined information. Whether this is the case
-is indicated at the bottom of each table.
+is indicated at the top of each table.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Identification of an expression evaluation event.}
 \label{sect:idevent}
+Both validation results and aggregates are created by an event $e$ that
+evaluates an expression. 
 
 \begin{spec}{
 Mandatory identification of a expression evaluation event $e$
@@ -122,19 +121,15 @@ status was changed.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Identification of data}
 \label{sect:iddata}
-We distinguish between two data values to reference: the \emph{source} data
-that was necessary to evaluate an expression, and the \emph{target} data in
-relation to wich a result is interpreted (see Equation~\ref{eq:hbfun} on
-Page~\pageref{eq:hbfun} for an example). The former informs the user on how
-the result was obtained while the latter informs the user on how the result
-is to be interpreted. In many cases, the source and target data will however
-coincide.
+The validation report needs to identify two data sets for each reported
+validation result or aggregate: the set of datapoints that was involved in
+evaluating the expression and the set of datapoints related to the
+interpretation of the result.  The dataset that is used to evaluate an
+expression will be referred to as the \emph{source} data while the dataset that
+is related to the interpretation of the result will be referred to as the
+\emph{target} data. In many cases these will coincide but  see
+Equation~\ref{eq:hbfun} on Page~\pageref{eq:hbfun} for a counterexample.
 
-
-
-
-
-  
 
 \begin{spec}{Mandatory identification of validated data.}{}
 source    & string[] 
@@ -193,7 +188,7 @@ the methodological handbook on validation, the report will identify data
 involved in validation completely free of any context involving the sender, the
 process, institutes involved and so on. 
 
-\paragraph{2. Extra standardization.} The key sets can quikly inflate the size
+\paragraph{2. Extra standardization.} The key sets can quickly inflate the size
 of a validation report. Since the format is left open (we only specify keys to
 be an (array of) strings), it is possible to apply a more practical format at
 the price of extra standardizing agreements between sender and receiver of the

@@ -1,6 +1,6 @@
 { 
   "title"  : "confrontation object v0.0.1",
-  "id"     : "https://git.io/v9jJs",
+  "id"     : "TODO",
   "$schema": "http://json-schema.org/draft-04/schema#", 
     "type" : "array",
       "items" : {
@@ -15,7 +15,7 @@
         "properties" : 
         {
           "id"         : { "type" : "string" },
-          "enum"       : { "enum" : ["validation"] },
+          "type"       : { "enum" : ["validation"] },
           "event"      : { "$ref" : "#/definitions/event" },
           "expression" : { "$ref" : "#/definitions/rule"  },
           "data"       : { "$ref" : "#/definitions/data"  },
@@ -27,7 +27,7 @@
         "properties" : 
         {
           "id"         : { "type" : "string" },
-          "enum"       : { "enum" : ["aggregation"] },
+          "type"       : { "enum" : ["aggregation"] },
           "event"      : { "$ref" : "#/definitions/event" },
           "expression" : { "$ref" : "#/definitions/aggregate"  },
           "data"       : { "$ref" : "#/definitions/data"  },
