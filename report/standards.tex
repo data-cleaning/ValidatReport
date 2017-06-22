@@ -48,45 +48,86 @@ reports are encoded as stated in Table~\ref{tab:dataformat}.
 
 
 
-
-
-
-\clearpage{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{JSON Schemas}
-The JSON message consists of records with the following structure
+The JSON message consists of records that are either of type validation,
+or aggregation. The former are schematically represented as follows
 \begin{align*}
-\langle \textsf{id}, \textsf{type}, 
-\textsf{event}, \textsf{expression}, \textsf{data}, \textsf{value}\rangle,
+\textsf{validation}&:=\langle
+  \textsf{id}
+, \textsf{type}:=\code{"validation"}
+, \textsf{event}
+, \textsf{rule}
+,\textsf{data}
+,\textsf{value}\rangle\\
+\textsf{event} &= \langle
+  \textsf{time}
+, \textsf{actor}
+, agent
+, trigger\rangle\\
+\textsf{rule} &:=\langle
+  \textsf{language}
+, \textsf{expression}
+, \textsf{severity}
+, status\rangle\\
+\textsf{data} &:=\langle
+  \textsf{source}
+, \textsf{target}
+, description\rangle,
 \end{align*}
-where \textsf{id} is a unique identifier, \textsf{type} is one of
-\code{"aggregation"} or \code{"validation"}. The objects are otherwise direct
-translations of Definitions~\ref{def:validationresult}, \ref{def:confrontation}
-and \ref{def:aggregation}, with components derived from
+where `id' is a unique identifier, `type' has a fixed value that labels the
+object type and `value' is a validation result ($0$, $1$ or $\na{}$). In the
+above scheme, the fields in $italics$ are optional. 
+
+Objects of type type `aggregation' are schematically described as
+\begin{align*}
+\textsf{aggregation} &:=\langle
+  \textsf{id}
+, \textsf{type}=\code{"validation"}
+, \textsf{event}
+, \textsf{aggregate}
+, \textsf{data}
+,\textsf{value}\rangle\\
+\textsf{event} &:= \langle
+  \textsf{time}
+, \textsf{actor}\rangle\\
+\textsf{aggregate} &:=\langle
+  \textsf{language}
+, \textsf{expression}\rangle\\
+\textsf{data} &:=\langle
+  \textsf{source}
+, \textsf{target}
+, description\rangle,
+\end{align*}
+where `value' is the aggregate value, represented as a string.
+
+These object types are translations of Definitions~\ref{def:validationresult},
+\ref{def:confrontation} and \ref{def:aggregation}, with components derived from
 the logical descriptions in \S\ref{sect:basicreportstructure}.
 
-
-The full code can also be found at github:
+The JSON scheme defining these objects can be found in the listings on
+pages~\pageref{lst:valrep1}--\pageref{lst:valrep3}. The full code can also be
+found at github:
 \begin{center}
 \href{https://github.com/data-cleaning/ValidatReport}{https://github.com/data-cleaning/ValidatReport}
 \end{center}
 %
 \lstinputlisting[frame=single
   , linewidth=1.15\textwidth
-  , lastline=11
+  , lastline=36
   , float=h,caption=JSON schema for a validation report.
   , label=lst:valrep1]{../json/validation_report.json}
 %
 %
 \newpage
 
-\lstinputlisting[frame=single
-  , linewidth=1.15\textwidth
-  , firstnumber=12
-  , firstline=12
-  , lastline=36
-  , float=h,caption=JSON schema for a validation report---continued.
-  , label=lst:valrep2]{../json/validation_report.json}
+%\lstinputlisting[frame=single
+%  , linewidth=1.15\textwidth
+%  , firstnumber=12
+%  , firstline=12
+%  , lastline=36
+%  , float=h,caption=JSON schema for a validation report---continued.
+%  , label=lst:valrep2]{../json/validation_report.json}
 
 
 \newpage
