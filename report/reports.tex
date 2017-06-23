@@ -1,11 +1,11 @@
 \section{Validation reports}
 \label{sect:basicreports}
-Recall that a \emph{validation} is a tuple $(e,d,f,v)$ ($v\in\{0,1,\na{}\})$
-and an \emph{aggregation} is a tuple $(e,d,f,a)$ with $a$ an aggregate value.
-In both cases, $e$ refers to the event that where the expression $f$ was
-evaluated to create the result ($v$, or $a$) and $d$ refers to the data evolved
-in evaluating the expression as well as the data related to the interpretation
-of the result. 
+Recall that a \emph{validation} is a tuple $(e,d,f,v)$ and an
+\emph{aggregation} is a tuple $(e,d,f,a)$. Here ($v\in\{0,1,\na{}\})$ is a
+validatin result and $a$ is an aggregate value.  In both cases, $e$ refers to
+the event that where the expression $f$ was evaluated to create the result
+($v$, or $a$) and $d$ refers to the data evolved in evaluating the expression
+as well as the data related to the interpretation of the result. 
 
 The tuples are constructed to make  the values $a$ and $v$ identifiable
 (Demand~\ref{dem:identify}).  The following recursive construction defines
@@ -16,6 +16,10 @@ aggregable (Demand~\ref{dem:aggregate}).
 \begin{enumerate}[topsep=0pt,itemsep=0pt]
 \item The empty set $\{\}$ is a validation report.
 \item If $(e,r,d,v)$ is a  validation then $\{(e,d,r,v)\}$ is a validation report.
+\end{enumerate}
+Note that $\{(e,d,r,v)\}$ is a trivial DAG, with a single node and no edges.
+\begin{enumerate}
+\setcounter{enumi}{2}
 \item If $V$ and $W$ are combinable in the sense of
 Definition~\ref{def:compatibledag}, then $V\cup W$ is also a validation report.
 \item If $V$ is a validation report, $f$ is an expression, and  $S$ is a subset of $V$  
@@ -33,11 +37,13 @@ result $f(S)$ pertains.
 The first step is a formality, allowing for the edge case of empty reports.  By
 applying the second and third step repeatedly, a report can be populated with
 identifiable validation results (validations). Observe that as long as we are
-only adding validations, the validation reports are trivially combinable
-since it can be interpreted as an edgeless graph (see under
+only adding validations, the validation reports are trivially combinable since
+it can be interpreted as an edgeless graph (see under
 definition~\ref{def:compatibledag}). In step four, an identifiable aggregate
 (aggregation) is constructed that is compatible with the validation report to
-which it is added.
+which it is added. Remember that an aggregation object also stores the edges to
+the nodes that were used to construct it so this definition indeed constructs a
+directed acyclic graph.
 
 Now that we have a conceptual definition of a validation report, that satisfies
 all three demands, we can move forward and define the identifying pieces of
@@ -122,14 +128,14 @@ status was changed.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Identification of data}
 \label{sect:iddata}
-The validation report needs to identify two data sets for each reported
-validation result or aggregate: the set of datapoints that was involved in
-evaluating the expression and the set of datapoints related to the
-interpretation of the result.  The dataset that is used to evaluate an
-expression will be referred to as the \emph{source} data while the dataset that
-is related to the interpretation of the result will be referred to as the
-\emph{target} data. In many cases these will coincide but  see
-Equation~\ref{eq:hbfun} on Page~\pageref{eq:hbfun} for a counterexample.
+The validation report identifies two data sets for each reported validation
+result or aggregate: the set of datapoints that was involved in evaluating the
+expression and the set of datapoints related to the interpretation of the
+result. The dataset that is used to evaluate an expression will be referred to
+as the \emph{source} data while the dataset that is related to the
+interpretation of the result will be referred to as the \emph{target} data. In
+many cases these will coincide but  see Equation~\ref{eq:hbfun} on
+Page~\pageref{eq:hbfun} for a counterexample.
 
 
 \begin{spec}{Mandatory identification of validated data.}{}

@@ -1,4 +1,5 @@
 \section{Aggregation}
+\label{sect:aggregation}
 An inventorisation of aggregates desired by users of validation reports
 yielded a wide range of desires\footnote{Inventories were taken at 
 the ESSnet Validat Integration meeting in \"Orebro Sweden (14-16 February 2017) and during
@@ -36,7 +37,7 @@ add an aggregate counting the number of passes in a certain subset
 (Figure~\ref{fig:graph1}).  In Figure~\ref{fig:graph2}, a second count is
 added, as well as an overall count that is composed of the two low-level
 aggregates. Figure~\ref{fig:graph3} depicts a situation where a subset of
-validation results are combined to form aggregates of several types: the number
+validation results is combined to form aggregates of several types: the number
 of passes and the fraction of passes.
 %
 \begin{figure}[!t]
@@ -64,7 +65,7 @@ These examples suggest that aggregates can be interpreted as nodes in a
 directed graph where the edges (arrows) point from the aggregate to the nodes
 used to compute the contents of the node. Nodes that have no outgoing edges
 (leaves) correspond one-to-one with validation results.  The collection of
-nodes and edges contain sufficient structure to make the representation of
+nodes and edges contains sufficient structure to make the representation of
 validation reports identifiable, combinable, and (recursively) aggregable. In
 the following paragraph we define more closely the type of graph that can be
 used to represent an aggregation structure.
@@ -108,20 +109,22 @@ purpose of structuring validation aggregates.
 A \emph{simple finite directed graph} is a pair  $(V,E)$ where $V$ is a finite set and $E$
 is a set of pairs $(v_1,v_2)$ with $v_1,v_2\in V$ and $v_1\not=v_2$.
 \end{definition}
-In this definition, the term \emph{simple} means that there are no loops (edges
-that start where they begin, like $(v_1,v_1)$). The term \emph{directed} mean
+The term \emph{directed} means
 that edges have a direction: the edge $(v_1,v_2)$ can be thought of as an
 arrow, pointing from $v_1$ to $v_2$ and therefore differs from ($v_2$,$v_1$).
-The term \emph{simple} also indicates that each pair of nodes is connected by
-at most two, opposite pointing arrows.
+The first element of an edge is referred to as the \emph{start} and the second
+element is referred to as the \emph{end} of the edge. In a simple
+directed graph there are no loops (edges whose start and end are the same)
+and there are maximally two opposite-pointing edges that connect two
+nodes.
 
-A validation report can be represented by a more special graph. To define
-it, we first need the concept of a path.
+A validation report can be represented by a more special graph. To define it,
+we first need the concept of a paths and cycles.
 \begin{definition}[path, cycle]
 \label{def:pathcycle}
-Given a simple finite directed graph $(V,E)$. A \emph{path} is a sequence of
-edges $e_1,e_2,\ldots,e_n$ such that the start of $e_j$ is equal to the end of
-$e_{j+1}$ for $j=2,3,\ldots,n$. A \emph{cycle} is a path such that the end of
+A \emph{path} is a sequence of edges edges $e_1,e_2,\ldots,e_n$ such that the 
+end of $e_j$ is equal to the start of
+$e_{j+1}$ for $j=1,2,\ldots,n-1$. A \emph{cycle} is a path such that the end of
 $e_n$ is equal to the start of $e_1$.
 \end{definition}
 A path is thus a sequence of connected edges. Since aggregation works bottom-up
@@ -141,15 +144,16 @@ computing \citep{gupta2003spark}.
 Simple graphs have a natural rule of composition. The `sum' of two simple
 (directed) graphs is obtained as the union of the two vertex sets and the union
 of the two edge sets. For a DAG, this combination rule does not always apply
-since we are not allowed to have more than a single edge between any pair of
-nodes.  We therefore define the following compatibility rule for directed acyclic
-graphs.
+since such a combination could in principle introduce cycles. (As an example,
+combine the DAGs $({a,b},{(a,b)})$ and $({a,b},{(b,a)})$, the result is no
+longer a DAG). We therefore define the following compatibility rule for
+directed acyclic graphs.
 \begin{definition}[Compatible DAGs]
 \label{def:compatibledag}
 Given two DAGs $G=(V,E)$ and $F=(V',E')$. These graphs are called
 \emph{compatible} when the combination
 \begin{align*}
-G\oplus F = (V\cup V', E\cup E'),
+ (V\cup V', E\cup E'),
 \end{align*}
 is also a DAG.
 \end{definition}
@@ -159,9 +163,8 @@ aggregations, to be defined below) should always check for compatibility of the
 reports upon combination. 
 
 One case compatible graphs occurs when both $G$ and $F$ are edgeless. Two
-reports that do not contain any aggregates satisfy this condition. If $F\cap
-G=\varnothing$ so $F$ and $G$ have no nodes or edges in common, they are also
-compatible. 
+reports that do not contain any aggregates satisfy this condition. If and $G$
+have no nodes or edges in common, they are also compatible. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -178,14 +181,15 @@ The aggregate
 a = k - \sum_{j=1}^{k}v_j,
 \end{align*}
 counts the number of violations in the first subset. In this case, the
-aggregate is aimed to communicate a fact about the set used in the calculation.
+aggregate communicates a fact about the set used in the calculation.
 Now consider
 \begin{align*}
 a' = \frac{a}{n-\sum_{j=1}^n{v_j}}.
 \end{align*}
 This aggregate is the fraction of all failures that occur in the first subset.
-Although every validation result is used to compute it, the aggregate is
-intended to communicate something about a particular subset of the results.
+Although every validation result is used to compute it, such aggregates are
+usually reported in a table with one column stating the subset (e.g. the
+economic sector) and one column stating the aggregate value. 
 
 For this reason it is proposed that the validation report provides explicit
 room to communicate cases where by intention, the value set to which an
@@ -201,13 +205,10 @@ aggregation, $f$ the aggregating expression, and $v$ the aggregate value.
 \end{definition}
 We leave open the possibility that the elements $e$, $d$ and $f$ are again
 tuples. In particular, $d$ may identify both the data used while evaluating a
-rule and the data to which the aggregate value pertains.  Like
+rule and the data to which the aggregate value pertains.  Observe also that the
+data element ($d$) fixes the edges of the aggregation graph.  Like
 Definition~\ref{def:confrontation}, this is not a definition in a precise
 mathematical sense. Rather it is something that can be tested in a particular
 practical software/data environment. 
-
-Considering again the graph structure of an aggregate, we see that an
-aggregation stores information on the content of the aggregate node and on the
-edges that connect it to the data used in its construction.
 
 

@@ -1,5 +1,5 @@
 \section{Evaluation events}
-\label{evaluations}
+\label{sect:evaluations}
 Figure~\ref{fig:eval} depicts the concepts involved in creating a result by
 evaluating a validating or aggregating expression. Conceptually, the \textsf{data}
 consists of values bound to variable names. The \emph{expression} denotes, using
@@ -11,8 +11,10 @@ In the \emph{evaluation} event, the following activities take place
 stored in \emph{data}.
 \item Evaluate the expression, creating the \emph{result}.
 \end{enumerate}
-As a demonstration that both validation and aggregation fit in this description,
-consider the following two examples.
+In actual implementations these processes can be optimized. For example when
+the same expression is evaluated with multiple data sets, the first step needs
+to be executed only once. As a demonstration that both validation and
+aggregation fit in this description, consider the following two examples.
 %
 \begin{figure}
 \centering

@@ -10,7 +10,8 @@ of missing data, yielding \na{}.
 %
 \begin{table}
 \centering
-\caption{Example data, validation rules, and results}
+\caption{Example data, validation rules, and results for six validation 
+events.}
 \begin{tabular}{rccccb{4cm}}
 \hline
 &\multicolumn{2}{c}{\textbf{Variables}}&&\multicolumn{2}{c}{\textbf{Rules}}\\
@@ -52,13 +53,14 @@ to define aggregators in later chapters.
 
 A recurring point of discussion is whether \na{} should be an allowed
 validation result. The main other options are to either interrupt execution, or
-to interpret the result as failed when one of the data points
-necessary for evaluating a rule is missing. Because statistical data often
-suffers from missing data the first option would yield many interruptions of a
-statistical process flow, unless each rule guards against it by building in
-clauses that detect missing values explicitly. The second option (\na{} implies
-\onwaar{}) would yield a loss of information. More importantly, it assumes
-(possibly unwarranted) that the user of the result follows this interpretation.
+to interpret the result as failed when one of the data points necessary for
+evaluating a rule is missing. Because statistical data often suffers from
+missing data the first option would yield many interruptions of a statistical
+process flow. The only way to prevent that woudl be to make sure that each rule
+guards against it explicitly by building in clauses that detect missing values.
+The second option (\na{} implies \onwaar{}) would yield a loss of information.
+More importantly, it assumes (possibly unwarranted) that the user of the result
+follows this interpretation.
 
 We deem both alternatives undesirable and therefore follow the definition
 above, which also agrees with the definition of a formal data validation
@@ -89,12 +91,12 @@ fixed parameter. To evaluate this rule $x^*$ must be computed which implies
 that the whole of $\la{x}$ must be known. This means that in a formal sense the
 rule is a validation of $\la{x}$ as a whole. After all, changing any value
 $x_{i}$ may influence the result for even when $i\not=j$. The aim is of course
-to evaluate the rule $m$ times, once for each value $x_j$ where the goal is to
+to evaluate the rule $n$ times, once for each value $x_j$ where the goal is to
 evaluate the value of $x_j$, not the combination of values $\la{x}$ $n$ times.
 
 For this reason it is proposed that the validation report provides explicit
 room to communicate cases where by intention, the validated data is not
-identical to the data used in evaluation of a rule. 
+identical to the data used in the evaluation of a rule. 
 %
 \begin{definition}[validation] 
 A \emph{validation} is a tuple $(e,d,f,v)$, where $e$ identifies the
@@ -104,7 +106,7 @@ generated validation result.
 \label{def:confrontation}
 \end{definition}
 %
-We leave open the possibility that the components $e$, $r$ and $d$ consist of
+We leave open the possibility that the components $e$, $f$ and $d$ consist of
 informative tuples to identify subcomponents of the event, data, or rule.  In
 particular, $d$ will contain information on the data used to evaluate the rule
 as well as the data to which the result pertains. Note that the above
