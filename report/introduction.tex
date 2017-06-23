@@ -31,9 +31,10 @@ report structure that can be used in \emph{any validation task} in \emph{any
 organisation} in any \emph{statistical domain}.  To make it applicable in
 machine to machine communication contexts as well as in human contexts we
 design a machine-readable as well as a human readable format.
+This report focusses on the machine-readable version.
 
 The approach we have taken is a combination of a top-down apprach and a
-botom-up approach.  In the bottom-up approach a number of example validation
+bottom-up approach.  In the bottom-up approach a number of example validation
 reports from member states and Eurostat were collected and studied to identify
 common elements.  This resulted in a long-list of validation report elements
 categorized into several classes such as rule metadata, process metadata,
@@ -52,13 +53,15 @@ their validation output.
 In this deliverable we address the following aspects: In
 Chapter~\ref{sect:demands} we ask ourselves what we should expect from a
 generic validation report.  After some elaboration on the variety in richness
-of a validation report, we define a number of generic demands.  In
-Chapter~\ref{sect:identifying} we define some core elements to be used in the
-definition of the validation report structure such as a validation result and a
-validation event.  In Chapter~\ref{sect:basicreports} we formally define a
-validation report for basic validation results. In Chapter~\ref{sect:extended}
-we discuss the structure of aggregates, in light of the demands laid out in
-Chapter~\ref{sect:demands}. Chapter~\ref{sect:extended} then defines the report
+of a validation report, we define a number of generic demands. In
+Chapter~\ref{sect:evaluations} the idea of validation events and 
+aggregation events will be explained.
+Chapter~\ref{sect:identifying} explains how to identify validation results
+and other core elements to be used in the
+definition of the validation report structure.
+In Chapter~\ref{sect:aggregation} we dive deeper into the modeling of aggregates
+to be contained in a validation report.
+In Chapter~\ref{sect:reports} we formally define the generic validation report 
 structure that can carry both basic and aggregated results.
 Chapter~\ref{sect:standards} describes the technical implementation of the
 concepts developed in the earlier Chapters.  Finally,
