@@ -1,0 +1,54 @@
+[
+  {
+    "id": "agg1",
+    "type": "aggregation",
+    "event": {
+      "time": "20150930T104052+0200",
+      "actor": "Triton demo 2",
+      "agent": null,
+      "trigger": null
+    },
+    "expression": {
+      "language": "VBA",
+      "expression": "COUNT",
+      "severity": "information",
+      "description": "Totalt antal fel",
+      "status": ""
+    },
+    "data": {
+      "source": null,
+      "target": null,
+      "description": ""
+    },
+    "value": "17"
+  },
+  {
+    "id": "A_22",
+    "type": "validation",
+    "event": {
+      "time": "20150930T104041+0200",
+      "actor": "Triton demo 2",
+      "agent": null,
+      "trigger": null
+    },
+    "expression": {
+      "language": "VBA",
+      "expression": "Om(B1; PersonNr10; 0; 
+            T.Substring(KO;9;0;N, KO;1;0;N)) >= (KO;0;T)",
+      "severity": "error",
+      "description": 
+          "A_22 Personnummer maste anges med 10 tekken.",
+      "status": ""
+    },
+    "data": {
+      "source": "["invarna i Sverige",
+              "underskning",
+              "5510112641",
+              "PersonNr10"]",
+      "target": null,
+      "description": ""
+    },
+    "value": "0"
+  }
+  ... other evaluation results ...
+]

@@ -1,0 +1,88 @@
+[
+  {
+    "id": "aggr",
+    "type": "aggregation",
+    "event": {
+      "time": "",
+      "actor": "",
+      "agent": null,
+      "trigger": null
+    },
+    "expression": {
+      "language": "VTL 1.1",
+      "expression": "COUNT",
+      "description": "Total nr of revisions above threshold",
+    },
+    "data": {
+      "source": ["WC001", "WC002", "WC003", "WC004"],
+      "target": null,
+      "description": "EU member states"
+    },
+    "value": "4"
+  },
+  {
+    "id": "WC001",
+    "type": "validation",
+    "event": {
+      "time": "20150930T104041+0200",
+      "actor": "Laura Vignola",
+      "agent": null,
+      "trigger": null
+    },
+    "expression": {
+      "language": "VTL 1.1",
+      "expression": "
+        ds_esa_current_filt = 
+          ds_esa_current [ 
+            filter (PRICE = 'V' and PRICE = 'Y') ];
+
+        ds_esa_previous_filt = 
+          ds_esa_previous [ 
+            filter (PRICE = 'V' and PRICE = 'Y') ];
+
+        ds_esa_current_pcent = 
+          ds_esa_current_filt [ STO = 'P3' ] / 
+            ds_esa_current_filt [ STO = 'B1GQ' ];
+
+        ds_esa_previous_pcent = 
+          ds_esa_previous_filt [ STO = 'P3' ] / 
+            ds_esa_previous_filt [ STO = 'B1GQ' ];
+
+        ds_result_5 := check( abs( 
+          ds_esa_current_pcent.obs_value - 
+            ds_esa_previous_pcent.obs_value ) ) <= 0.015, 
+          errorcode('Deviation larger than 1.5% between 
+            revised figures and previous version for 
+            the ratio final consumption expenditure / GDP 
+            at market price'), 
+          errorlevel('Error') ) ; ",
+      "severity": "error",
+      "description": "
+          For current prices (PRICE='V') and previous year 
+          prices (PRICE='Y'), the difference between
+          - revised figures of final consumption expenditure 
+            (STO='P3') as a % GDP at market price 
+            (STO:'B1GQ') 
+          - and the same ratio for the previous 
+            transmission should not be higher than 1.5% 
+          => deviation of 1.5% maximum accepted for the ratio 
+            (final consumption expenditure / 
+             GDP at market price) in the revised figures.",
+      "status": ""
+    },
+    "data": {
+      "source": [
+        [ "prices", "2014Q1-first"  ,"AT",
+          "final consumption expenditure"
+        ],
+        [ "prices","2014Q1-revised","AT",
+          "final consumption expenditure"
+        ]
+      ],
+      "target": null,
+      "description": ""
+    },
+    "value": "0"
+  }
+  ... the other evaluation results...
+]

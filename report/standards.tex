@@ -4,63 +4,19 @@ In this section we define explicitly the technical data exchange format for the
 logical structures defined in the previous subsections.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{File encoding and data storage format per type}
-Below we propose a JSON format \citep{ecma2013json} for exchanging data
-validation reports.  Although it is a textual format, the JSON standard does
-not impose restrictions on the encoding used. It is left explicitly to
-standards built upon JSON to define an encoding \citep[pp ii]{ecma2013json}. In
-this standard we follow the currently most widely applied standard (see
-Figure~\ref{fig:encoding}) with the following demand.
-
-\begin{center}
-\captionof{table}{File encoding used for validation reports}
-\label{tab:encoding}
-\begin{tabular}{|p{0.97\textwidth}|}
-\hline
-Validation reports  are encoded in \code{UTF-8}.\\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.7\textwidth]{fig/encoding_use.pdf}
-\caption{Percentages of encoding standards used on the web \citep{w3techs2017}.}
-\label{fig:encoding}
-\end{figure}
-
-The different data types within a file are to be formatted according to
-commonly used standards where possible. In particular, data in validation
-reports are encoded as stated in Table~\ref{tab:dataformat}.
-\begin{center}
-\captionof{table}{Format of data types in validation reports.}
-\begin{tabular}{|lp{0.92\textwidth}|}
-\hline
-1&Numbers are encoded in a valid decimal ISO/IEC/IEEE 60559:2011 (IEEE 754) format
-\citep{ieee:2008}. \\
-2&Date-time data shall be denoted in ISO 8601 format \code{YYMMDDTHHmmss+HHMM} \citep{iso2004data}. \\
-\hline
-\end{tabular}
-\label{tab:dataformat}
-\end{center}
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{JSON Schemas}
-The JSON message consists of records that are either of type validation,
-or aggregation. The former are schematically represented as follows
+\subsection{Object model}
+The validation report structure consists of records that are either of
+type validation, or aggregation. The former are schematically represented as
+follows
 \begin{align*}
 \textsf{validation}&:=\langle
   \textsf{id}
-, \textsf{type}:=\code{"validation"}
+, \textsf{type}=\code{"validation"}
 , \textsf{event}
 , \textsf{rule}
 ,\textsf{data}
 ,\textsf{value}\rangle\\
-\textsf{event} &= \langle
+\textsf{event} &:= \langle
   \textsf{time}
 , \textsf{actor}
 , agent
@@ -101,9 +57,73 @@ Objects of type type `aggregation' are schematically described as
 \end{align*}
 where `value' is the aggregate value, represented as a string.
 
-These object types are translations of Definitions~\ref{def:validationresult},
-\ref{def:confrontation} and \ref{def:aggregation}, with components derived from
-the logical descriptions in \S\ref{sect:basicreportstructure}.
+The above description serves as a quick reference data structure, independent
+of the implementation language. It encompasses
+Definitions~\ref{def:validationresult}, \ref{def:confrontation} and
+\ref{def:aggregation}, with components derived from the logical descriptions in
+\S\ref{sect:basicreportstructure}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Implementation}
+
+Below we propose a technical format for exchanging data
+validation reports. There are several common standards allowing for
+implementation of structured data exchange, including textual formats such as
+XML \citep{xml}, YAML \citep{yaml}, JSON \citep{ecma2013json} and popular binary
+formats such as protobuf \citep{protobuf}. In principle, any of these formats
+can be used to serialize the validation and aggregation data structures that
+were in the previous subsection. Here, we use the JSON format because of
+simplicitly, wide support in many languages, and the availability
+of a schema definition language \citep{galiegue2013json}. Moreover, JSON
+strings parse straight into javascript objects, facilitating further processing
+and visualisation, for example in the popular \texttt{d3.js} framework
+\citep{bostock2011data}. This implementation can be used as a reference and it
+is left to the user to implement the concepts in another language if so
+desired.
+
+
+Although it is a textual format, the JSON standard does not impose restrictions
+on the encoding used. It is left explicitly to standards built upon JSON to
+define an encoding \citep[pp ii]{ecma2013json}. In this standard we follow the
+currently most widely applied standard (see Figure~\ref{fig:encoding}) with the
+following demand.
+
+\begin{center}
+\captionof{table}{File encoding used for validation reports}
+\label{tab:encoding}
+\begin{tabular}{|p{0.97\textwidth}|}
+\hline
+Validation reports  are encoded in \code{UTF-8}.\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{fig/encoding_use.pdf}
+\caption{Percentages of encoding standards used on the web \citep{w3techs2017}.}
+\label{fig:encoding}
+\end{figure}
+
+The different data types within a file are to be formatted according to
+commonly used standards where possible. In particular, data in validation
+reports are encoded as stated in Table~\ref{tab:dataformat}.
+\begin{center}
+\captionof{table}{Format of data types in validation reports.}
+\begin{tabular}{|lp{0.92\textwidth}|}
+\hline
+1&Numbers are encoded in a valid decimal ISO/IEC/IEEE 60559:2011 (IEEE 754) format
+\citep{ieee:2008}. \\
+2&Date-time data shall be denoted in ISO 8601 format \code{YYMMDDTHHmmss+HHMM} \citep{iso2004data}. \\
+\hline
+\end{tabular}
+\label{tab:dataformat}
+\end{center}
+
+
+
+
+
 
 The JSON scheme defining these objects can be found in the listings on
 pages~\pageref{lst:valrep1}--\pageref{lst:valrep3}. The full code can also be
@@ -111,22 +131,24 @@ found at github:
 \begin{center}
 \href{https://github.com/data-cleaning/ValidatReport}{https://github.com/data-cleaning/ValidatReport}
 \end{center}
-%
+
+\newpage
 \lstinputlisting[frame=single
   , linewidth=1.15\textwidth
-  , lastline=36
-  , float=h,caption=JSON schema for a validation report.
+  , caption=JSON schema for a validation report.
   , label=lst:valrep1]{../json/validation_report.json}
+
+\label{lst:valrep3}
 %
 %
 \newpage
 
 
 
-\lstinputlisting[frame=single
-  , linewidth=1.15\textwidth
-  , firstnumber=37
-  , firstline=37
-  , float=h,caption=JSON schema for a validation report---continued.
-  , label=lst:valrep3]{../json/validation_report.json}
+%\lstinputlisting[frame=single
+%  , linewidth=1.15\textwidth
+%  , firstnumber=35
+%  , firstline=35
+%  , float=h,caption=JSON schema for a validation report---continued.
+%  , label=lst:valrep3]{../json/validation_report.json}
 

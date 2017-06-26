@@ -1,78 +1,82 @@
 { 
-  "title"  : "validation report v0.8.0",
+  "title"  : "validation report RFC 0.9.0",
   "id"     : "https://goo.gl/PhHurj",
   "$schema": "http://json-schema.org/draft-04/schema#", 
     "type" : "array",
-      "items" : {
-        "oneOf" : [
-          {"$ref" : "#/definitions/validation"},
-          {"$ref" : "#/definitions/aggregation"}
-        ]
-      },
+    "items" : {
+      "oneOf" : [
+        {"$ref" : "#/definitions/validation"},
+        {"$ref" : "#/definitions/aggregation"}
+      ]
+    },
   "definitions" : {
     "validation" : {
       "type" : "object",
-        "properties" : 
-        {
-          "id"         : { "type" : "string" },
-          "type"       : { "enum" : ["validation"] },
-          "event"      : { "$ref" : "#/definitions/event" },
-          "expression" : { "$ref" : "#/definitions/rule"  },
-          "data"       : { "$ref" : "#/definitions/data"  },
-          "value"      : { "enum" : ["0", "1", "NA"] }
-        }
+      "properties" : {
+        "id"         : { "type" : "string" },
+        "type"       : { "enum" : ["validation"] },
+        "event"      : { "$ref" : "#/definitions/event" },
+        "expression" : { "$ref" : "#/definitions/rule"  },
+        "data"       : { "$ref" : "#/definitions/data"  },
+        "value"      : { "enum" : ["0", "1", "NA"] }
+      }
     },
     "aggregation" : {
       "type" : "object",
-        "properties" : 
-        {
-          "id"         : { "type" : "string" },
-          "type"       : { "enum" : ["aggregation"] },
-          "event"      : { "$ref" : "#/definitions/event" },
-          "expression" : { "$ref" : "#/definitions/aggregate" },
-          "data"       : { "$ref" : "#/definitions/data"  },
-          "value"      : { "type" : "string" }
-        }
+      "properties" : {
+        "id"         : { "type" : "string" },
+        "type"       : { "enum" : ["aggregation"] },
+        "event"      : { "$ref" : "#/definitions/event" },
+        "expression" : { "$ref" : "#/definitions/aggregate" },
+        "data"       : { "$ref" : "#/definitions/data"  },
+        "value"      : { "type" : "string" }
+      }
     },
     "event" : {
       "type" : "object", 
-        "properties" :
-        {
-          "time"    : { "type" : "string" },
-          "actor"   : { "type" : "string" },
-          "agent"   : {},
-          "trigger" : {}
-        }, "required"  : ["time", "actor"]
+      "properties" : {
+        "time"    : { "type" : "string" },
+        "actor"   : { "type" : "string" },
+        "agent"   : {},
+        "trigger" : {}
+      }, 
+      "required"  : ["time", "actor"]
     },
     "rule" : {
       "type" : "object",
-        "properties" : 
-        {
-          "language"   : { "type" : "string" },
-          "expression" : { "type" : "string" },
-          "severity"   : { "enum" : 
-            ["information", "warning", "error"]},
-          "description": { "type" : "string" },
-          "status"     : { "type" : "string" }
-        }, "required" : ["language", "expression", "severity"]
+      "properties" : {
+        "language"   : { "type" : "string" },
+        "expression" : { "type" : "string" },
+        "severity"   : { "enum" : 
+          ["information", "warning", "error"]},
+        "description": { "type" : "string" },
+        "status"     : { "type" : "string" }
+      }, 
+      "required" : ["language", "expression", "severity"]
     },
     "aggregate" : {
       "type" : "object",
-        "properties" : 
-        {
-          "language"   : { "type" : "string" },
-          "expression" : { "type" : "string" },
-          "description": { "type" : "string" }
-        },
-        "required" : ["language", "expression"]
+      "properties" : {
+        "language"   : { "type" : "string" },
+        "expression" : { "type" : "string" },
+        "description": { "type" : "string" }
+      },
+      "required" : ["language", "expression"]
     },
     "data" : {
       "type" : "object",
-        "properties" : {
-          "source" : "array", "items" : {"type" : "string"},
-          "target" : "array", "items" : {"type" : "string"},
-          "description" : { "type" : "string"}
-        }, "required" : ["source", "target"]
+      "properties" : {
+        "source" : {
+          "type" : "array", 
+          "items" : {"type" : "string"}
+        },
+        "target" : {
+          "type" : "array", 
+          "items" : {"type" : "string"}
+        },
+        "description" : { "type" : "string"}
+      }, 
+      "required" : ["source", "target"]
     }
   }
 }
