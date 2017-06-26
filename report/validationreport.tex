@@ -9,11 +9,13 @@
 \usepackage{listings}
 \usepackage{enumitem}
 
+\newcommand{\version}{RFC version 0.9.0 \today}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \rhead{\leftmark}
 \lhead{}
-\lfoot{CONCEPT \today}
+\lfoot{\version{}}
 \rfoot{\thepage}
 \cfoot{}
 
@@ -46,25 +48,28 @@ language=C
 
 \newcommand{\la}[1]{\boldsymbol{#1}}
 
-\title{Validation report structure}
-\author{Mark van der Loo and Olav ten Bosch\thanks{
-Statistics Netherlands, Henri Faasdreef 312 2492 JP The Hague
-}}
-\date{\today\\
-\vspace{1cm}
-Deliverable xx for the ESSnet Validat Integration
+\title{Design of a generic machine-readable validation report structure}
+\author{Mark van der Loo and Olav ten Bosch\\
+\emph{Statistics Netherlands}
+}
+\date{\version{}\\
+\begin{picture}(0,0)
+\put(150,350){\includegraphics[height=2.5cm]{fig/logo_validat_integration.png}}
+\end{picture}
 }
 
+
+%% specification table
 \newenvironment{spec}[2]
 {
-\begin{minipage}{\textwidth}
-\begin{center}
-\captionof{table}{#1. Fields marked with a ${}^\dagger$ are for
-validation results only. The number of fields is #2extendable. }
-\begin{tabular}{|p{0.11\textwidth}p{0.11\textwidth}p{0.325\textwidth}p{0.325\textwidth}|}
-\hline
-\textbf{Item} & \textbf{Format} &\textbf{Description} &\textbf{Example}\\
-\hline
+  \begin{minipage}{\textwidth}
+  \begin{center}
+  \captionof{table}{#1. Fields marked with a ${}^\dagger$ are for
+  validation results only. The number of fields is #2extendable. }
+  \begin{tabular}{|p{0.11\textwidth}p{0.11\textwidth}p{0.325\textwidth}p{0.325\textwidth}|}
+   \hline
+   \textbf{Item} & \textbf{Format} &\textbf{Description} &\textbf{Example}\\
+   \hline
 }
 {
 \hline
@@ -79,6 +84,20 @@ validation results only. The number of fields is #2extendable. }
 \begin{document}
 
 \maketitle{}
+
+\thispagestyle{empty}
+\null
+\vfill{}
+\begin{description}[noitemsep]
+\item \textbf{Colofon}
+\item \version{}
+\item Deliverable of Task 14/02 for the \href{https://ec.europa.eu/eurostat/cros/content/essnet-validat-integration_en}{ESSnet Validat Integration}
+\item European Union Grant agreement N$^\circ$ 11103.2016.01-2016.739
+\item \texttt{https://ec.europa.eu/eurostat/cros/content/essnet-validat-integration}
+\item Typeset with \LaTeX
+\end{description}
+
+\newpage
 
 \tableofcontents{}
 
