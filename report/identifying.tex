@@ -29,7 +29,7 @@ Nr  & Age  & hasjob     && \code{Age >= 0} & \code{IF Age < 15 THEN hasjob == `n
 
 In the example three records on age and work status are checked against two
 rules: age must be larger than or equal to zero, and persons under 15 years old
-cannot have a job. In each case the demand on  age can be checked and and each
+cannot have a job. In each case the demand on  age can be checked and each
 record passes this test, yielding $1$ (\waar{}) as validation result. For the
 second rule, the first record passes the check since age equals 36 and the
 person has a job which is allowed by the rule. In the second case the job
@@ -56,7 +56,7 @@ validation result. The main other options are to either interrupt execution, or
 to interpret the result as failed when one of the data points necessary for
 evaluating a rule is missing. Because statistical data often suffers from
 missing data the first option would yield many interruptions of a statistical
-process flow. The only way to prevent that woudl be to make sure that each rule
+process flow. The only way to prevent that would be to make sure that each rule
 guards against it explicitly by building in clauses that detect missing values.
 The second option (\na{} implies \onwaar{}) would yield a loss of information.
 More importantly, it assumes (possibly unwarranted) that the user of the result
