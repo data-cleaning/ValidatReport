@@ -8,7 +8,7 @@
       "agent": null,
       "trigger": null
     },
-    "expression": {
+    "aggregate": {
       "language": "VBA",
       "expression": "COUNT",
       "severity": "information",
@@ -31,7 +31,7 @@
       "agent": null,
       "trigger": null
     },
-    "expression": {
+    "rule": {
       "language": "VBA",
       "expression": "Om(B1; PersonNr10; 0; 
             T.Substring(KO;9;0;N, KO;1;0;N)) >= (KO;0;T)",

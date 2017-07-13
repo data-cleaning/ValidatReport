@@ -1,5 +1,5 @@
 { 
-  "title"  : "validation report RFC 0.9.0",
+  "title"  : "validation report RFC 0.9.5",
   "id"     : "https://goo.gl/PhHurj",
   "$schema": "http://json-schema.org/draft-04/schema#", 
     "type" : "array",
@@ -16,7 +16,7 @@
         "id"         : { "type" : "string" },
         "type"       : { "enum" : ["validation"] },
         "event"      : { "$ref" : "#/definitions/event" },
-        "expression" : { "$ref" : "#/definitions/rule"  },
+        "rule"       : { "$ref" : "#/definitions/rule"  },
         "data"       : { "$ref" : "#/definitions/data"  },
         "value"      : { "enum" : ["0", "1", "NA"] }
       }
@@ -27,7 +27,7 @@
         "id"         : { "type" : "string" },
         "type"       : { "enum" : ["aggregation"] },
         "event"      : { "$ref" : "#/definitions/event" },
-        "expression" : { "$ref" : "#/definitions/aggregate" },
+        "aggregate" : { "$ref" : "#/definitions/aggregate" },
         "data"       : { "$ref" : "#/definitions/data"  },
         "value"      : { "type" : "string" }
       }

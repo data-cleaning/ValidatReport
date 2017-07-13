@@ -10,7 +10,7 @@
     },
     "expression": {
       "language": "VTL 1.1",
-      "expression": "COUNT",
+      "aggregate": "COUNT",
       "description": "Total nr of revisions above threshold",
     },
     "data": {
@@ -29,7 +29,7 @@
       "agent": null,
       "trigger": null
     },
-    "expression": {
+    "rule": {
       "language": "VTL 1.1",
       "expression": "
         ds_esa_current_filt = 
