@@ -99,20 +99,20 @@ room to communicate cases where by intention, the validated data is not
 identical to the data used in the evaluation of a rule. 
 %
 \begin{definition}[validation] 
-A \emph{validation} is a tuple $(e,d,f,v)$, where $e$ identifies the
-physical validation event, $d$ identifies the data points to which the result
-pertains, $f$ identifies the evaluated validation rule, and $v$ is the
-generated validation result.
+A \emph{validation} is a tuple $(e,d,f,v)$, where $e$ identifies the physical
+validation event, $d$ identifies the data points to which the result pertains,
+$f$ identifies the evaluated validation rule, and $v$ is the generated
+validation result.
 \label{def:confrontation}
 \end{definition}
 %
 We leave open the possibility that the components $e$, $f$ and $d$ consist of
 informative tuples to identify subcomponents of the event, data, or rule.  In
 particular, $d$ will contain information on the data used to evaluate the rule
-as well as the data to which the result pertains. Note that the above
-`definition' is not a definition in the mathematical sense.  Rather it is a
-convention that can be tested in a (software) environment where data, rules,
-and validation events have been labeled and stored.
+as well as the data under scrutiny. Note that the above `definition' is not a
+definition in the mathematical sense.  Rather it is a convention that can be
+tested in a (software) environment where data, rules, and validation events
+have been labeled and stored.
 
 
 

@@ -1,7 +1,7 @@
 \section{Aggregation}
 \label{sect:aggregation}
 A stocktaking of aggregates desired by users of validation reports
-yielded a wide range of desires\footnote{Inventories were taken at 
+yielded a wide range of wishes\footnote{Inventories were taken at 
 the ESSnet Validat Integration meeting in \"Orebro Sweden (14-16 February 2017) and during
 the Task Force on Validation meeting in Luxembourg (27 April 2017). Minutes of both
 meetings are available via \href{https://ec.europa.eu/eurostat/cros}{CROS-portal} .}.
@@ -87,13 +87,13 @@ this, consider the following example. Two institutes validate a dataset with
 turnover values against the rule \code{turnover >= 0}. The first institute
 reports the fraction of passes, while the second institute reports the results
 for each individual record. If these reports were naively combined, one could
-misinterpret the fractional value reported by the first institute as pertaining
+misinterpret the fractional value reported by the first institute as relating
 to the separate values reported by the second institute. A second example
 occurs when the first institute creates a report containing both the individual
 results and the aggregated fraction of passes. If this report is to be
 augmented with new information, for example when new records come in it should
-be clear from the report that the reported fraction of passes does not pertain
-to the records added later.
+be clear from the report that the reported fraction of passes does not concern
+the records added later.
 
 
 Graphs basically consist of elements of some set, called \emph{nodes} or
@@ -162,20 +162,20 @@ that combines extended validation reports (validation reports including
 aggregations, to be defined below) should always check for compatibility of the
 reports upon combination. 
 
-One case compatible graphs occurs when both $G$ and $F$ are edgeless. Two
-reports that do not contain any aggregates satisfy this condition. If and $G$
-have no nodes or edges in common, they are also compatible. 
+One case of compatible graphs occurs when both $G$ and $F$ are edgeless. Two
+reports that do not contain any aggregates satisfy this condition. Ifa $F$ and
+$G$ have no nodes or edges in common, they are also compatible. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Identifying aggregates}
 Just like validation results, aggregation results are created by evaluating an
 expression. Also, just like for validation results, the interpretation of to
-what dataset an aggregate pertains need not coincide with the data used to
+what dataset an aggregate relates need not coincide with the data used to
 compute the result. Consider a set of validation results
 $\la{v}=(v_1,v_2,\ldots,v_k,v_{k+1},v_{k+2},\ldots, v_n)$. Here,
-$v_1\ldots v_k$ pertain to one subset of the data under scrutiny, for example a
-certain economic sector, and $v_{k+1},\ldots,v_n$ pertain to another subset.
+$v_1\ldots v_k$ relates to one subset of the data under scrutiny, for example a
+certain economic sector, and $v_{k+1},\ldots,v_n$ relates to another subset.
 The aggregate
 \begin{align*}
 a = k - \sum_{j=1}^{k}v_j,
@@ -205,7 +205,7 @@ aggregation, $f$ the aggregating expression, and $v$ the aggregate value.
 \end{definition}
 We leave open the possibility that the elements $e$, $d$ and $f$ are again
 tuples. In particular, $d$ may identify both the data used while evaluating a
-rule and the data to which the aggregate value pertains.  Observe also that the
+rule and the data that is the subject of validation.  Observe also that the
 data element ($d$) fixes the edges of the aggregation graph.  Like
 Definition~\ref{def:confrontation}, this is not a definition in a precise
 mathematical sense. Rather it is something that can be tested in a particular
