@@ -89,7 +89,7 @@ time             & \code{datetime} & Time marking the completion of a validation
 actor         & \code{string}   & Software that or person who created the result. & \code{R package validate version 0.1.7}\\
 \end{spec}
 
-The data validation business architecture \citep{ess2017} defines a
+The `Business Architecture for ESS Validation' \citep{ess2017} defines a
 service-oriented infrastructure for data validation. In the cases where a
 client-server model is applied (the server executing validation and sending
 reports), the following extra information is recommended.
@@ -110,18 +110,17 @@ severity$^\dagger$      & enum     & \code{`error'}, \code{`warning'},
                            or \code{`information'}                & \code{`error'}\\ 
 \end{spec}
 
-The ESS validation business architecture also allows for certain up- or
+The business architecture for ESS validation also allows for certain up- or
 downgrades of the severity status for individual cases. Furthermore, it is good
 practice to explain the purpose of complicated expressions in a human-readable
 description.
 
 \begin{spec}{Recommended values for identification of a validation rule}{}
-description   & \code{string} & human-readable description of the rule. & 
+description            & \code{string} & human-readable description of the rule. & 
 Nonnegativity for age.\\
-status$^\dagger$        & \code{string} & Whether the severity level was up- or downgraded for 
-the current report. & Lowered from \code{error}.\\
+change$^\dagger$        & \code{enum} & \code{`up'}, \code{`down'}    & \code{`down'}\\
+explanation$^\dagger$ &\code{string} & Explanation for change & Nationalization of a large bank.  \\
 \end{spec}
-
 Of course the `status' field can also be used to add an explanation on why a
 status was changed.
 
@@ -135,7 +134,9 @@ result. The dataset that is used to evaluate an expression will be referred to
 as the \emph{source} data while the dataset that is related to the
 interpretation of the result will be referred to as the \emph{target} data. In
 many cases these will coincide but  see Equation~\ref{eq:hbfun} on
-Page~\pageref{eq:hbfun} for a counterexample.
+Page~\pageref{eq:hbfun} for a counterexample. There, the \emph{source}
+is the whole column of data (denoted $\la{x}$) while the \emph{target}
+is a single value of the column (denoted $x_j$). 
 
 
 \begin{spec}{Mandatory identification of validated data.}{}

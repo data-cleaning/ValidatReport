@@ -1,5 +1,5 @@
 { 
-  "title"  : "validation report RFC 0.9.5",
+  "title"  : "validation report 1.0.0",
   "id"     : "https://goo.gl/PhHurj",
   "$schema": "http://json-schema.org/draft-04/schema#", 
     "type" : "array",
@@ -48,9 +48,10 @@
         "language"   : { "type" : "string" },
         "expression" : { "type" : "string" },
         "severity"   : { "enum" : 
-          ["information", "warning", "error"]},
+          ["information", "warning", "error"] },
         "description": { "type" : "string" },
-        "status"     : { "type" : "string" }
+        "change"     : { "enum" : ["up", "down"] },
+        "explanation": { "type" : "string" }
       }, 
       "required" : ["language", "expression", "severity"]
     },
