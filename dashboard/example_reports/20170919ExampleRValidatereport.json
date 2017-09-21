@@ -1,0 +1,2663 @@
+[{
+  "id": "00001",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC01"],
+    "target":      ["REC01"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00002",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC02"],
+    "target":      ["REC02"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00003",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC03"],
+    "target":      ["REC03"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00004",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC04"],
+    "target":      ["REC04"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00005",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC05"],
+    "target":      ["REC05"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00006",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC06"],
+    "target":      ["REC06"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00007",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC07"],
+    "target":      ["REC07"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00008",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC08"],
+    "target":      ["REC08"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00009",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC09"],
+    "target":      ["REC09"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00010",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC10"],
+    "target":      ["REC10"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00011",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC11"],
+    "target":      ["REC11"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00012",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC12"],
+    "target":      ["REC12"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00013",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC13"],
+    "target":      ["REC13"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00014",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC14"],
+    "target":      ["REC14"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00015",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC15"],
+    "target":      ["REC15"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00016",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC16"],
+    "target":      ["REC16"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00017",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC17"],
+    "target":      ["REC17"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00018",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC18"],
+    "target":      ["REC18"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00019",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC19"],
+    "target":      ["REC19"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00020",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC20"],
+    "target":      ["REC20"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00021",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC21"],
+    "target":      ["REC21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00022",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC22"],
+    "target":      ["REC22"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00023",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC23"],
+    "target":      ["REC23"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00024",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC24"],
+    "target":      ["REC24"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00025",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC25"],
+    "target":      ["REC25"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00026",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC26"],
+    "target":      ["REC26"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00027",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC27"],
+    "target":      ["REC27"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00028",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC28"],
+    "target":      ["REC28"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00029",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC29"],
+    "target":      ["REC29"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00030",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC30"],
+    "target":      ["REC30"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00031",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC31"],
+    "target":      ["REC31"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00032",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC32"],
+    "target":      ["REC32"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00033",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC33"],
+    "target":      ["REC33"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00034",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC34"],
+    "target":      ["REC34"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00035",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC35"],
+    "target":      ["REC35"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00036",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC36"],
+    "target":      ["REC36"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00037",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC37"],
+    "target":      ["REC37"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00038",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC38"],
+    "target":      ["REC38"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00039",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC39"],
+    "target":      ["REC39"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00040",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC40"],
+    "target":      ["REC40"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00041",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC41"],
+    "target":      ["REC41"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00042",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC42"],
+    "target":      ["REC42"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00043",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC43"],
+    "target":      ["REC43"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00044",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC44"],
+    "target":      ["REC44"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00045",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC45"],
+    "target":      ["REC45"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00046",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC46"],
+    "target":      ["REC46"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00047",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC47"],
+    "target":      ["REC47"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00048",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC48"],
+    "target":      ["REC48"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00049",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC49"],
+    "target":      ["REC49"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00050",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC50"],
+    "target":      ["REC50"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00051",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC51"],
+    "target":      ["REC51"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00052",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC52"],
+    "target":      ["REC52"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00053",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC53"],
+    "target":      ["REC53"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00054",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC54"],
+    "target":      ["REC54"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00055",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC55"],
+    "target":      ["REC55"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00056",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC56"],
+    "target":      ["REC56"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00057",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC57"],
+    "target":      ["REC57"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00058",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC58"],
+    "target":      ["REC58"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00059",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC59"],
+    "target":      ["REC59"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00060",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(turnover - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC60"],
+    "target":      ["REC60"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00061",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC01"],
+    "target":      ["REC01"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00062",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC02"],
+    "target":      ["REC02"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00063",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC03"],
+    "target":      ["REC03"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00064",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC04"],
+    "target":      ["REC04"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00065",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC05"],
+    "target":      ["REC05"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00066",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC06"],
+    "target":      ["REC06"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00067",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC07"],
+    "target":      ["REC07"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00068",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC08"],
+    "target":      ["REC08"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00069",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC09"],
+    "target":      ["REC09"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00070",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC10"],
+    "target":      ["REC10"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00071",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC11"],
+    "target":      ["REC11"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00072",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC12"],
+    "target":      ["REC12"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00073",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC13"],
+    "target":      ["REC13"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00074",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC14"],
+    "target":      ["REC14"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00075",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC15"],
+    "target":      ["REC15"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00076",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC16"],
+    "target":      ["REC16"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00077",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC17"],
+    "target":      ["REC17"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00078",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC18"],
+    "target":      ["REC18"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00079",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC19"],
+    "target":      ["REC19"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00080",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC20"],
+    "target":      ["REC20"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00081",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC21"],
+    "target":      ["REC21"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00082",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC22"],
+    "target":      ["REC22"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00083",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC23"],
+    "target":      ["REC23"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00084",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC24"],
+    "target":      ["REC24"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00085",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC25"],
+    "target":      ["REC25"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00086",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC26"],
+    "target":      ["REC26"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00087",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC27"],
+    "target":      ["REC27"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00088",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC28"],
+    "target":      ["REC28"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00089",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC29"],
+    "target":      ["REC29"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00090",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC30"],
+    "target":      ["REC30"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00091",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC31"],
+    "target":      ["REC31"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00092",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC32"],
+    "target":      ["REC32"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00093",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC33"],
+    "target":      ["REC33"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00094",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC34"],
+    "target":      ["REC34"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00095",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC35"],
+    "target":      ["REC35"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00096",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC36"],
+    "target":      ["REC36"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00097",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC37"],
+    "target":      ["REC37"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00098",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC38"],
+    "target":      ["REC38"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00099",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC39"],
+    "target":      ["REC39"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00100",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC40"],
+    "target":      ["REC40"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00101",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC41"],
+    "target":      ["REC41"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00102",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC42"],
+    "target":      ["REC42"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00103",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC43"],
+    "target":      ["REC43"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00104",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC44"],
+    "target":      ["REC44"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00105",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC45"],
+    "target":      ["REC45"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00106",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC46"],
+    "target":      ["REC46"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00107",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC47"],
+    "target":      ["REC47"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00108",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC48"],
+    "target":      ["REC48"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00109",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC49"],
+    "target":      ["REC49"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00110",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC50"],
+    "target":      ["REC50"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00111",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC51"],
+    "target":      ["REC51"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00112",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC52"],
+    "target":      ["REC52"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00113",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC53"],
+    "target":      ["REC53"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00114",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC54"],
+    "target":      ["REC54"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00115",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC55"],
+    "target":      ["REC55"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00116",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC56"],
+    "target":      ["REC56"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00117",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC57"],
+    "target":      ["REC57"],
+    "description": ""
+  },
+  "value": "NA"
+},{
+  "id": "00118",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC58"],
+    "target":      ["REC58"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00119",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC59"],
+    "target":      ["REC59"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00120",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "abs(total.costs + profit - turnover) < 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["REC60"],
+    "target":      ["REC60"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00121",
+  "type": "validation",
+  "event": {
+    "time":    "2017-09-19 12:45:10",
+    "actor":   "R version 3.4.1 (2017-06-30) (Single Candle) running on x86_64-pc-linux-gnu",
+    "agent":   "",
+    "trigger": ""
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "mean(turnover, na.rm = TRUE) >= 0",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["NA"],
+    "target":      ["NA"],
+    "description": ""
+  },
+  "value": "1"
+}]
