@@ -131,7 +131,8 @@ function render_plots() {
 	.controlsUseVisibility(true)
 	.innerRadius(0)
 	.label(function (d) {
-		return d.key /*+" ("+ d.value+" )";*/
+		//return d.key /*+" ("+ d.value+" )";*/
+		return (d.key == 0 ? "fails" : (d.key == 1 ? "passes" : d.key)) /*+" ("+ d.value+" )";*/
 	})
 	.colors(function (d) {
 		return colorScaleValues(d);
