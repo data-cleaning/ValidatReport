@@ -109,7 +109,7 @@ d3.json('example_reports/ex-18rulesvalidatfoundation_1000.json', function (error
 		}),
 	ruleDim = ndx.dimension(function (d) {
 			if ("id" in d.rule)
-				return d.id;
+				return d.rule.id;
 			else
 				return d.rule.description.substr(0, 160);
 		})
