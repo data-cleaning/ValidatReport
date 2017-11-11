@@ -1,0 +1,30 @@
+[
+  {
+    "rule": {
+      "expression": "check(DS.hours_worked between 1 and 80)",
+      "severity": "warning"
+    },
+    "event": {
+      "time": "2017-09-01T07:51:44.933Z",
+      "actor": "Eurostat"
+    },
+    "data": {},
+    "value": "0" // failed
+  },
+  {
+    "rule": {
+      "expression": "cost + profit == turnover",
+      "severity": "error"
+    },
+    "event": {
+      "time": "2017-09-01T07:51:46.933Z",
+      "actor": "Eurostat"
+    },
+    "data": {},
+    "value": "1" // passed
+  },
+  ...
+  ...
+  ...
+]
+  
