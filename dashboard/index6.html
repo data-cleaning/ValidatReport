@@ -81,7 +81,7 @@ actorDim, actorCount, all;
 var colorScaleValues = d3.scaleOrdinal().domain(["0", "1", "NA"])
 	.range(["#FC8D59", "#91CF60", "#FFFFBF"]);
 
-d3.json("example_reports/validationReport1.0.0Test10000.json").then(function(data) {
+d3.json("example_reports/validationreport_NA.json").then(function(data) {
 	
 	ruleMap = buildRuleMap(data);
 
