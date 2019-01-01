@@ -5,14 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/dc.css"/>
+	<link rel="stylesheet" type="text/css" href="css/dc.3.0.9.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/dashboard.css"/>
 </head>
 
 <body>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-<script type="text/javascript" src="js/crossfilter.min.js"></script>
-<script type="text/javascript" src="js/dc.min.js"></script>
+<script type="text/javascript" src="js/d3.5.7.0.min.js"></script>
+<script type="text/javascript" src="js/crossfilter.1.4.6.min.js"></script>
+<script type="text/javascript" src="js/dc.3.0.9.min.js"></script>
 
 <div class="container">
 
@@ -65,6 +65,8 @@
 
 <script type="text/javascript">
 
+dc.config.defaultColors(d3.schemeAccent);
+
 var chartValue = dc.pieChart("#divChartValue"),
 chartSeverity = dc.rowChart("#divChartSeverity"),
 chartActor = dc.rowChart("#divChartActor"),
@@ -76,15 +78,10 @@ tableEvents = dc.dataTable('#divTableEvents');
 var myndx, valueDim, severityDim, agentDim, valueCount, severityCount,
 actorDim, actorCount, all;
 
-var colorScaleValues = d3.scale.ordinal().domain(["0", "1", "NA"])
+var colorScaleValues = d3.scaleOrdinal().domain(["0", "1", "NA"])
 	.range(["#FC8D59", "#91CF60", "#FFFFBF"]);
 
-var data;
-var tip;
-d3.json('example_reports/validationreport_NA.json', function (error, json) {
-	if (error)
-		return console.warn(error);
-	data = json;
+d3.json("example_reports/validationReport1.0.0Test10000.json").then(function(data) {
 	
 	ruleMap = buildRuleMap(data);
 
@@ -140,6 +137,7 @@ function render_plots() {
 	.group(severityCount)
 	.controlsUseVisibility(true)
 	.elasticX(true)
+	.ordinalColors(['#3182bd'])
 	.label(function (d) {
 		if (chartSeverity.hasFilter() && !chartSeverity.hasFilter(d.key)) {
 			return d.key + ' (0%)';
@@ -158,6 +156,7 @@ function render_plots() {
 	.group(actorCount)
 	.controlsUseVisibility(true)
 	.elasticX(true)
+	.ordinalColors(['#3182bd'])
 	.renderTitleLabel(false);
 
 	chartAgent
@@ -165,12 +164,13 @@ function render_plots() {
 	.dimension(agentDim)
 	.group(agentCount)
 	.controlsUseVisibility(true)
+	.ordinalColors(['#3182bd'])
 	.elasticX(true);
 
 	chartRule
 	.width(800)
 	.height(300)
-	.x(d3.scale.ordinal())
+	.x(d3.scaleBand())
 	.xUnits(dc.units.ordinal)
 	.brushOn(true)
 	.xAxisLabel('Rules')
@@ -185,6 +185,7 @@ function render_plots() {
 	})
 	.controlsUseVisibility(true)
 	.elasticY(true)
+	.ordinalColors(['#3182bd'])
 	.xAxis().tickFormat("")
 
 	eventCount
