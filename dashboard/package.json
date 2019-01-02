@@ -1,0 +1,22 @@
+{
+  "name": "dashboard",
+  "version": "0.0.3",
+  "description": "",
+  "main": "validationDashboard.js",
+  "scripts": {
+    "build": "webpack -d -w",
+    "prod": "webpack -p"
+  },
+  "author": "",
+  "license": "EUPL",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "merge-options": "^1.0.1"
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2"
+  }
+}
