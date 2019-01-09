@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pilot Validation Dashboard</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/dc.3.0.9.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/dashboard.css"/>
+	<link rel="stylesheet" type="text/css" href="css/datatables.min.css">
+</head>
+
+<body onload="showDashboard()">
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/d3.5.7.0.min.js"></script>
+<script type="text/javascript" src="js/crossfilter.1.4.6.min.js"></script>
+<script type="text/javascript" src="js/dc.3.0.9.min.js"></script>
+<script type="text/javascript" src="js/validationDashBoard0.0.5.Alpha.js"></script>
+<script type="text/javascript" src="js/datatables.min.js"></script>
+
+<div class="container-fluid">
+
+	<h2>Validation Dashboard <small>version 0.0.5 alpha</small></h2>
+	<p>Interactive exploration of a <a href="example_reports/Task2_Report.json">validation report</a> (json) which is a results of 
+	executing <a href="example_reports/Task2_Rules.yaml">these rules</a> (yaml) on <a href="example_reports/Task2_Data.csv">this data</a> (csv).
+	</p>
+	
+	<div id="dashboard"></div>
+	
+</div>
+
+<script type="text/javascript">
+
+function showDashboard() {
+	d3.csv("example_reports/Task2_Data.csv").then(function(data) {
+		d3.json("example_reports/Task2_Report.json").then(function(report) {
+			new validationDashboard({container: "#dashboard", data: data, report: report, idcol: "ID"})
+		})
+	})
+}
+
+</script>
+
+</body>
+</html>

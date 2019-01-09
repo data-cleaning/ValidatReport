@@ -3,4 +3,10 @@
 }
 .dc-chart .pie-slice {
     fill: black;
+	font-weight: bold;
+}
+
+.dc-chart g.row text {
+    fill: black;
+	font-weight: bold;
 }
