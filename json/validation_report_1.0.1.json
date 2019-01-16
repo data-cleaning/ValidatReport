@@ -1,5 +1,5 @@
 { 
-  "title"  : "validation report 1.0.0",
+  "title"  : "validation report 1.0.1 alpha",
   "id"     : "https://goo.gl/PhHurj",
   "$schema": "http://json-schema.org/draft-04/schema#", 
     "type" : "array",
@@ -69,11 +69,11 @@
       "properties" : {
         "source" : {
           "type" : "array", 
-          "items" : {"type" : "string"}
+          "items" : {"type" : "array"}
         },
         "target" : {
           "type" : "array", 
-          "items" : {"type" : "string"}
+          "items" : {"type" : "array"}
         },
         "description" : { "type" : "string"}
       }, 
