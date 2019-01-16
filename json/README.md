@@ -4,12 +4,12 @@ the [ESSnet validat integration project](https://ec.europa.eu/eurostat/cros/cont
 
 ### Changelog
 
-##### version 1.0.0. 
+##### Version 1.0.0 (2017-08-15)
 
-Initial release 2017-08-16
+Initial release.
 
 
-#### version 1.0.1 (alpha)
+##### Version 1.0.1 (alpha)
 
 - `[breaking]` Attibutes `source` and `target` were defined as arrays of
   strings, these are now arrays of arrays. This is to allow for data
