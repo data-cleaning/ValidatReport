@@ -1,6 +1,6 @@
 { 
-  "title"  : "validation report 1.0.0",
-  "id"     : "https://goo.gl/PhHurj",
+  "title"  : "validation report 1.0.1 alpha",
+  "id"     : "https://raw.githubusercontent.com/data-cleaning/ValidatReport/master/json/validation_report_1.0.1.json",
   "$schema": "http://json-schema.org/draft-04/schema#", 
     "type" : "array",
     "items" : {
@@ -69,11 +69,11 @@
       "properties" : {
         "source" : {
           "type" : "array", 
-          "items" : {"type" : "string"}
+          "items" : {"type" : "array"}
         },
         "target" : {
           "type" : "array", 
-          "items" : {"type" : "string"}
+          "items" : {"type" : "array"}
         },
         "description" : { "type" : "string"}
       }, 
