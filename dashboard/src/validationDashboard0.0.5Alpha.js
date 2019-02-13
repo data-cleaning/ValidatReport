@@ -11,12 +11,18 @@ const mergeOptions = require('merge-options')
 
 let _defaultOptions = {}
 let colorScaleValues = d3.scaleOrdinal().domain(["0", "1", "NA"]).range(["#FC8D59", "#91CF60", "#FFFFBF"])
+let colorScaleOpacityPasses = d3.scaleOrdinal().domain([1, 10]).range([0.4, 1]) // domain is set dynamically
+let colorScaleOpacityFails = d3.scaleOrdinal().domain([1, 10]).range([0.4, 1]) // domain is set dynamically
+let colorScaleOpacityNAs = d3.scaleOrdinal().domain([1, 10]).range([0.4, 1]) // domain is set dynamically
 let myndx, valueDim, severityDim, agentDim, valueCount, severityCount, actorDim, actorCount, all
 let ndx
+let datatable
 
 class validationDashboard {
 
 	constructor(options) {
+		//console.log(options, _defaultOptions)
+		
 		this.options = mergeOptions(_defaultOptions, options)
 		if ("container" in this.options == false) {console.log('container not set'); return; }
 		if ("data" in this.options == false) {console.log('data not set'); return; }
@@ -49,10 +55,12 @@ class validationDashboard {
 		
 		// Experimental data table:
 		let columns = []
-		for (col of Object.keys(this.options.data[0]))
-			columns.push({data: col, title: col})
+		function escapeDots(s) {return(s.replace(/\./g, "\\."))}
+		for (col of Object.keys(this.options.data[0])) {
+			columns.push({data: escapeDots(col), name: col, title: col})
+		}
 		right.append("table").attr("id", "tableData").classed("compact", true).classed("cell-border", true)
-		$('#tableData').DataTable({
+		datatable = $('#tableData').DataTable({
 			data: this.options.data,
 		    columns: columns,
 			searching: false,
@@ -92,7 +100,8 @@ class validationDashboard {
 		severityDim = ndx.dimension(d => d.rule.severity)
 		agentDim = ndx.dimension(d => d.event.agent)
 		actorDim = ndx.dimension(d => d.event.actor)
-		ruleDim = ndx.dimension(d => "id" in d.rule ? d.rule.id : this._expressionShort(d.rule.expression))
+		//ruleDim = ndx.dimension(d => "id" in d.rule ? d.rule.id : this._expressionShort(d.rule.expression))
+		ruleDim = ndx.dimension(d => "id" in d.rule ? d.rule.id : this._expressionShort(d.rule.source))
 		
 		valueCount = valueDim.group().reduceCount()
 		severityCount = severityDim.group().reduceCount()
@@ -254,21 +263,59 @@ class validationDashboard {
 	}
 	
 	_showFails() {
-		// Clean all coloring
-		let table = d3.select('#tableData')
-		table.selectAll("tr").style("background-color", "#ffffff")
+		// Clean all cells and set count to 0:
+		$( datatable.cells().nodes() ).css("background-color", '')
 		
-		let events = ndx.allFiltered()	
-		//if (ndx.size() == events.length) return
+		// Map for storing cells info:
+		let cells = new Map()
 		
-		// Color failRecs:
-		for (e of events) {
-			if (e.value == 0) {
-				let id = e.data.target[0]
-				let selector = '[id=' + '"' + id + '"'
-				let row = table.select(selector)
-				row.style("background-color", colorScaleValues(e.value))
+		// Calculate cell statistics and calculate maximum error cnt:
+		let maxCnts = new Map([["0", 0],["1", 0],["NA", 0]])
+		for (const e of ndx.allFiltered()) {
+			for (const t of e.data.target) {
+				let cellId = t[2]+t[3]
+				let item = cells.get(cellId)
+				if (!item) {
+					cells.set(cellId, {row: t[2], col: t[3], cnts: new Map([["0", 0],["1", 0],["NA", 0]]), events: []})
+					item = cells.get(cellId)
+				}
+				item.cnts.set(e.value, item.cnts.get(e.value)+1)
+				item.events.push(e)
+				
+				// Administer maxCnts:
+				if (item.cnts.get(e.value) > maxCnts.get(e.value)) maxCnts.set(e.value, item.cnts.get(e.value))
 			}
+		}
+		
+		
+		// Set domain of colorScaleOpacityCells:
+		console.log(maxCnts)
+		colorScaleOpacityPasses.domain([1, maxCnts.get("1")])
+		colorScaleOpacityFails.domain([1, maxCnts.get("0")])
+		colorScaleOpacityNAs.domain([1, maxCnts.get("NA")])
+		
+		for (var [cellId, item] of cells) {
+			let rowSelector = "#"+item.row
+			let colSelector = item.col+':name'
+			let cell = datatable.cell(rowSelector, colSelector)
+			
+			// Determine background color:
+			let failDetected = false
+			let NADetected = false
+			for (e of item.events) {
+				if (e.value == "0") { failDetected = true; break }
+				if (e.value == "NA") { NADetected = true }
+			}
+			let value = failDetected ? "0" : ( NADetected ? "NA" : "1" )
+			
+			// Set background-color:
+			let bgcolor = d3.color(colorScaleValues(value))
+			let cnt = item.cnts.get(value)
+			bgcolor.opacity = (value == "1") ? colorScaleOpacityPasses(cnt) : ( (value == "0") ? colorScaleOpacityFails(cnt) : colorScaleOpacityNAs(cnt) )
+			$( cell.node() ).css("background-color", bgcolor.toString())
+			
+			console.log(cellId, value, cnt)
+			
 		}
 		
 	}

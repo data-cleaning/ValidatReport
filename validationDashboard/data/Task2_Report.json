@@ -1,0 +1,3873 @@
+[{
+  "id": "00001",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["1"],
+    "target":      ["1"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00002",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["2"],
+    "target":      ["2"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00003",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["3"],
+    "target":      ["3"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00004",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["4"],
+    "target":      ["4"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00005",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["5"],
+    "target":      ["5"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00006",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["6"],
+    "target":      ["6"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00007",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["7"],
+    "target":      ["7"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00008",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["8"],
+    "target":      ["8"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00009",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["9"],
+    "target":      ["9"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00010",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["10"],
+    "target":      ["10"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00011",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["11"],
+    "target":      ["11"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00012",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["12"],
+    "target":      ["12"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00013",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["13"],
+    "target":      ["13"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00014",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["14"],
+    "target":      ["14"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00015",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["15"],
+    "target":      ["15"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00016",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["16"],
+    "target":      ["16"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00017",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["17"],
+    "target":      ["17"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00018",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["18"],
+    "target":      ["18"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00019",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["19"],
+    "target":      ["19"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00020",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["20"],
+    "target":      ["20"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00021",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00022",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00023",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["23"],
+    "target":      ["23"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00024",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["24"],
+    "target":      ["24"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00025",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["25"],
+    "target":      ["25"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00026",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["1"],
+    "target":      ["1"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00027",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["2"],
+    "target":      ["2"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00028",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["3"],
+    "target":      ["3"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00029",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["4"],
+    "target":      ["4"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00030",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["5"],
+    "target":      ["5"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00031",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["6"],
+    "target":      ["6"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00032",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["7"],
+    "target":      ["7"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00033",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["8"],
+    "target":      ["8"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00034",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["9"],
+    "target":      ["9"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00035",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["10"],
+    "target":      ["10"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00036",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["11"],
+    "target":      ["11"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00037",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["12"],
+    "target":      ["12"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00038",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["13"],
+    "target":      ["13"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00039",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["14"],
+    "target":      ["14"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00040",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["15"],
+    "target":      ["15"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00041",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["16"],
+    "target":      ["16"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00042",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["17"],
+    "target":      ["17"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00043",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["18"],
+    "target":      ["18"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00044",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["19"],
+    "target":      ["19"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00045",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["20"],
+    "target":      ["20"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00046",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00047",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00048",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["23"],
+    "target":      ["23"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00049",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["24"],
+    "target":      ["24"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00050",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Age - 120) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["25"],
+    "target":      ["25"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00051",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["1"],
+    "target":      ["1"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00052",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["2"],
+    "target":      ["2"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00053",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["3"],
+    "target":      ["3"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00054",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["4"],
+    "target":      ["4"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00055",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["5"],
+    "target":      ["5"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00056",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["6"],
+    "target":      ["6"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00057",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["7"],
+    "target":      ["7"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00058",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["8"],
+    "target":      ["8"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00059",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["9"],
+    "target":      ["9"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00060",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["10"],
+    "target":      ["10"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00061",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["11"],
+    "target":      ["11"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00062",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["12"],
+    "target":      ["12"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00063",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["13"],
+    "target":      ["13"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00064",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["14"],
+    "target":      ["14"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00065",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["15"],
+    "target":      ["15"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00066",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["16"],
+    "target":      ["16"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00067",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["17"],
+    "target":      ["17"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00068",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["18"],
+    "target":      ["18"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00069",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["19"],
+    "target":      ["19"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00070",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["20"],
+    "target":      ["20"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00071",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00072",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00073",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["23"],
+    "target":      ["23"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00074",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["24"],
+    "target":      ["24"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00075",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 0) >= -1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["25"],
+    "target":      ["25"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00076",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["1"],
+    "target":      ["1"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00077",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["2"],
+    "target":      ["2"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00078",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["3"],
+    "target":      ["3"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00079",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["4"],
+    "target":      ["4"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00080",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["5"],
+    "target":      ["5"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00081",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["6"],
+    "target":      ["6"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00082",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["7"],
+    "target":      ["7"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00083",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["8"],
+    "target":      ["8"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00084",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["9"],
+    "target":      ["9"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00085",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["10"],
+    "target":      ["10"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00086",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["11"],
+    "target":      ["11"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00087",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["12"],
+    "target":      ["12"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00088",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["13"],
+    "target":      ["13"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00089",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["14"],
+    "target":      ["14"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00090",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["15"],
+    "target":      ["15"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00091",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["16"],
+    "target":      ["16"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00092",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["17"],
+    "target":      ["17"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00093",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["18"],
+    "target":      ["18"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00094",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["19"],
+    "target":      ["19"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00095",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["20"],
+    "target":      ["20"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00096",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00097",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00098",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["23"],
+    "target":      ["23"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00099",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["24"],
+    "target":      ["24"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00100",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "(Working_hours - 100) <= 1e-08",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["25"],
+    "target":      ["25"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00101",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["1"],
+    "target":      ["1"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00102",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["2"],
+    "target":      ["2"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00103",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["3"],
+    "target":      ["3"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00104",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["4"],
+    "target":      ["4"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00105",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["5"],
+    "target":      ["5"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00106",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["6"],
+    "target":      ["6"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00107",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["7"],
+    "target":      ["7"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00108",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["8"],
+    "target":      ["8"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00109",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["9"],
+    "target":      ["9"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00110",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["10"],
+    "target":      ["10"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00111",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["11"],
+    "target":      ["11"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00112",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["12"],
+    "target":      ["12"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00113",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["13"],
+    "target":      ["13"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00114",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["14"],
+    "target":      ["14"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00115",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["15"],
+    "target":      ["15"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00116",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["16"],
+    "target":      ["16"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00117",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["17"],
+    "target":      ["17"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00118",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["18"],
+    "target":      ["18"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00119",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["19"],
+    "target":      ["19"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00120",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["20"],
+    "target":      ["20"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00121",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00122",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00123",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["23"],
+    "target":      ["23"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00124",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["24"],
+    "target":      ["24"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00125",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Married > 0) | (Age > 18)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["25"],
+    "target":      ["25"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00126",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["1"],
+    "target":      ["1"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00127",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["2"],
+    "target":      ["2"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00128",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["3"],
+    "target":      ["3"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00129",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["4"],
+    "target":      ["4"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00130",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["5"],
+    "target":      ["5"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00131",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["6"],
+    "target":      ["6"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00132",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["7"],
+    "target":      ["7"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00133",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["8"],
+    "target":      ["8"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00134",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["9"],
+    "target":      ["9"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00135",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["10"],
+    "target":      ["10"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00136",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["11"],
+    "target":      ["11"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00137",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["12"],
+    "target":      ["12"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00138",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["13"],
+    "target":      ["13"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00139",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["14"],
+    "target":      ["14"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00140",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["15"],
+    "target":      ["15"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00141",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["16"],
+    "target":      ["16"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00142",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["17"],
+    "target":      ["17"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00143",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["18"],
+    "target":      ["18"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00144",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["19"],
+    "target":      ["19"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00145",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["20"],
+    "target":      ["20"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00146",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00147",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00148",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["23"],
+    "target":      ["23"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00149",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["24"],
+    "target":      ["24"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00150",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Working_hours > 0) | (Employed > 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["25"],
+    "target":      ["25"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00151",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["1"],
+    "target":      ["1"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00152",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["2"],
+    "target":      ["2"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00153",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["3"],
+    "target":      ["3"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00154",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["4"],
+    "target":      ["4"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00155",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["5"],
+    "target":      ["5"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00156",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["6"],
+    "target":      ["6"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00157",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["7"],
+    "target":      ["7"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00158",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["8"],
+    "target":      ["8"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00159",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["9"],
+    "target":      ["9"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00160",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["10"],
+    "target":      ["10"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00161",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["11"],
+    "target":      ["11"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00162",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["12"],
+    "target":      ["12"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00163",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["13"],
+    "target":      ["13"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00164",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["14"],
+    "target":      ["14"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00165",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["15"],
+    "target":      ["15"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00166",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["16"],
+    "target":      ["16"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00167",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["17"],
+    "target":      ["17"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00168",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["18"],
+    "target":      ["18"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00169",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["19"],
+    "target":      ["19"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00170",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["20"],
+    "target":      ["20"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00171",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00172",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["21"],
+    "target":      ["21"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00173",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["23"],
+    "target":      ["23"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00174",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["24"],
+    "target":      ["24"],
+    "description": ""
+  },
+  "value": "0"
+},{
+  "id": "00175",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "!(Age > 65) | (Working_hours = 0)",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["25"],
+    "target":      ["25"],
+    "description": ""
+  },
+  "value": "1"
+},{
+  "id": "00176",
+  "type": "validation",
+  "event": {
+    "time":    "2018-01-31 21:41:59",
+    "actor":   "R version 3.4.3 (2017-11-30) (Kite-Eating Tree) running on i386-w64-mingw32",
+    "agent":   "Olav",
+    "trigger": "Task2_Metrics validation"
+  },
+  "rule": {
+    "language":    "R package validate 0.2.0",
+    "expression":  "any(duplicated(ID)) == FALSE",
+    "severity":    "error",
+    "description": "",
+    "status":      ""
+  },
+  "data": {
+    "source":      ["NA"],
+    "target":      ["NA"],
+    "description": ""
+  },
+  "value": "0"
+}]

@@ -22,8 +22,8 @@
 <div class="container-fluid">
 
 	<h2>Validation Dashboard <small>version 0.0.5</small></h2>
-	<p>Shows a <a href="example_reports/Task2_Report.json">validation report</a> (json) which is a results of 
-	executing <a href="example_reports/Task2_Rules.yaml">these rules</a> (yaml) on <a href="example_reports/Task2_Data.csv">this data</a> (csv).
+	<p>Shows a <a href="example_reports/retailersReport.json">validation report</a> (json) which is a results of 
+	executing <a href="example_reports/retailersRules3.yaml">these rules</a> (yaml) on <a href="example_reports/retailers.csv">this data</a> (csv).
 	</p>
 	
 	<div id="dashboard"></div>
@@ -33,9 +33,9 @@
 <script type="text/javascript">
 
 function showDashboard() {
-	d3.csv("example_reports/Task2_Data.csv").then(function(data) {
-		d3.json("example_reports/Task2_Report.json").then(function(report) {
-			new validationDashboard({container: "#dashboard", data: data, report: report, idcol: "ID"})
+	d3.csv("example_reports/SBS2000.csv").then(function(data) {
+		d3.json("example_reports/SBS2000Report.json").then(function(report) {
+			new validationDashboard({container: "#dashboard", data: data, report: report, idcol: "id"})
 		})
 	})
 }

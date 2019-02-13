@@ -1,0 +1,14 @@
+dependencies:
+- name: validationDashboard
+  version: 0.0.5
+  src: htmlwidgets/lib/validationDashboard-0.0.5
+  script:
+#    - plugins/jquery-3.3.1.min.js  # another version of jquery is already in shiny, 2 versions is a problem. 
+    - plugins/bootstrap.min.js
+    - plugins/d3.5.7.0.min.js
+    - plugins/crossfilter.1.4.6.min.js
+    - plugins/dc.3.0.9.min.js
+    - plugins/datatables.min.js
+    - validationDashBoard0.0.5.Alpha.js
+
+#    stylesheets:
