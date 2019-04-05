@@ -5,12 +5,13 @@
 #' @import htmlwidgets
 #'
 #' @export
-validationDashboard <- function(data, report, width = NULL, height = NULL, elementId = NULL) {
+validationDashboard <- function(data, report, idcol, width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
   x = list(
     data = data,
-    report = report
+    report = report,
+    idcol = idcol
   )
 
   # create widget

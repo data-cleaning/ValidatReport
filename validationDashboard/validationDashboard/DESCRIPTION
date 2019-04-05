@@ -1,8 +1,8 @@
 Package: validationDashboard
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: Daskboard for validation results
+Version: 0.0.5
+Authors@R: person("Olav", "ten Bosch", email = "o.tenbosch@cbs.nl", role = c("aut", "cre"))
+Description: Daskboard for validation results
 Depends: R (>= 3.5.2)
 License: What license is it under?
 Encoding: UTF-8

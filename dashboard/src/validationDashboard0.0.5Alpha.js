@@ -16,6 +16,7 @@ let colorScaleOpacityFails = d3.scaleOrdinal().domain([1, 10]).range([0.4, 1]) /
 let colorScaleOpacityNAs = d3.scaleOrdinal().domain([1, 10]).range([0.4, 1]) // domain is set dynamically
 let myndx, valueDim, severityDim, agentDim, valueCount, severityCount, actorDim, actorCount, all
 let ndx
+let rowIds = []
 let datatable
 let datatableShowAllRows = true
 let datatableColoredCells = new Map() // For administering metadata for each colored cell
@@ -31,7 +32,7 @@ class validationDashboard {
 		if ("idcol" in this.options == false) {console.log('idcol not set'); return; }
 		if (d3.select(this.options.container).empty()) {console.log('container not found'); return; }
 		
-		// dc needs this:
+		// dc.js needs this:
 		dc.config.defaultColors(d3.schemeAccent)
 		
 		// Create divs and headers:
@@ -50,6 +51,9 @@ class validationDashboard {
 		addDiv(left, "divChartValue", "Results")
 		addDiv(left, "divChartSeverity", "Severity")
 		addDiv(left, "divChartRule", "Rules")
+		
+		// Derive array of rowIds:
+		for (const rec of this.options.data) rowIds.push(rec[this.options.idcol])
 		
 		// Data table:
 		let columns = []
@@ -243,7 +247,6 @@ class validationDashboard {
 		ndx.onChange(eventType => {
 			if (eventType == "filtered") {
 				this._updateTable()
-				// TODO: update charts and count
 				dc.redrawAll();
 			}
 		})
@@ -269,33 +272,47 @@ class validationDashboard {
 		$( datatable.cells().nodes() ).css("background-color", '')
 		datatableColoredCells.clear()
 		
-		// Calculate cell statistics and calculate maximum error cnt:
-		let maxCnts = new Map([["0", 0],["1", 0],["NA", 0]])
+		// Build up map of colored cells with events to cells and calculate maximum fails±
+		let maxFails = 0
 		for (const e of ndx.allFiltered()) {
 			for (const t of e.data.target) {
-				let cellId = t[2]+t[3]
-				let item = datatableColoredCells.get(cellId)
-				if (!item) {
-					datatableColoredCells.set(cellId, {row: t[2], col: t[3], cnts: new Map([["0", 0],["1", 0],["NA", 0]]), events: []})
-					item = datatableColoredCells.get(cellId)
-				}
-				item.cnts.set(e.value, item.cnts.get(e.value)+1)
-				item.events.push(e)
 				
-				// Administer maxCnts:
-				if (item.cnts.get(e.value) > maxCnts.get(e.value)) maxCnts.set(e.value, item.cnts.get(e.value))
+				let rowId = t[2]
+				let colId = t[3]
+				
+				if (rowId === "NA") {
+					// Column: color all cells of column:
+					for (const rowId of rowIds) {
+						_mapCell(rowId, colId, e, datatableColoredCells)
+					}
+				} else if (colId === "NA") {
+					// Row: color all cells of record:
+					console.log("Row event: not implemented yet")
+				} else {
+					// Cell: color one cell:
+					_mapCell(rowId, colId, e, datatableColoredCells)
+				}
 			}
 		}
 		
+		function _mapCell(rowId, colId, e, datatableColoredCells) {
+			let cellId = ""+rowId+colId
+			let item = datatableColoredCells.get(cellId)
+			if (!item) item = datatableColoredCells.set(cellId, {rowId: rowId, colId: colId, events: [], failCnt: 0}).get(cellId)
+			item.failCnt++
+			item.events.push(e)
+			maxFails = Math.max(maxFails, item.failCnt)
+		}
 		
-		// Set domain of colorScaleOpacityCells:
-		colorScaleOpacityPasses.domain([1, maxCnts.get("1")])
-		colorScaleOpacityFails.domain([1, maxCnts.get("0")])
-		colorScaleOpacityNAs.domain([1, maxCnts.get("NA")])
+		// Set domains of colorScaleOpacities:
+		//colorScaleOpacityPasses.domain([1, maxCnts.get("1")])
+		colorScaleOpacityFails.domain([1, maxFails])
+		//colorScaleOpacityNAs.domain([1, maxCnts.get("NA")])
 		
+		// Color the cells:
 		for (var [cellId, item] of datatableColoredCells) {
-			let rowSelector = "#"+item.row
-			let colSelector = item.col+':name'
+			let rowSelector = "#"+item.rowId
+			let colSelector = item.colId+':name'
 			let cell = datatable.cell(rowSelector, colSelector)
 			if (cell.node()) cell.node().cellId = cellId		// Register cellId for use in mouseover
 			
@@ -314,8 +331,8 @@ class validationDashboard {
 			// Set background-color:
 			let bgcolor = d3.color(colorScaleValues(value))
 			if (value == "0") {
-				// Calculate opacity based on maxCnt:
-				bgcolor.opacity = colorScaleOpacityFails(item.cnts.get(value))
+				// Calculate opacity based on failCnt:
+				bgcolor.opacity = colorScaleOpacityFails(item.failCnt)
 			}
 			$( cell.node() ).css("background-color", bgcolor.toString())
 		}

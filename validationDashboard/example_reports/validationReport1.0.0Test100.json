@@ -1,0 +1,2858 @@
+[
+  {
+    "id": "id_loshibu36y",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "validate",
+      "expression": "# rule 14\nall(table(gender, age_group) >= 1) & \n  all(c(\"male\", \"female\") %in% gender) &\n  all(c(\"child\",\"adult\",\"senior\") %in% age_group)\n",
+      "severity": "error",
+      "description": "Every combination of sex and age group occurs at least once in the data set.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.879Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_lozps0jkrx",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 15",
+      "language": "validate",
+      "expression": "# define parent:\nparents :=  sub(\"\\\\.[0-9]$\",\"\",level)\nis_parent := level %in% parents\n\n# define child sums, by search for parent pattern.\nchild_sums := sapply(level[is_parent], function(x){ \n    sum(weight[grepl(paste0(\"^\",x,\".[0-9]$\"),level)])\n  })\n# rule 16 \nall(weight[is_parent] == child_sums)\n\n",
+      "severity": "error",
+      "description": "A check on hierarchical aggreggation.\n\n forall k >= 1: w(x1. ... .xk) equals the sum of\n w(x1. ... .xk.i) forall i >= 0"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_szubb0egqs",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "VTL 1.0",
+      "expression": "DS=person-id(identifier), age\n\nDScalc:= DS[calc   1   as   \"temp_id\"   role   \"identifier\"][keep (temp_id, age)]\n\nDScond:= DScalc[filter age between 0 and 113]\n\nDSr:=DScond[aggregate count(age)]= DScalc[aggregate count(include NULLS age)]\n\n",
+      "severity": "warning",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "NA"
+  },
+  {
+    "id": "id_ozwcaajh4n",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 3",
+      "language": "validate",
+      "expression": "# rule_04:\n(price_t - price_tmin1) <= 0.5 * price_tmin1 & (price_t - price_Ymin1) <= \n    0.5 * price_Ymin1\n",
+      "severity": "information",
+      "description": "Price change between the current month and the previous month should not exceed 50% (taking the previous value as 100%).\nThe same must hold for the price change between the current month and the same month last year.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_sge0hpbdzy",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "VTL 1.0",
+      "expression": "DS=person-id(identifier), age\n\nDScalc:= DS[calc   1   as   \"temp_id\"   role   \"identifier\"][keep (temp_id, age)]\n\nDScond:= DScalc[filter age between 0 and 113]\n\nDSr:=DScond[aggregate count(age)]= DScalc[aggregate count(include NULLS age)]\n\n",
+      "severity": "warning",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_chquos4beq",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 9",
+      "language": "VTL 1.0",
+      "expression": "DScalc:= DS[calc   1   as   \"temp_id\"    role    \"identifier \"] \nDScond:= DScalc[filter  business_id=100 and turnover>1000000] \nDSr:= DScond[keep  (temp_id,business_id)][aggregate  count  (business_id)] > 0\n",
+      "severity": "information",
+      "description": "exists x: x.business-id = 100 AND x.turnover > 1.000.000"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_sl9ewc72a4",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 17",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_person_id, x1\nrc := 0\n\nLOOP FOR x1 := 1 UNTIL x1 > members\n     IF NOT SEQUENCE (household_id, x1) IN DATASET personen (household_id , person_id )\n      THEN rc := 1\n     END\n\n  END\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: forall n:\n  IF 1 <= n <= x.no_of_household_members\n  THEN exists y: \n    x.household-id = y.household-id AND y.person-id = n",
+      "change": "down",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_z77p7dk7jb",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 12",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, dummy, counter\nrc, counter  := {0,0}\n\n  FOR EVERY dummy IN DATASET mat_Rule13 (gender = gender, age_group = age_group  ; person_id )\n  counter := counter + 1\n\n\n    IF counter /= 1\n     THEN rc := 1\n    END\n\nEND\nRETURN rc",
+      "severity": "warning",
+      "description": "The combination of sex and age group in the data set is unique, i.e., there do not exist two distinct records in the data set with an identical combination of values for sex and age group.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_wt707ubbtf",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 7",
+      "language": "Estatistik",
+      "expression": "DECLARE rc\nrc := 0\n\n\"Haushalt = household\"\n\nIF NOT  SEQUENCE (person_id , person , year_of_birth) \n IN DATASET Haushalt (person_id , person , year_of_birth)\n THEN rc := 1\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "Year of birth in household questionnaire must equal year of birth in individual questionnaire",
+      "change": "down",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_jin7yqr91b",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "Estatistik",
+      "expression": "DECLARE tmp_age, rc, tmp_decided, tmp_invalid\nrc,tmp_decided, tmp_invalid := {0,0,0}\ntmp_age := EMPTY\nFOR EVERY tmp_age IN DATASET mat_Rule09 (age)\n\n   IF tmp_age  = EMPTY \n    THEN tmp_decided := 1 \n   \n     ELSE\n      IF NOT tmp_age  IN SEQUENCE (0++113)\n       THEN tmp_invalid := 1  \n      END\n   END\nEND\n\nIF tmp_decided = 0 AND  tmp_invalid = 1\n THEN rc := 1\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "NA"
+  },
+  {
+    "id": "id_qjl6oa8m28",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 0",
+      "language": "validate",
+      "expression": "# rule_01:\nhours_worked >= 1 & hours_worked <= 80\n",
+      "severity": "warning",
+      "description": "Number of hours per week usually worked should be between 1 and 80"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_d11j26353m",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 12",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, dummy, counter\nrc, counter  := {0,0}\n\n  FOR EVERY dummy IN DATASET mat_Rule13 (gender = gender, age_group = age_group  ; person_id )\n  counter := counter + 1\n\n\n    IF counter /= 1\n     THEN rc := 1\n    END\n\nEND\nRETURN rc",
+      "severity": "warning",
+      "description": "The combination of sex and age group in the data set is unique, i.e., there do not exist two distinct records in the data set with an identical combination of values for sex and age group.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_kcg9fj8h24",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 12",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, dummy, counter\nrc, counter  := {0,0}\n\n  FOR EVERY dummy IN DATASET mat_Rule13 (gender = gender, age_group = age_group  ; person_id )\n  counter := counter + 1\n\n\n    IF counter /= 1\n     THEN rc := 1\n    END\n\nEND\nRETURN rc",
+      "severity": "warning",
+      "description": "The combination of sex and age group in the data set is unique, i.e., there do not exist two distinct records in the data set with an identical combination of values for sex and age group.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "NA"
+  },
+  {
+    "id": "id_nklfdgxj5j",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 17",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_person_id, x1\nrc := 0\n\nLOOP FOR x1 := 1 UNTIL x1 > members\n     IF NOT SEQUENCE (household_id, x1) IN DATASET personen (household_id , person_id )\n      THEN rc := 1\n     END\n\n  END\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: forall n:\n  IF 1 <= n <= x.no_of_household_members\n  THEN exists y: \n    x.household-id = y.household-id AND y.person-id = n",
+      "change": "down",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_aelq55l5c",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 2",
+      "language": "validate",
+      "expression": "# def_03:\ncounts :=  table(level)\n\n# rule_03:\ncounts[\"high\"] < 0.1 * sum(counts)\n",
+      "severity": "information",
+      "description": "Check whether the relative occurrence of the category high in a column containing values low, high, medium does not exceed 10%"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_rv7vv8g9cf",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 6",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, d_t, d_tm1, s_t, s_tm1, d_t_neu, t, tm1, counter,  DSr\nrc, d_t, d_tm1, s_t, s_tm1, d_t_neu, counter  := {0,0,0,0,0,0,0}\n\n\"Count totals SP2 and SP3 across all records\"\n  FOR EVERY  t, tm1 IN DATASET mat_Rule07lb (price_t, price_tm1)\n          counter := counter + 1\n          s_t   := s_t + t\n          s_tm1 := s_tm1 + tm1\n\n  END\n\n\"Evaluate result\"\n\nIF counter > 0\n\n  THEN \n    \"Compute previous average\"\n    d_t       := s_t   / counter\n    d_tm1     := s_tm1 / counter\n\t\n    \"Compute new average\"\n    d_t_neu := (s_t - price_t + price_tm1) / counter\n\n    \"Compute relative size of new average\"\n     DSr :=  FUNCTION ABSOLUTEVALUE(d_t - d_tm1) / FUNCTION ABSOLUTEVALUE(d_t_neu - d_tm1)\n\n  \"Check\"\n  IF NOT DSr IN SEQUENCE  (0.9 ++ 1.1)\n   THEN rc := 1\n  END\n\nEND \n \nRETURN rc",
+      "severity": "error",
+      "description": "The price change of a single item may not influence the change in the mean prices by more than 10%, upwards or downwards"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_6wvrf95hdw",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "Estatistik",
+      "expression": "DECLARE tmp_age, rc, tmp_decided, tmp_invalid\nrc,tmp_decided, tmp_invalid := {0,0,0}\ntmp_age := EMPTY\nFOR EVERY tmp_age IN DATASET mat_Rule09 (age)\n\n   IF tmp_age  = EMPTY \n    THEN tmp_decided := 1 \n   \n     ELSE\n      IF NOT tmp_age  IN SEQUENCE (0++113)\n       THEN tmp_invalid := 1  \n      END\n   END\nEND\n\nIF tmp_decided = 0 AND  tmp_invalid = 1\n THEN rc := 1\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_yuy3toef3a",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 7",
+      "language": "Estatistik",
+      "expression": "DECLARE rc\nrc := 0\n\n\"Haushalt = household\"\n\nIF NOT  SEQUENCE (person_id , person , year_of_birth) \n IN DATASET Haushalt (person_id , person , year_of_birth)\n THEN rc := 1\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "Year of birth in household questionnaire must equal year of birth in individual questionnaire",
+      "change": "down",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_adlfk8gtbw",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 4",
+      "language": "VTL 1.0",
+      "expression": "DS= id(identifier), age, grandchild_of \n\nDSmerge:=merge(DS as \"DSgp\",DS as \"DSgc\"  \non (DSgp#person-id= DSgc# grandchild_of),\nreturn (DSgc#person-id as \"person-id\", DSgc#age as \"age\"\", DSgp#age as \"gp_age\", DSgc#grandchild_of  as \"grandchild_of\")\n \nDSr:= (DSmerge#gp_age-28) >= DSmerge#age\n\nDSinvalid:=DS setdiff DSr[keep(person-id,age,grandchild_of)]\n\n",
+      "severity": "warning",
+      "description": "Age of grandparents – 28 >= age of their grandchildren"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_v2t6xzqtfj",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 6",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, d_t, d_tm1, s_t, s_tm1, d_t_neu, t, tm1, counter,  DSr\nrc, d_t, d_tm1, s_t, s_tm1, d_t_neu, counter  := {0,0,0,0,0,0,0}\n\n\"Count totals SP2 and SP3 across all records\"\n  FOR EVERY  t, tm1 IN DATASET mat_Rule07lb (price_t, price_tm1)\n          counter := counter + 1\n          s_t   := s_t + t\n          s_tm1 := s_tm1 + tm1\n\n  END\n\n\"Evaluate result\"\n\nIF counter > 0\n\n  THEN \n    \"Compute previous average\"\n    d_t       := s_t   / counter\n    d_tm1     := s_tm1 / counter\n\t\n    \"Compute new average\"\n    d_t_neu := (s_t - price_t + price_tm1) / counter\n\n    \"Compute relative size of new average\"\n     DSr :=  FUNCTION ABSOLUTEVALUE(d_t - d_tm1) / FUNCTION ABSOLUTEVALUE(d_t_neu - d_tm1)\n\n  \"Check\"\n  IF NOT DSr IN SEQUENCE  (0.9 ++ 1.1)\n   THEN rc := 1\n  END\n\nEND \n \nRETURN rc",
+      "severity": "error",
+      "description": "The price change of a single item may not influence the change in the mean prices by more than 10%, upwards or downwards"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "NA"
+  },
+  {
+    "id": "id_y1foarq18u",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "Estatistik",
+      "expression": "DECLARE tmp_age, rc, tmp_decided, tmp_invalid\nrc,tmp_decided, tmp_invalid := {0,0,0}\ntmp_age := EMPTY\nFOR EVERY tmp_age IN DATASET mat_Rule09 (age)\n\n   IF tmp_age  = EMPTY \n    THEN tmp_decided := 1 \n   \n     ELSE\n      IF NOT tmp_age  IN SEQUENCE (0++113)\n       THEN tmp_invalid := 1  \n      END\n   END\nEND\n\nIF tmp_decided = 0 AND  tmp_invalid = 1\n THEN rc := 1\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_ojrgziv22i",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 4",
+      "language": "VTL 1.0",
+      "expression": "DS= id(identifier), age, grandchild_of \n\nDSmerge:=merge(DS as \"DSgp\",DS as \"DSgc\"  \non (DSgp#person-id= DSgc# grandchild_of),\nreturn (DSgc#person-id as \"person-id\", DSgc#age as \"age\"\", DSgp#age as \"gp_age\", DSgc#grandchild_of  as \"grandchild_of\")\n \nDSr:= (DSmerge#gp_age-28) >= DSmerge#age\n\nDSinvalid:=DS setdiff DSr[keep(person-id,age,grandchild_of)]\n\n",
+      "severity": "warning",
+      "description": "Age of grandparents – 28 >= age of their grandchildren"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_sx8d2x472m",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "Estatistik",
+      "expression": "DECLARE tmp_age, rc, tmp_decided, tmp_invalid\nrc,tmp_decided, tmp_invalid := {0,0,0}\ntmp_age := EMPTY\nFOR EVERY tmp_age IN DATASET mat_Rule09 (age)\n\n   IF tmp_age  = EMPTY \n    THEN tmp_decided := 1 \n   \n     ELSE\n      IF NOT tmp_age  IN SEQUENCE (0++113)\n       THEN tmp_invalid := 1  \n      END\n   END\nEND\n\nIF tmp_decided = 0 AND  tmp_invalid = 1\n THEN rc := 1\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_v56dpc2r0e",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 15",
+      "language": "VTL 1.0",
+      "expression": "DS=id(identifier),level(identifier),weight\n\n/*\n * Create a hierarchy (actually is no possible to do using VTL because some string operators are missing)\n *\n *  MAPS FROM\t   MAPS TO\tLEVEL\t   SIGN\n *  x1                      1\t      +\n *  x1.1          x1\t      2\t      +\n *  x1.2          x1\t      2\t      +\n *  x1.3          x1\t      2\t      +\n *  x2                      1       +\n *  x2.1          x2\t      2\t      +\n */\n\nDShierarchy := hierarchy(DS, level, \"HRC\", false)\nDScond := (DShierarchy = DS)[filter weight = \"false\"]\nDSr := DScond[calc 1 as \"msrcount\" role \"MEASURE\"][aggregate count(msrcount)] = 0\n",
+      "severity": "information",
+      "description": "A check on hierarchical aggreggation.\n\n forall k >= 1: w(x1. ... .xk) equals the sum of\n w(x1. ... .xk.i) forall i >= 0"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "NA"
+  },
+  {
+    "id": "id_ejw2bmszlt",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 0",
+      "language": "VTL 1.0",
+      "expression": "DS= person-id, hours_worked\n\nDSr:= DS#hours_worked between 1 and 80\n/* In case a value in hours_worked is NULL the value returned will be NULL */\n.\n",
+      "severity": "error",
+      "description": "Number of hours per week usually worked should be between 1 and 80"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "NA"
+  },
+  {
+    "id": "id_h5s7osxca6",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 4",
+      "language": "VTL 1.0",
+      "expression": "DS= id(identifier), age, grandchild_of \n\nDSmerge:=merge(DS as \"DSgp\",DS as \"DSgc\"  \non (DSgp#person-id= DSgc# grandchild_of),\nreturn (DSgc#person-id as \"person-id\", DSgc#age as \"age\"\", DSgp#age as \"gp_age\", DSgc#grandchild_of  as \"grandchild_of\")\n \nDSr:= (DSmerge#gp_age-28) >= DSmerge#age\n\nDSinvalid:=DS setdiff DSr[keep(person-id,age,grandchild_of)]\n\n",
+      "severity": "warning",
+      "description": "Age of grandparents – 28 >= age of their grandchildren"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_0z593as7sp",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 3",
+      "language": "validate",
+      "expression": "# rule_04:\n(price_t - price_tmin1) <= 0.5 * price_tmin1 & (price_t - price_Ymin1) <= \n    0.5 * price_Ymin1\n",
+      "severity": "information",
+      "description": "Price change between the current month and the previous month should not exceed 50% (taking the previous value as 100%).\nThe same must hold for the price change between the current month and the same month last year.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_83vd2iu6wm",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 3",
+      "language": "validate",
+      "expression": "# rule_04:\n(price_t - price_tmin1) <= 0.5 * price_tmin1 & (price_t - price_Ymin1) <= \n    0.5 * price_Ymin1\n",
+      "severity": "information",
+      "description": "Price change between the current month and the previous month should not exceed 50% (taking the previous value as 100%).\nThe same must hold for the price change between the current month and the same month last year.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_k84vuut8q7",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 6",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, d_t, d_tm1, s_t, s_tm1, d_t_neu, t, tm1, counter,  DSr\nrc, d_t, d_tm1, s_t, s_tm1, d_t_neu, counter  := {0,0,0,0,0,0,0}\n\n\"Count totals SP2 and SP3 across all records\"\n  FOR EVERY  t, tm1 IN DATASET mat_Rule07lb (price_t, price_tm1)\n          counter := counter + 1\n          s_t   := s_t + t\n          s_tm1 := s_tm1 + tm1\n\n  END\n\n\"Evaluate result\"\n\nIF counter > 0\n\n  THEN \n    \"Compute previous average\"\n    d_t       := s_t   / counter\n    d_tm1     := s_tm1 / counter\n\t\n    \"Compute new average\"\n    d_t_neu := (s_t - price_t + price_tm1) / counter\n\n    \"Compute relative size of new average\"\n     DSr :=  FUNCTION ABSOLUTEVALUE(d_t - d_tm1) / FUNCTION ABSOLUTEVALUE(d_t_neu - d_tm1)\n\n  \"Check\"\n  IF NOT DSr IN SEQUENCE  (0.9 ++ 1.1)\n   THEN rc := 1\n  END\n\nEND \n \nRETURN rc",
+      "severity": "error",
+      "description": "The price change of a single item may not influence the change in the mean prices by more than 10%, upwards or downwards"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_xc9hvk385s",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "validate",
+      "expression": "# rule_09:\nall(age >= 0 & age <= 113)\n",
+      "severity": "error",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_c0i4hviw26",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 7",
+      "language": "Estatistik",
+      "expression": "DECLARE rc\nrc := 0\n\n\"Haushalt = household\"\n\nIF NOT  SEQUENCE (person_id , person , year_of_birth) \n IN DATASET Haushalt (person_id , person , year_of_birth)\n THEN rc := 1\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "Year of birth in household questionnaire must equal year of birth in individual questionnaire",
+      "change": "down",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_qakp0y14cz",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 7",
+      "language": "VTL 1.0",
+      "expression": "DS_h= household-id, person-id(identifier),person, year_of_birth\nDS_p= person-id(identifier),person, year_of_birth, gender\n \nDSr:= DS_h#year_of_birth=DS_p#year_of_birth\n",
+      "severity": "warning",
+      "description": "Year of birth in household questionnaire must equal year of birth in individual questionnaire"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_zjjdyjvmnr",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 9",
+      "language": "validate",
+      "expression": "# rule_10:\nany(business_id == 100 & turnover > 1e+06)\n",
+      "severity": "error",
+      "description": "exists x: x.business-id = 100 AND x.turnover > 1.000.000"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_zgonw7t3ca",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 5",
+      "language": "validate",
+      "expression": "# rule_06:\nif (season == \"out\") price_t == price_tmin1 & quantity_t == \n    quantity_tmin1\n",
+      "severity": "error",
+      "description": "If a product is out of season, the price and quantity must be the same as last month's values"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_yfuqrpw3zc",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 11",
+      "language": "VTL 1.0",
+      "expression": "DS=person-id(identifier), spouse-id, relation_to_head\n\nDSfilter := DS[filter relation_to_head = 4]\nDSmerge := merge(DS \"DSx\",DS \"DSy\",\n    on\n    (DSy#spouse-id = DSx#person-id and DSy#relation_to_head = 3 and DSx#relation_to_head = 4)\n    return\n    (DSx#person-id as \"person-id\"))\n\nDSnot_exists := DSfilter not_exists_in DSmerge\n\nDScount := DSnot_exists[calc 1 as \"id\" role \"identifier\"][keep (id, person_id)][aggregate count (person_id)] = 0\n",
+      "severity": "error",
+      "description": "forall x: \n  IF x.relation_to_head = 4 \n  THEN exists y:\n    x.spouse-id = y.person-id AND y.relation_to_head = 3"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_jw8y7ayku5",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 5",
+      "language": "Estatistik",
+      "expression": "season = 'out' AND (price_t /= price_t_1 OR quantity_t /= quantity_t_1)",
+      "severity": "information",
+      "description": "If a product is out of season, the price and quantity must be the same as last month's values"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_sjq7ixjhki",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 4",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_age\ntmp_age := EMPTY\n\n  tmp_age := DATASET mat_Rule05lb (person_id = grandchild_of ; age)\n\nIF tmp_age - 28 < age\n THEN rc := 1\nEND\n\n\nRETURN rc",
+      "severity": "information",
+      "description": "Age of grandparents – 28 >= age of their grandchildren"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_kdpwpyynj9",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 15",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_AnzSst, tmp_such, tmp_level, tmp_sum, tmp_weight, hit\nrc,tmp_sum,hit  := {0,0,0}\n\ntmp_AnzSst := FUNCTION LENGTH (level)\n\nIF tmp_AnzSst IN SEQUENCE  (1,3)\n THEN \n\n  FOR EVERY tmp_level, tmp_weight IN DATASET mat_Rule16 (level, weight )\n\n   IF tmp_AnzSst = 1 AND FUNCTION LENGTH (tmp_level) = 3 AND \n                          FUNCTION PART (tmp_level,1,1) = FUNCTION PART (level,1,1) \n     THEN tmp_sum:= tmp_sum + tmp_weight  \n          hit := 1\n    END\n\n   IF tmp_AnzSst = 3 AND FUNCTION LENGTH (tmp_level) = 5 AND \n                          FUNCTION PART (tmp_level,1,3) = FUNCTION PART (level,1,3) \n     THEN tmp_sum:= tmp_sum + tmp_weight  \n          hit := 1\n    END\n\n END\n\n  \"Check\"\n  IF tmp_sum /= weight AND hit = 1\n   THEN rc := 1\n  END\n\nEND\n\nRETURN rc",
+      "severity": "warning",
+      "description": "A check on hierarchical aggreggation.\n\n forall k >= 1: w(x1. ... .xk) equals the sum of\n w(x1. ... .xk.i) forall i >= 0"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_qz5p8f59yg",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 1",
+      "language": "VTL 1.0",
+      "expression": "DS= business-id, cost, profit, turnover \n\nDSr:= (DS#cost + DS#profit) = DS#turnover\n",
+      "severity": "warning",
+      "description": "cost + profit = turnover"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_uzdkj68v1j",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 2",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, s1  , z1 , total\nrc,z1,total := {0,0,0}\n\nFOR EVERY s1  IN DATASET mat_Rule03 (level1)\n\n   IF s1 /= 'NA' THEN  total := total + 1 END \"count records that contain any valid value \"\n   IF s1  = 'high' THEN z1 := z1 + 1   END    \"count records that contain value \"high\"\n\nEND\n\n\"Check relative occurrence of value 'high'\"\n\nIF z1 > total * 0.1 THEN rc := 1 END\n\nRETURN rc",
+      "severity": "warning",
+      "description": "Check whether the relative occurrence of the category high in a column containing values low, high, medium does not exceed 10%"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_iygbtstv8p",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "validate",
+      "expression": "# rule 14\nall(table(gender, age_group) >= 1) & \n  all(c(\"male\", \"female\") %in% gender) &\n  all(c(\"child\",\"adult\",\"senior\") %in% age_group)\n",
+      "severity": "error",
+      "description": "Every combination of sex and age group occurs at least once in the data set.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_opdtgn0353",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 7",
+      "language": "validate",
+      "expression": "# rule_08:\nyear_of_birth == persons$year_of_birth\n",
+      "severity": "error",
+      "description": "Year of birth in household questionnaire must equal year of birth in individual questionnaire"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_q8alqcj16a",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 15",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_AnzSst, tmp_such, tmp_level, tmp_sum, tmp_weight, hit\nrc,tmp_sum,hit  := {0,0,0}\n\ntmp_AnzSst := FUNCTION LENGTH (level)\n\nIF tmp_AnzSst IN SEQUENCE  (1,3)\n THEN \n\n  FOR EVERY tmp_level, tmp_weight IN DATASET mat_Rule16 (level, weight )\n\n   IF tmp_AnzSst = 1 AND FUNCTION LENGTH (tmp_level) = 3 AND \n                          FUNCTION PART (tmp_level,1,1) = FUNCTION PART (level,1,1) \n     THEN tmp_sum:= tmp_sum + tmp_weight  \n          hit := 1\n    END\n\n   IF tmp_AnzSst = 3 AND FUNCTION LENGTH (tmp_level) = 5 AND \n                          FUNCTION PART (tmp_level,1,3) = FUNCTION PART (level,1,3) \n     THEN tmp_sum:= tmp_sum + tmp_weight  \n          hit := 1\n    END\n\n END\n\n  \"Check\"\n  IF tmp_sum /= weight AND hit = 1\n   THEN rc := 1\n  END\n\nEND\n\nRETURN rc",
+      "severity": "warning",
+      "description": "A check on hierarchical aggreggation.\n\n forall k >= 1: w(x1. ... .xk) equals the sum of\n w(x1. ... .xk.i) forall i >= 0"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_od4w7n7po2",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 2",
+      "language": "validate",
+      "expression": "# def_03:\ncounts :=  table(level)\n\n# rule_03:\ncounts[\"high\"] < 0.1 * sum(counts)\n",
+      "severity": "information",
+      "description": "Check whether the relative occurrence of the category high in a column containing values low, high, medium does not exceed 10%"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_81va70shee",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "VTL 1.0",
+      "expression": "DS=person-id(identifier), name, gender(identifier), age-group(identifier)\nDSgender= gender(identifier) {male, female}\nDSage =age-group(identifier) {child, adult, senior}\n/*\n * gender: male, female\n * age-groups: child, adult, senior\n */\nDSmerge := merge(DSgender \"DSgender\"  ,DSage \"DSage\" ,\n    on\n    (1 = 1)\n    return\n   (DSgender#gender as \"gender\",DSage #age-group as \"age-group\"))\nDSdiff := DSmerge setdiff DS[keep (gender, age-group)]\nDSr := DSdiff [calc 1 as \"msrcount\" role \"measure\"][aggregate count(msrcount)] = 0\n",
+      "severity": "error",
+      "description": "Every combination of sex and age group occurs at least once in the data set.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_lxgp2yo50z",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 11",
+      "language": "VTL 1.0",
+      "expression": "DS=person-id(identifier), spouse-id, relation_to_head\n\nDSfilter := DS[filter relation_to_head = 4]\nDSmerge := merge(DS \"DSx\",DS \"DSy\",\n    on\n    (DSy#spouse-id = DSx#person-id and DSy#relation_to_head = 3 and DSx#relation_to_head = 4)\n    return\n    (DSx#person-id as \"person-id\"))\n\nDSnot_exists := DSfilter not_exists_in DSmerge\n\nDScount := DSnot_exists[calc 1 as \"id\" role \"identifier\"][keep (id, person_id)][aggregate count (person_id)] = 0\n",
+      "severity": "error",
+      "description": "forall x: \n  IF x.relation_to_head = 4 \n  THEN exists y:\n    x.spouse-id = y.person-id AND y.relation_to_head = 3"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_p48eqhg892",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 2",
+      "language": "validate",
+      "expression": "# def_03:\ncounts :=  table(level)\n\n# rule_03:\ncounts[\"high\"] < 0.1 * sum(counts)\n",
+      "severity": "information",
+      "description": "Check whether the relative occurrence of the category high in a column containing values low, high, medium does not exceed 10%"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.880Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_lh4g81s336",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 0",
+      "language": "validate",
+      "expression": "# rule_01:\nhours_worked >= 1 & hours_worked <= 80\n",
+      "severity": "warning",
+      "description": "Number of hours per week usually worked should be between 1 and 80"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_uslnywvn8n",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "validate",
+      "expression": "# rule_09:\nall(age >= 0 & age <= 113)\n",
+      "severity": "error",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_ut5yqb3tdc",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 11",
+      "language": "VTL 1.0",
+      "expression": "DS=person-id(identifier), spouse-id, relation_to_head\n\nDSfilter := DS[filter relation_to_head = 4]\nDSmerge := merge(DS \"DSx\",DS \"DSy\",\n    on\n    (DSy#spouse-id = DSx#person-id and DSy#relation_to_head = 3 and DSx#relation_to_head = 4)\n    return\n    (DSx#person-id as \"person-id\"))\n\nDSnot_exists := DSfilter not_exists_in DSmerge\n\nDScount := DSnot_exists[calc 1 as \"id\" role \"identifier\"][keep (id, person_id)][aggregate count (person_id)] = 0\n",
+      "severity": "error",
+      "description": "forall x: \n  IF x.relation_to_head = 4 \n  THEN exists y:\n    x.spouse-id = y.person-id AND y.relation_to_head = 3"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_ygrrmogntk",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 7",
+      "language": "VTL 1.0",
+      "expression": "DS_h= household-id, person-id(identifier),person, year_of_birth\nDS_p= person-id(identifier),person, year_of_birth, gender\n \nDSr:= DS_h#year_of_birth=DS_p#year_of_birth\n",
+      "severity": "warning",
+      "description": "Year of birth in household questionnaire must equal year of birth in individual questionnaire"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_w36y02axqr",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "Estatistik",
+      "expression": "DECLARE tmp_age, rc, tmp_decided, tmp_invalid\nrc,tmp_decided, tmp_invalid := {0,0,0}\ntmp_age := EMPTY\nFOR EVERY tmp_age IN DATASET mat_Rule09 (age)\n\n   IF tmp_age  = EMPTY \n    THEN tmp_decided := 1 \n   \n     ELSE\n      IF NOT tmp_age  IN SEQUENCE (0++113)\n       THEN tmp_invalid := 1  \n      END\n   END\nEND\n\nIF tmp_decided = 0 AND  tmp_invalid = 1\n THEN rc := 1\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_vqb6t2e7ez",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 14",
+      "language": "VTL 1.0",
+      "expression": "DS=district-id(identifier),postcode(identifier),city(identifier)\n\n\nDScount := DS[calc 1 as msr_count role \"MEASURE\"]\nDSr := DScount[keep (postcode, msr_count)][aggregate count (msr_count)] =\nDScount[keep (postcode, city, msr_count)][aggregate count (msr_count)][keep (postcode, msr_count)]\n",
+      "severity": "information",
+      "description": "If two records have the same postal code, they must have the same value for city (a functional dependency)."
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_ae7lgmiai8",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 12",
+      "language": "VTL 1.0",
+      "expression": "DS= person-id(identifier),gender(identifier),age-group(identifier)\n/*\n * gender: male, female\n * age-groups: child, adult, senior\n */\nDScalc := DS[calc 1 as \"id\" role \"identifier\", 1 as \"msrcount\" role \"measure\"]\nDScount := DS[keep(id, msrcount, gender, age_groups)][aggregate count(msrcount)][filter msrcount > 1]\nDSr := DScount [keep (id, msrcount)][aggregate count(msrcount)] = 0\n",
+      "severity": "warning",
+      "description": "The combination of sex and age group in the data set is unique, i.e., there do not exist two distinct records in the data set with an identical combination of values for sex and age group.",
+      "change": "down",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_nud56eeuxf",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 11",
+      "language": "validate",
+      "expression": "# def_rel_4:\nrel_4 :=  person_id[relation_to_head == 4]\n\n# def_rel_3:\nspouse_of_rel_3 :=  spouse_id[relation_to_head == 3]\n\n# rule_12:\nall(rel_4 %in% spouse_of_rel_3)\n",
+      "severity": "error",
+      "description": "forall x: \n  IF x.relation_to_head = 4 \n  THEN exists y:\n    x.spouse-id = y.person-id AND y.relation_to_head = 3"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_vnpr4cf0b3",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 10",
+      "language": "validate",
+      "expression": "# rule_11:\nsum(business_id == 100 & turnover > 1e+06) == 1\n",
+      "severity": "information",
+      "description": "exists! x: x.business-id = 100 AND x.turnover > 1.000.000"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_si78msp8gj",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 5",
+      "language": "validate",
+      "expression": "# rule_06:\nif (season == \"out\") price_t == price_tmin1 & quantity_t == \n    quantity_tmin1\n",
+      "severity": "error",
+      "description": "If a product is out of season, the price and quantity must be the same as last month's values"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_mhftjx378x",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 16",
+      "language": "VTL 1.0",
+      "expression": "DShousehold=household-id(identifier),members\nDSpersons=person-id(identifier),household-id(identifier) (in the example fields are not correctly defined)\n\nDScount := (DSpersons[calc 1 as \"members\" role \"MEASURE\"][keep (household-id, members)][aggregate count(members)]= \n        DShousehold)[filter members= \"false\"]\nDSr := DScount[calc 1 as \"msr_count\" role \"MEASURE\"][aggregate count(msr_count)] = 0\n\n",
+      "severity": "information",
+      "description": "The value for no_of_household_members must equal the number of records for each household"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_1hpv0mbvy4",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 1",
+      "language": "validate",
+      "expression": "# rule_02:\ncost + profit == turnover\n",
+      "severity": "warning",
+      "description": "cost + profit = turnover"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_g6svlekaa1",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "Estatistik",
+      "expression": "DECLARE tmp_age, rc, tmp_decided, tmp_invalid\nrc,tmp_decided, tmp_invalid := {0,0,0}\ntmp_age := EMPTY\nFOR EVERY tmp_age IN DATASET mat_Rule09 (age)\n\n   IF tmp_age  = EMPTY \n    THEN tmp_decided := 1 \n   \n     ELSE\n      IF NOT tmp_age  IN SEQUENCE (0++113)\n       THEN tmp_invalid := 1  \n      END\n   END\nEND\n\nIF tmp_decided = 0 AND  tmp_invalid = 1\n THEN rc := 1\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_s9lcwt2q6g",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "validate",
+      "expression": "# rule 14\nall(table(gender, age_group) >= 1) & \n  all(c(\"male\", \"female\") %in% gender) &\n  all(c(\"child\",\"adult\",\"senior\") %in% age_group)\n",
+      "severity": "error",
+      "description": "Every combination of sex and age group occurs at least once in the data set.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_d83k7022u8",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_age_group, tmp_gender,\n    male_child, female_child, male_adult, female_adult, male_senior, female_senior\nrc,male_child, female_child,male_adult,female_adult,male_senior,female_senior  := {0,0,0,0,0,0,0}\n\n  FOR EVERY tmp_gender , tmp_age_group IN DATASET mat_Rule14 (gender , age_group)\n   IF tmp_gender = 'male'   AND tmp_age_group = 'child'  THEN male_child    := male_child    + 1 END\n   IF tmp_gender = 'female' AND tmp_age_group = 'child'  THEN female_child  := female_child  + 1 END\n   IF tmp_gender = 'male'   AND tmp_age_group = 'adult'  THEN male_adult    := male_adult    + 1 END\n   IF tmp_gender = 'female' AND tmp_age_group = 'adult'  THEN female_adult  := female_adult  + 1 END\n   IF tmp_gender = 'male'   AND tmp_age_group = 'senior' THEN male_senior   := male_senior   + 1 END\n   IF tmp_gender = 'female' AND tmp_age_group = 'senior' THEN female_senior := female_senior + 1 END\n\n  END\n    IF male_child = 0 OR female_child = 0 OR male_adult = 0 OR female_adult = 0 OR male_senior = 0 OR female_senior = 0 \n     THEN rc := 1\n    END\n\n\nRETURN rc",
+      "severity": "warning",
+      "description": "Every combination of sex and age group occurs at least once in the data set."
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_r79vo44nhk",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "validate",
+      "expression": "# rule 14\nall(table(gender, age_group) >= 1) & \n  all(c(\"male\", \"female\") %in% gender) &\n  all(c(\"child\",\"adult\",\"senior\") %in% age_group)\n",
+      "severity": "error",
+      "description": "Every combination of sex and age group occurs at least once in the data set.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_v5sit8wbvq",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_age_group, tmp_gender,\n    male_child, female_child, male_adult, female_adult, male_senior, female_senior\nrc,male_child, female_child,male_adult,female_adult,male_senior,female_senior  := {0,0,0,0,0,0,0}\n\n  FOR EVERY tmp_gender , tmp_age_group IN DATASET mat_Rule14 (gender , age_group)\n   IF tmp_gender = 'male'   AND tmp_age_group = 'child'  THEN male_child    := male_child    + 1 END\n   IF tmp_gender = 'female' AND tmp_age_group = 'child'  THEN female_child  := female_child  + 1 END\n   IF tmp_gender = 'male'   AND tmp_age_group = 'adult'  THEN male_adult    := male_adult    + 1 END\n   IF tmp_gender = 'female' AND tmp_age_group = 'adult'  THEN female_adult  := female_adult  + 1 END\n   IF tmp_gender = 'male'   AND tmp_age_group = 'senior' THEN male_senior   := male_senior   + 1 END\n   IF tmp_gender = 'female' AND tmp_age_group = 'senior' THEN female_senior := female_senior + 1 END\n\n  END\n    IF male_child = 0 OR female_child = 0 OR male_adult = 0 OR female_adult = 0 OR male_senior = 0 OR female_senior = 0 \n     THEN rc := 1\n    END\n\n\nRETURN rc",
+      "severity": "warning",
+      "description": "Every combination of sex and age group occurs at least once in the data set."
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_be66yxjnxa",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 8",
+      "language": "Estatistik",
+      "expression": "DECLARE tmp_age, rc, tmp_decided, tmp_invalid\nrc,tmp_decided, tmp_invalid := {0,0,0}\ntmp_age := EMPTY\nFOR EVERY tmp_age IN DATASET mat_Rule09 (age)\n\n   IF tmp_age  = EMPTY \n    THEN tmp_decided := 1 \n   \n     ELSE\n      IF NOT tmp_age  IN SEQUENCE (0++113)\n       THEN tmp_invalid := 1  \n      END\n   END\nEND\n\nIF tmp_decided = 0 AND  tmp_invalid = 1\n THEN rc := 1\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: x.age >= 0 AND x.age <= 113"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "NA"
+  },
+  {
+    "id": "id_n7xbfq5om4",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "VTL 1.0",
+      "expression": "DS=person-id(identifier), name, gender(identifier), age-group(identifier)\nDSgender= gender(identifier) {male, female}\nDSage =age-group(identifier) {child, adult, senior}\n/*\n * gender: male, female\n * age-groups: child, adult, senior\n */\nDSmerge := merge(DSgender \"DSgender\"  ,DSage \"DSage\" ,\n    on\n    (1 = 1)\n    return\n   (DSgender#gender as \"gender\",DSage #age-group as \"age-group\"))\nDSdiff := DSmerge setdiff DS[keep (gender, age-group)]\nDSr := DSdiff [calc 1 as \"msrcount\" role \"measure\"][aggregate count(msrcount)] = 0\n",
+      "severity": "error",
+      "description": "Every combination of sex and age group occurs at least once in the data set.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_lpplk1h3po",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "VTL 1.0",
+      "expression": "DS=person-id(identifier), name, gender(identifier), age-group(identifier)\nDSgender= gender(identifier) {male, female}\nDSage =age-group(identifier) {child, adult, senior}\n/*\n * gender: male, female\n * age-groups: child, adult, senior\n */\nDSmerge := merge(DSgender \"DSgender\"  ,DSage \"DSage\" ,\n    on\n    (1 = 1)\n    return\n   (DSgender#gender as \"gender\",DSage #age-group as \"age-group\"))\nDSdiff := DSmerge setdiff DS[keep (gender, age-group)]\nDSr := DSdiff [calc 1 as \"msrcount\" role \"measure\"][aggregate count(msrcount)] = 0\n",
+      "severity": "error",
+      "description": "Every combination of sex and age group occurs at least once in the data set.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_gk1wm5h4fs",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 17",
+      "language": "validate",
+      "expression": "# define vector with T/F value for each household\ntest := sapply(1:length(household_id), function(i){\n  hhid <- household_id[i]\n  all(1:members[i] %in% persons$person_id[persons$household_id == hhid])\n})\n\n# rule must hold for all households\nall(test)\n\n",
+      "severity": "warning",
+      "description": "forall x: forall n:\n  IF 1 <= n <= x.no_of_household_members\n  THEN exists y: \n    x.household-id = y.household-id AND y.person-id = n"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_o9q50qwow0",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "validate",
+      "expression": "# rule 14\nall(table(gender, age_group) >= 1) & \n  all(c(\"male\", \"female\") %in% gender) &\n  all(c(\"child\",\"adult\",\"senior\") %in% age_group)\n",
+      "severity": "error",
+      "description": "Every combination of sex and age group occurs at least once in the data set.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_l8bzwqiped",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 14",
+      "language": "VTL 1.0",
+      "expression": "DS=district-id(identifier),postcode(identifier),city(identifier)\n\n\nDScount := DS[calc 1 as msr_count role \"MEASURE\"]\nDSr := DScount[keep (postcode, msr_count)][aggregate count (msr_count)] =\nDScount[keep (postcode, city, msr_count)][aggregate count (msr_count)][keep (postcode, msr_count)]\n",
+      "severity": "information",
+      "description": "If two records have the same postal code, they must have the same value for city (a functional dependency)."
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_dw3glrbnct",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 3",
+      "language": "VTL 1.0",
+      "expression": "DS=id, item, price_t, price_t-1, price_Y-1 \n\nDSr1:= ((DS#price_t - DS#price_t-1) <= (DS#price_t-1 * 0.5))  and  ((DS#price_t + DS#price_Y-1) <= (DS#price_Y-1 * 0.5))\n\n/* if a NULL value is in one of the terms of the AND the result will be as indicated in 3VL, Three-valued logic  see page 42 VTL-part1 */\n",
+      "severity": "warning",
+      "description": "Price change between the current month and the previous month should not exceed 50% (taking the previous value as 100%).\nThe same must hold for the price change between the current month and the same month last year.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_zrvtqb0dw2",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 5",
+      "language": "validate",
+      "expression": "# rule_06:\nif (season == \"out\") price_t == price_tmin1 & quantity_t == \n    quantity_tmin1\n",
+      "severity": "error",
+      "description": "If a product is out of season, the price and quantity must be the same as last month's values"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_ypznp0gblo",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 1",
+      "language": "VTL 1.0",
+      "expression": "DS= business-id, cost, profit, turnover \n\nDSr:= (DS#cost + DS#profit) = DS#turnover\n",
+      "severity": "warning",
+      "description": "cost + profit = turnover"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_6tze0ugt1t",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 1",
+      "language": "validate",
+      "expression": "# rule_02:\ncost + profit == turnover\n",
+      "severity": "warning",
+      "description": "cost + profit = turnover"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_8hjm3pysis",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 17",
+      "language": "VTL 1.0",
+      "expression": "DShousehold=household-id(identifier),members\nDSpersons=household-id(identifier), person-id(identifier)\n\n\nDSmerge:=merge (DShousehold as \"DSh\", DSpersons as \"DSp\" \n        on DSh#household-id=DSp#household-id, \n        return \n        (DSh#household-id as household-id,DSh#person-id as person-id,DSp#members as members))\n \n\nDSout:= DSmerge[filter person-id < 1 or person-id>members][keep (household-id,members)][aggregate count (members)] = 0\n\nDSdist:= DSmerge[rename (person-id) as \"p_id\" role \"measure\"][aggregate count_distinct (p_id)][filter p id <> members]\n[aggregate count (members)] = 0\n\n\nDSr := (DSout and DSdist)\n\n",
+      "severity": "information",
+      "description": "forall x: forall n:\n  IF 1 <= n <= x.no_of_household_members\n  THEN exists y: \n    x.household-id = y.household-id AND y.person-id = n",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_khg6k5ys1f",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 9",
+      "language": "validate",
+      "expression": "# rule_10:\nany(business_id == 100 & turnover > 1e+06)\n",
+      "severity": "error",
+      "description": "exists x: x.business-id = 100 AND x.turnover > 1.000.000"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_1op0me6ymn",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_age_group, tmp_gender,\n    male_child, female_child, male_adult, female_adult, male_senior, female_senior\nrc,male_child, female_child,male_adult,female_adult,male_senior,female_senior  := {0,0,0,0,0,0,0}\n\n  FOR EVERY tmp_gender , tmp_age_group IN DATASET mat_Rule14 (gender , age_group)\n   IF tmp_gender = 'male'   AND tmp_age_group = 'child'  THEN male_child    := male_child    + 1 END\n   IF tmp_gender = 'female' AND tmp_age_group = 'child'  THEN female_child  := female_child  + 1 END\n   IF tmp_gender = 'male'   AND tmp_age_group = 'adult'  THEN male_adult    := male_adult    + 1 END\n   IF tmp_gender = 'female' AND tmp_age_group = 'adult'  THEN female_adult  := female_adult  + 1 END\n   IF tmp_gender = 'male'   AND tmp_age_group = 'senior' THEN male_senior   := male_senior   + 1 END\n   IF tmp_gender = 'female' AND tmp_age_group = 'senior' THEN female_senior := female_senior + 1 END\n\n  END\n    IF male_child = 0 OR female_child = 0 OR male_adult = 0 OR female_adult = 0 OR male_senior = 0 OR female_senior = 0 \n     THEN rc := 1\n    END\n\n\nRETURN rc",
+      "severity": "warning",
+      "description": "Every combination of sex and age group occurs at least once in the data set."
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_wa7xrvbnk3",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 15",
+      "language": "validate",
+      "expression": "# define parent:\nparents :=  sub(\"\\\\.[0-9]$\",\"\",level)\nis_parent := level %in% parents\n\n# define child sums, by search for parent pattern.\nchild_sums := sapply(level[is_parent], function(x){ \n    sum(weight[grepl(paste0(\"^\",x,\".[0-9]$\"),level)])\n  })\n# rule 16 \nall(weight[is_parent] == child_sums)\n\n",
+      "severity": "error",
+      "description": "A check on hierarchical aggreggation.\n\n forall k >= 1: w(x1. ... .xk) equals the sum of\n w(x1. ... .xk.i) forall i >= 0"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_y31ew15qpq",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 12",
+      "language": "validate",
+      "expression": "# def_counts:\ncounts :=  table(gender, age_group)\n\n# rule_13:\nall(counts <= 1)\n",
+      "severity": "information",
+      "description": "The combination of sex and age group in the data set is unique, i.e., there do not exist two distinct records in the data set with an identical combination of values for sex and age group."
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_bmww2w2dwh",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 17",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_person_id, x1\nrc := 0\n\nLOOP FOR x1 := 1 UNTIL x1 > members\n     IF NOT SEQUENCE (household_id, x1) IN DATASET personen (household_id , person_id )\n      THEN rc := 1\n     END\n\n  END\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: forall n:\n  IF 1 <= n <= x.no_of_household_members\n  THEN exists y: \n    x.household-id = y.household-id AND y.person-id = n",
+      "change": "down",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_3xwjewm35j",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 15",
+      "language": "VTL 1.0",
+      "expression": "DS=id(identifier),level(identifier),weight\n\n/*\n * Create a hierarchy (actually is no possible to do using VTL because some string operators are missing)\n *\n *  MAPS FROM\t   MAPS TO\tLEVEL\t   SIGN\n *  x1                      1\t      +\n *  x1.1          x1\t      2\t      +\n *  x1.2          x1\t      2\t      +\n *  x1.3          x1\t      2\t      +\n *  x2                      1       +\n *  x2.1          x2\t      2\t      +\n */\n\nDShierarchy := hierarchy(DS, level, \"HRC\", false)\nDScond := (DShierarchy = DS)[filter weight = \"false\"]\nDSr := DScond[calc 1 as \"msrcount\" role \"MEASURE\"][aggregate count(msrcount)] = 0\n",
+      "severity": "information",
+      "description": "A check on hierarchical aggreggation.\n\n forall k >= 1: w(x1. ... .xk) equals the sum of\n w(x1. ... .xk.i) forall i >= 0"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_k8h3tkrsb6",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 16",
+      "language": "VTL 1.0",
+      "expression": "DShousehold=household-id(identifier),members\nDSpersons=person-id(identifier),household-id(identifier) (in the example fields are not correctly defined)\n\nDScount := (DSpersons[calc 1 as \"members\" role \"MEASURE\"][keep (household-id, members)][aggregate count(members)]= \n        DShousehold)[filter members= \"false\"]\nDSr := DScount[calc 1 as \"msr_count\" role \"MEASURE\"][aggregate count(msr_count)] = 0\n\n",
+      "severity": "information",
+      "description": "The value for no_of_household_members must equal the number of records for each household"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_eltsjunl8z",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 15",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_AnzSst, tmp_such, tmp_level, tmp_sum, tmp_weight, hit\nrc,tmp_sum,hit  := {0,0,0}\n\ntmp_AnzSst := FUNCTION LENGTH (level)\n\nIF tmp_AnzSst IN SEQUENCE  (1,3)\n THEN \n\n  FOR EVERY tmp_level, tmp_weight IN DATASET mat_Rule16 (level, weight )\n\n   IF tmp_AnzSst = 1 AND FUNCTION LENGTH (tmp_level) = 3 AND \n                          FUNCTION PART (tmp_level,1,1) = FUNCTION PART (level,1,1) \n     THEN tmp_sum:= tmp_sum + tmp_weight  \n          hit := 1\n    END\n\n   IF tmp_AnzSst = 3 AND FUNCTION LENGTH (tmp_level) = 5 AND \n                          FUNCTION PART (tmp_level,1,3) = FUNCTION PART (level,1,3) \n     THEN tmp_sum:= tmp_sum + tmp_weight  \n          hit := 1\n    END\n\n END\n\n  \"Check\"\n  IF tmp_sum /= weight AND hit = 1\n   THEN rc := 1\n  END\n\nEND\n\nRETURN rc",
+      "severity": "warning",
+      "description": "A check on hierarchical aggreggation.\n\n forall k >= 1: w(x1. ... .xk) equals the sum of\n w(x1. ... .xk.i) forall i >= 0"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_r6ao114t0y",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 9",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_turnover \nrc := 1\ntmp_turnover := EMPTY\n\nFOR EVERY tmp_turnover IN DATASET mat_Rule10 (business_id = '100' ; turnover )\n\n\n  IF tmp_turnover /= EMPTY AND tmp_turnover > 1000000\n   THEN rc := 0\n  END\n\nEND\n\nRETURN rc",
+      "severity": "information",
+      "description": "exists x: x.business-id = 100 AND x.turnover > 1.000.000"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_fzv8qpyu6z",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 17",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_person_id, x1\nrc := 0\n\nLOOP FOR x1 := 1 UNTIL x1 > members\n     IF NOT SEQUENCE (household_id, x1) IN DATASET personen (household_id , person_id )\n      THEN rc := 1\n     END\n\n  END\n\nRETURN rc",
+      "severity": "information",
+      "description": "forall x: forall n:\n  IF 1 <= n <= x.no_of_household_members\n  THEN exists y: \n    x.household-id = y.household-id AND y.person-id = n",
+      "change": "down",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_ao83kyd4dk",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 17",
+      "language": "VTL 1.0",
+      "expression": "DShousehold=household-id(identifier),members\nDSpersons=household-id(identifier), person-id(identifier)\n\n\nDSmerge:=merge (DShousehold as \"DSh\", DSpersons as \"DSp\" \n        on DSh#household-id=DSp#household-id, \n        return \n        (DSh#household-id as household-id,DSh#person-id as person-id,DSp#members as members))\n \n\nDSout:= DSmerge[filter person-id < 1 or person-id>members][keep (household-id,members)][aggregate count (members)] = 0\n\nDSdist:= DSmerge[rename (person-id) as \"p_id\" role \"measure\"][aggregate count_distinct (p_id)][filter p id <> members]\n[aggregate count (members)] = 0\n\n\nDSr := (DSout and DSdist)\n\n",
+      "severity": "information",
+      "description": "forall x: forall n:\n  IF 1 <= n <= x.no_of_household_members\n  THEN exists y: \n    x.household-id = y.household-id AND y.person-id = n",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "CONVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_tsvmzydwxb",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 6",
+      "language": "validate",
+      "expression": "\n# def_ratio\nmeani := mean(price_t)  + (price_tm1 - price_t)/length(price_t)\nratio := abs(meani-mean(price_tm1))/abs(mean(price_t)-mean(price_tm1))\n\n# rule_07\nratio >= 0.9 & ratio <= 1.1\n\n",
+      "severity": "error",
+      "description": "The price change of a single item may not influence the change in the mean prices by more than 10%, upwards or downwards"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_53gkzbys0q",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 16",
+      "language": "validate",
+      "expression": "# def_count:\nperson_count :=  table(person$household_id)\n\n# rule17:\nmembers == person_count[household_id]\n",
+      "severity": "warning",
+      "description": "The value for no_of_household_members must equal the number of records for each household"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_lm3wqgkp5f",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 16",
+      "language": "VTL 1.0",
+      "expression": "DShousehold=household-id(identifier),members\nDSpersons=person-id(identifier),household-id(identifier) (in the example fields are not correctly defined)\n\nDScount := (DSpersons[calc 1 as \"members\" role \"MEASURE\"][keep (household-id, members)][aggregate count(members)]= \n        DShousehold)[filter members= \"false\"]\nDSr := DScount[calc 1 as \"msr_count\" role \"MEASURE\"][aggregate count(msr_count)] = 0\n\n",
+      "severity": "information",
+      "description": "The value for no_of_household_members must equal the number of records for each household"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_kla6uxj6pw",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 10",
+      "language": "validate",
+      "expression": "# rule_11:\nsum(business_id == 100 & turnover > 1e+06) == 1\n",
+      "severity": "information",
+      "description": "exists! x: x.business-id = 100 AND x.turnover > 1.000.000"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_lp64goctsp",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 10",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_turnover, tmp_undecided, tmp_count\nrc,tmp_undecided, tmp_count := {1,0,0}\ntmp_turnover := EMPTY\n\n  FOR EVERY tmp_turnover IN DATASET mat_Rule11 (business_id = '100' ; turnover )\n\n   IF tmp_turnover  = EMPTY \n    THEN tmp_undecided := 1 \n   \n     ELSE\n      IF tmp_turnover > 1000000\n       THEN tmp_count :=  tmp_count + 1  \n      END\n   END\n END\n\n IF tmp_undecided = 1 OR  tmp_count = 1\n  THEN rc := 0\n END\n\n\n\nRETURN rc",
+      "severity": "error",
+      "description": "exists! x: x.business-id = 100 AND x.turnover > 1.000.000"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_igxe9zx3ln",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 6",
+      "language": "validate",
+      "expression": "\n# def_ratio\nmeani := mean(price_t)  + (price_tm1 - price_t)/length(price_t)\nratio := abs(meani-mean(price_tm1))/abs(mean(price_t)-mean(price_tm1))\n\n# rule_07\nratio >= 0.9 & ratio <= 1.1\n\n",
+      "severity": "error",
+      "description": "The price change of a single item may not influence the change in the mean prices by more than 10%, upwards or downwards"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_ftil38pjz4",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 9",
+      "language": "validate",
+      "expression": "# rule_10:\nany(business_id == 100 & turnover > 1e+06)\n",
+      "severity": "error",
+      "description": "exists x: x.business-id = 100 AND x.turnover > 1.000.000"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_en51in5nkz",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 11",
+      "language": "validate",
+      "expression": "# def_rel_4:\nrel_4 :=  person_id[relation_to_head == 4]\n\n# def_rel_3:\nspouse_of_rel_3 :=  spouse_id[relation_to_head == 3]\n\n# rule_12:\nall(rel_4 %in% spouse_of_rel_3)\n",
+      "severity": "error",
+      "description": "forall x: \n  IF x.relation_to_head = 4 \n  THEN exists y:\n    x.spouse-id = y.person-id AND y.relation_to_head = 3"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_q48mnrmoqn",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 3",
+      "language": "VTL 1.0",
+      "expression": "DS=id, item, price_t, price_t-1, price_Y-1 \n\nDSr1:= ((DS#price_t - DS#price_t-1) <= (DS#price_t-1 * 0.5))  and  ((DS#price_t + DS#price_Y-1) <= (DS#price_Y-1 * 0.5))\n\n/* if a NULL value is in one of the terms of the AND the result will be as indicated in 3VL, Three-valued logic  see page 42 VTL-part1 */\n",
+      "severity": "warning",
+      "description": "Price change between the current month and the previous month should not exceed 50% (taking the previous value as 100%).\nThe same must hold for the price change between the current month and the same month last year.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_f31w0f9ndk",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 10",
+      "language": "Estatistik",
+      "expression": "DECLARE rc, tmp_turnover, tmp_undecided, tmp_count\nrc,tmp_undecided, tmp_count := {1,0,0}\ntmp_turnover := EMPTY\n\n  FOR EVERY tmp_turnover IN DATASET mat_Rule11 (business_id = '100' ; turnover )\n\n   IF tmp_turnover  = EMPTY \n    THEN tmp_undecided := 1 \n   \n     ELSE\n      IF tmp_turnover > 1000000\n       THEN tmp_count :=  tmp_count + 1  \n      END\n   END\n END\n\n IF tmp_undecided = 1 OR  tmp_count = 1\n  THEN rc := 0\n END\n\n\n\nRETURN rc",
+      "severity": "error",
+      "description": "exists! x: x.business-id = 100 AND x.turnover > 1.000.000"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "Data Entry System",
+      "agent": "Destatis",
+      "trigger": "Lucas Statistician"
+    },
+    "data": {
+      "source": [
+        "WC001",
+        "WC002",
+        "WC003",
+        "WC004"
+      ],
+      "target": [],
+      "description": "Record from a EU member state"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_jgjzp989na",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 13",
+      "language": "validate",
+      "expression": "# rule 14\nall(table(gender, age_group) >= 1) & \n  all(c(\"male\", \"female\") %in% gender) &\n  all(c(\"child\",\"adult\",\"senior\") %in% age_group)\n",
+      "severity": "error",
+      "description": "Every combination of sex and age group occurs at least once in the data set.",
+      "change": "up",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_k2nlqa4n44",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 1",
+      "language": "validate",
+      "expression": "# rule_02:\ncost + profit == turnover\n",
+      "severity": "warning",
+      "description": "cost + profit = turnover"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "Jim",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data"
+    },
+    "value": "1"
+  },
+  {
+    "id": "id_n98c5ko97c",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 11",
+      "language": "VTL 1.0",
+      "expression": "DS=person-id(identifier), spouse-id, relation_to_head\n\nDSfilter := DS[filter relation_to_head = 4]\nDSmerge := merge(DS \"DSx\",DS \"DSy\",\n    on\n    (DSy#spouse-id = DSx#person-id and DSy#relation_to_head = 3 and DSx#relation_to_head = 4)\n    return\n    (DSx#person-id as \"person-id\"))\n\nDSnot_exists := DSfilter not_exists_in DSmerge\n\nDScount := DSnot_exists[calc 1 as \"id\" role \"identifier\"][keep (id, person_id)][aggregate count (person_id)] = 0\n",
+      "severity": "error",
+      "description": "forall x: \n  IF x.relation_to_head = 4 \n  THEN exists y:\n    x.spouse-id = y.person-id AND y.relation_to_head = 3"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "STRUVAL",
+      "agent": "Eurostat",
+      "trigger": "Jim Statistician"
+    },
+    "data": {
+      "source": [
+        "Inhabitants",
+        "EU-SILC",
+        "John",
+        "Income"
+      ],
+      "target": [],
+      "description": "synthetic income data nr2"
+    },
+    "value": "0"
+  },
+  {
+    "id": "id_9o9hgl18x3",
+    "type": "validation",
+    "rule": {
+      "id": "Rule 4",
+      "language": "validate",
+      "expression": "# def_age_gp:\nage_gp :=  age[match(grandchild_of, person_id)]\n\n# rule_04:\nage_gp - 28 >= age\n",
+      "severity": "warning",
+      "description": "Age of grandparents – 28 >= age of their grandchildren",
+      "change": "down",
+      "explanation": "This value has been checked manually and the exception is statistically correct"
+    },
+    "event": {
+      "time": "2017-10-24T15:20:43.881Z",
+      "actor": "R package validate version 0.2.0",
+      "agent": "CBS",
+      "trigger": "John Statistician"
+    },
+    "data": {
+      "source": [
+        "Enterprises",
+        "Survey_23",
+        "SuccesfulStartup",
+        "Nr_employees"
+      ],
+      "target": [],
+      "description": "a record on employees of a startup"
+    },
+    "value": "1"
+  }
+]

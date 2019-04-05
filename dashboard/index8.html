@@ -22,7 +22,7 @@
 <div class="container-fluid">
 
 	<h2>Validation Dashboard <small>version 0.0.5</small></h2>
-	<p>Shows a <a href="example_reports/retailersReport.json">validation report</a> (json) which is a results of 
+	<p>Shows a <a href="example_reports/retailersReportErrors.json">validation report</a> (json) which is a results of 
 	executing <a href="example_reports/retailersRules1.txt">these rules</a> (yaml) on <a href="example_reports/retailers.csv">this data</a> (csv).
 	</p>
 	
@@ -33,8 +33,8 @@
 <script type="text/javascript">
 
 function showDashboard() {
-	d3.csv("example_reports/SBS2000.csv").then(function(data) {
-		d3.json("example_reports/SBS2000Report.json").then(function(report) {
+	d3.csv("example_reports/SBS2000Errors.csv").then(function(data) {
+		d3.json("example_reports/SBS2000ReportErrors.json").then(function(report) {
 			new validationDashboard({container: "#dashboard", data: data, report: report, idcol: "id"})
 		})
 	})

@@ -1,0 +1,20 @@
+rules:
+- expr: turnover >= 0
+  name: V1
+  label: ''
+  description: ''
+  created: 2017-11-08 22:57:58
+  origin: command-line
+- expr: total.costs + profit == turnover
+  name: V2
+  label: ''
+  description: ''
+  created: 2017-11-08 22:57:58
+  origin: command-line
+- expr: mean(turnover, na.rm = TRUE) >= 0
+  name: V3
+  label: ''
+  description: ''
+  created: 2017-11-08 22:57:58
+  origin: command-line
+

@@ -10,3 +10,15 @@
     fill: black;
 	font-weight: bold;
 }
+
+div#divEventCount {
+	margin-top: 20px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+strong.selectorHeader {
+	margin-left: 5px;
+}
+table.dataTable tbody tr {	
+	cursor: pointer;
+}
